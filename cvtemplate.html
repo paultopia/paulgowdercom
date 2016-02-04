@@ -1,0 +1,201 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<!-- LIST OF VARIABLES:
+addy1: 407 Boyd Law Building
+addy2: Iowa City, IA 52242
+vox: 319-384-3202 (office)
+positions: list of positions
+          :university  University of Iowa
+          :title  Associate Professor of Law (pre-tenure) <br>Adjunct Associate Professor of Political Science (by courtesy)
+          :year  2012-present
+
+schools: list of schools (education)
+          :name Stanford University
+          :degree Ph.D. in Political Science
+          :year  2012
+
+books: books
+          :title The Rule of Law in the Real World
+          :publisher Cambridge University Press
+          :year forthcoming (early 2016), in press
+
+prarts: peer reviewed articles
+          :title What the Laws Demand of Socrates---and of Us
+          :journal The Monist
+          :cite 98(4):360-374
+          :year 2015
+
+lrarts: law articles
+          [same as prarts]
+
+chapters: book chapters
+        :title Trust and Commitment: How Athens Rebuilt the Rule of Law
+        :editors Corradetti, Eiskovits, and Rotondi
+        :book Theorizing Transitional Justice
+        :publisher Ashgate
+        :pages 225-236
+        :year 2015
+
+miscpubs: misc pubs, as one would expect
+        :title Procedural Due Process: the Missing Casebook Chapter
+        :description open access casebook chapter, released on SSRN
+        :year 2014
+
+awards: awards
+        :name Institute for Advanced Study, Princeton, NJ: Member (School of Social Science)
+        :year 2014-5
+
+need to:
+refactor out the styles to classes
+clean up the html templating
+figure out how to put notes if they exist in publication lines (or maybe just on bottom)
+
+
+-->
+
+<head><title>Paul Gowder: C.V.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="code/cv/normalize.css">
+<link rel="stylesheet" href="code/cv/skeleton2.css">
+</head><body onload=' location.href="#top" '>
+<a class="button tooltip" href="#top" style="position:fixed;">top<span>back to top</span></a><br><br>
+<a class="button tooltip" href="#pubs" style="position:fixed;">pub<span>publications</span></a><br><br>
+<a class="button tooltip" href="#awards" style="position:fixed;">awd<span>awards</span></a><br><br>
+<a class="button tooltip" href="#pres" style="position:fixed;">prs<span>presentations</span></a><br><br>
+<a class="button tooltip" href="#law" style="position:fixed;">law<span>law practice</span></a><br><br>
+<a class="button tooltip" href="#teach" style="position:fixed;">tch<span>teaching</span></a><br><br>
+<a class="button tooltip" href="#service" style="position:fixed;">svc<span>service</span></a><br><br>
+<a class="button tooltip" href="cv.pdf" style="position:fixed;">pdf</a>
+<div class="container">
+<div class="row">
+
+<div class="five columns" style="margin-top: 5%">
+<h1 id="top"><a href="http://paul-gowder.com">Paul Gowder</a></h1>
+</div>
+<div class="seven columns" style="margin-top: 6%">
+<table class="u-full-width" style="border-bottom: 0px; padding: 0px 2px">
+<tr style="background: none;">
+<td style="border: none; padding: 2px 5px;">{{addy1}}</td>
+<td style="border: none; padding: 2px 5px;"><a href="mailto:pgowder@post.harvard.edu">pgowder@post.harvard.edu</a></td>
+</tr><tr>
+<td style="padding: 2px 5px;">{{addy2}}</td>
+<td style="padding: 2px 5px;">{{vox}}</td>
+</tr></table></div></div>
+
+<div class="row">
+<div class="twelve columns">
+<h3>Academic Positions</h3><br><table class="u-full-width"><thead><tr><th>University</th><th>Title</th><th>Dates</th></thead><tbody>
+
+{% for position in positions %}
+<tr><td>
+<strong>{{position.university}}</strong>
+</td><td>
+{{position.title}}
+</td><td>
+{{position.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+
+<h3>Education</h3><br><table class="u-full-width"><thead><tr><th>University</th><th>Degree</th><th>Year</th></thead><tbody>
+
+{% for school in schools %}
+<tr><td>
+<strong>{{school.name}}</strong>
+</td><td>
+{{school.degree}}
+</td><td>
+{{school.gradyear}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+
+
+<h3 id="pubs">Publications</h3><br>
+<h5>Books</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Publisher</th><th>Year</th></thead><tbody>
+{% for book in books %}
+<tr><td><strong>
+{{book.title}}
+</strong></td><td>
+{{book.publisher}}
+</td><td>
+{{book.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+
+<h5>Peer Reviewed/Faculty Edited Articles</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
+{% for prart in prarts %}
+<tr>
+<td>
+<strong>{{prart.title}}</strong>
+</td><td>
+{{prart.journal}}
+</td><td>
+{{prart.cite}}
+</td><td>
+{{prart.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+<h5>Law Review/Student Edited Articles</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
+{% for lrart in lrarts %}
+<tr>
+<td>
+<strong>{{lrart.title}}</strong>
+</td><td>
+{{lrart.journal}}
+</td><td>
+{{lrart.cite}}
+</td><td>
+{{lrart.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+
+<h5>Book Chapters</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Book</th><th>Pages</th><th>Year</th></tr></thead><tbody>
+{% for chapter in chapters %}
+<tr><td>
+<strong>{{chapter.title}}</strong>
+</td>
+<td>
+{{chapter.editors}}, eds., <em>{{chapter.book}}</em> ({{chapter.publisher}})
+</td><td>
+{{chapter.pages}}
+</td><td>
+{{chapter.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+<h5>Miscellany</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Description</th><th>Year</th></thead><tbody>
+{% for misc in miscpubs %}
+<tr><td>
+{{misc.title}}
+</td><td>
+{{misc.description}}
+</td><td>
+{{misc.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+<h3 id="awards">Grants, Awards and Honors</h3><br><table class="u-full-width"><thead><tr><th>Award</th><th>Year</th></thead><tbody>
+{% for award in awards %}
+<tr><td>
+{{award.name}}
+</td><td>
+{{award.year}}
+</td></tr>
+
+<!-- this is where it gets messy with presentations.  Fixing the layout will be a start. -->
+
+  </body>
+</html>
