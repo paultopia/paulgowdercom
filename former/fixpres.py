@@ -16,4 +16,5 @@ def parsepres(prestype):
 
 print parsepres(oldjson["Presentations"]["Invited Talks"])
 
-# it works, all I need to do now is parse each type, put them all in a dictionary, and save as new json.
+# it works, all I need to do now is parse each type, put them all in a dictionary with types as keys, 
+# sort by year, then save as new json.
