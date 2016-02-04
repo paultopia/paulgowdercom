@@ -1,9 +1,7 @@
 import json
+from operator import itemgetter
 with open('presold.json') as old:
 	oldjson = json.load(old)
-
-
-
 
 def parsepres(prestype):
 	parsed = []
@@ -13,8 +11,12 @@ def parsepres(prestype):
 				parsed.append({"conference": conference, "title": title, "year": year})
 	return parsed
 
+bigdict = {"Invited Talks": parsepres(oldjson["Presentations"]["Invited Talks"]), "Conference Presentations": parsepres(oldjson["Presentations"]["Conference Talks"]), "Campus Talks": parsepres(oldjson["Presentations"]["Campus Talks"])}
 
-print parsepres(oldjson["Presentations"]["Invited Talks"])
+def sorttalks(preslist):
+	return sorted(sorted(preslist, key=itemgetter('title', 'conference')), key=itemgetter('year'), reverse=True)
 
-# it works, all I need to do now is parse each type, put them all in a dictionary with types as keys, 
-# sort by year, then save as new json.
+newdict = {k: sorttalks(v) for k, v in bigdict.items()}
+
+with open('presnew.json', 'w') as outfile:
+    json.dump(newdict, outfile)
