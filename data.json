@@ -494,7 +494,7 @@
     "campus": [{
         "venue": "Iowa Legal Studies Workshop",
         "year": "2015",
-        "title": "Corruption and the Transnational Litigation Prisoner's Dilemma (co-author with Maya Steinitz)"
+        "title": "Corruption and the Transnational Litigation Prisoner's Dilemma (Co-Author with Maya Steinitz)"
     }, {
         "venue": "Institute for Advanced Study, School of Social Science",
         "year": "2015",
@@ -709,6 +709,6 @@
     "computerlang": ["Python (strong intermediate level)", "R (intermediate level)", "C (basic level)", "Clojure (basic level)", "Javascript (basic level)"],
     "bars": ["Louisiana", "Massachusetts", "Oregon", "Virginia"],
     "other": ["Ph.D. Dissertation: An Egalitarian Theory of the Rule of Law", "Ph.D. Fields: Political Theory (major), Political Institutions (major), American Politics (minor)", "Research Assistant to Lawrence Lessig (2006-8, 1999), and to Richard Sobel (1998)"],
-    "notes": ["Market Unfreedom was reviewed only by (specialist) editor, not external referees.", "The Rule of Law in the Real World available from February 11, 2016.", "The Rule of Law Against Sovereign Immunity in a Democratic State was published in an online supplement.", "Bar Admissions are not currently in active/authorized to practice status."]
+    "notes": ["Market Unfreedom was reviewed only by (specialist) editor, not external referees.", "The Rule of Law in the Real World available from February 11, 2016.", "'The Rule of Law Against Sovereign Immunity...' was published in an online supplement.", "Bar Admissions are not currently in active/authorized to practice status.", "'Secrecy as Mystification of Power' was supported by the Century Foundation and was reprinted in Maret and Goldman, eds., Understanding Government Secrecy: Classic and Contemporary Readings (Greenwood Press/Libraries Unlimited, 2009).", "'The Health Insurance Mandate Really is a Tax...' is an only slightly changed adaptation of 'Death and Taxes...'"]
 
 }
