@@ -312,7 +312,7 @@
     "positions": [{
         "university": "University of Iowa",
         "title": "Associate Professor of Law (pre-tenure) <br>Adjunct Associate Professor of Political Science (by courtesy)",
-        "year": "2012-present"
+        "year": "2012-<br>present"
     }],
 
     "invited": [{
@@ -536,8 +536,8 @@
             "years": "2001-3"
         }, {
             "employer": "American Civil Liberties Union of the National Capital Area",
-            "role": "Law Clerk",
-            "years": "1999 (summer)"
+            "role": "Summer Law Clerk",
+            "years": "1999"
         }
 
     ],
@@ -564,9 +564,9 @@
         "terms": "2013, 2014",
         "notes": ""
     }, {
-        "school": "Stanford University, Educational Program for Gifted Youth",
+        "school": "Stanford University, Educational Program for Gifted Youth <br>(Stanford campus, plus Singapore Honors Academy in 2011)",
         "title": "Topics in Political Science",
-        "terms": "2010, 2011, 2012 (plus 2011 in Singapore Honors Academy)",
+        "terms": "2010, 2011, 2012",
         "notes": ""
     }],
 

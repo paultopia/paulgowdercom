@@ -20,10 +20,10 @@
 <table class="u-full-width" style="border-bottom: 0px; padding: 0px 2px">
 <tr style="background: none;">
 <td style="border: none; padding: 2px 5px;">{{basics.addr1}}</td>
-<td style="border: none; padding: 2px 5px;"><a href="mailto:{{basics.email}}">{{basics.email}}</a></td>
+<td style="border: none; padding: 2px 5px; text-align: right;"><a href="mailto:{{basics.email}}">{{basics.email}}</a></td>
 </tr><tr>
 <td style="padding: 2px 5px;">{{basics.addr2}}</td>
-<td style="padding: 2px 5px;">{{basics.phone}} ({{basics.phoneid}})</td>
+<td style="padding: 2px 5px; text-align: right;">{{basics.phone}} ({{basics.phoneid}})</td>
 </tr></table></div></div>
 
 <div class="row">
@@ -31,8 +31,8 @@
 <h3>Academic Positions</h3>
 <table class="u-full-width">
 <col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
+<col style="width:55%">
+<col style="width:7%">
 <thead><tr><th>University</th><th>Title</th><th>Dates</th></thead><tbody>
 
 {% for position in positions %}
@@ -50,8 +50,8 @@
 <h3>Education</h3>
 <table class="u-full-width">
 <col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
+<col style="width:55%">
+<col style="width:7%">
 <thead><tr><th>University</th><th>Degree</th><th>Year</th></thead><tbody>
 
 {% for school in schools %}
@@ -71,8 +71,8 @@
 <h5>Books</h5>
 <table class="u-full-width">
 <col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
+<col style="width:55%">
+<col style="width:7%">
 <thead><tr><th>Title</th><th>Publisher</th><th>Year</th></thead><tbody>
 {% for book in books %}
 <tr><td>
@@ -87,7 +87,12 @@
 
 
 <h5>Peer Reviewed Articles</h5>
-<table class="u-full-width"><thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
+<table class="u-full-width">
+<col style="width:35%">
+<col style="width:35%">
+<col style="width:20%">
+<col style="width:7%">
+<thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
 {% for prart in prarts %}
 <tr>
 <td>
@@ -103,7 +108,12 @@
 </tbody></table>
 
 <h5>Law Review Articles</h5>
-<table class="u-full-width"><thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
+<table class="u-full-width">
+<col style="width:35%">
+<col style="width:35%">
+<col style="width:20%">
+<col style="width:7%">
+<thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
 {% for lrart in lrarts %}
 <tr>
 <td>
@@ -120,7 +130,12 @@
 
 
 <h5>Book Chapters</h5>
-<table class="u-full-width"><thead><tr><th>Title</th><th>Book</th><th>Pages</th><th>Year</th></tr></thead><tbody>
+<table class="u-full-width">
+<col style="width:35%">
+<col style="width:35%">
+<col style="width:20%">
+<col style="width:7%">
+<thead><tr><th>Title</th><th>Book</th><th>Pages</th><th>Year</th></tr></thead><tbody>
 {% for chapter in chapters %}
 <tr><td>
 {{chapter.title}}
@@ -137,9 +152,9 @@
 
 <h5>Miscellany</h5>
 <table class="u-full-width">
-<col style="width:35%">
+<col style="width:40%">
 <col style="width:50%">
-<col style="width:15%">
+<col style="width:7%">
 <thead><tr><th>Title</th><th>Description</th><th>Year</th></thead><tbody>
 {% for misc in miscpubs %}
 <tr><td>
@@ -167,9 +182,9 @@
 
 <h5>Invited Talks</h5>
 <table class="u-full-width">
-<col style="width:35%">
+<col style="width:40%">
 <col style="width:50%">
-<col style="width:15%">
+<col style="width:7%">
 <thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
 {% for invitedpres in invited %}
 <tr><td>
@@ -185,9 +200,9 @@
 
 <h5>Conference Presentations</h5>
 <table class="u-full-width">
-<col style="width:35%">
+<col style="width:40%">
 <col style="width:50%">
-<col style="width:15%">
+<col style="width:7%">
 <thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
 {% for conference in conferences %}
 <tr><td>
@@ -202,9 +217,9 @@
 
 <h5>Campus Talks</h5>
 <table class="u-full-width">
-<col style="width:35%">
+<col style="width:40%">
 <col style="width:50%">
-<col style="width:15%">
+<col style="width:7%">
 <thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
 {% for ctalk in campus %}
 <tr><td>
@@ -221,9 +236,9 @@
 
 <h5>Lead Instructor</h5>
 <table class="u-full-width">
-<col style="width:35%">
+<col style="width:40%">
 <col style="width:50%">
-<col style="width:15%">
+<col style="width:7%">
 <thead><tr><th>Course</th><th>University</th><th>Dates</th></thead><tbody>
 {% for course in courses %}
 <tr><td>
@@ -238,9 +253,9 @@
 
 <h5>Teaching Assistant</h5>
 <table class="u-full-width">
-<col style="width:35%">
+<col style="width:40%">
 <col style="width:50%">
-<col style="width:15%">
+<col style="width:7%">
 <thead><tr><th>Course</th><th>University</th><th>Dates</th></thead><tbody>
 {% for taship in taships %}
 <tr><td>
@@ -256,9 +271,9 @@
 
 <h3 id="law">Legal Practice</h3>
 <table class="u-full-width">
-<col style="width:35%">
+<col style="width:40%">
 <col style="width:50%">
-<col style="width:15%">
+<col style="width:7%">
 <thead><tr><th>Employer</th><th>Role</th><th>Years</th></thead><tbody>
 {% for job in practice %}
 <tr><td>
@@ -274,7 +289,11 @@
 
 <h3 id="service">Service</h3>
 <h5>University Service</h5>
-<table class="u-full-width"><thead><tr><th>Role</th><th>Context</th><th>Dates</th></thead><tbody>
+<table class="u-full-width">
+<col style="width:40%">
+<col style="width:50%">
+<col style="width:7%">
+<thead><tr><th>Role</th><th>Context</th><th>Dates</th></thead><tbody>
 {% for userv in uservice %}
 <tr><td>
 {{userv.role}}
@@ -287,7 +306,8 @@
 </tbody></table>
 
 <h5>Disciplinary Service</h5>
-<table class="u-full-width"><thead><tr><th>Role</th><th>Dates</th></thead><tbody>
+<table class="u-full-width">
+<thead><tr><th>Role</th><th>Dates</th></thead><tbody>
 {% for dserv in dservice %}
 <tr><td>
 {{dserv.role}}
