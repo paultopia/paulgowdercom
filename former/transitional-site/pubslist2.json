@@ -166,11 +166,11 @@
     "Books": [
         {
             "publisher": "Cambridge University Press",
-            "year": "forthcoming (early 2016), in press",
+            "year": "2016",
             "title": "The Rule of Law in the Real World",
-            "abstract": "Details (and a separate website just for this book) coming soon!",
-            "publink": null,
-            "altlink": null
+        "abstract": "The Rule of Law in the Real World gives a comprehensive new theory of the political and legal ideal known as the rule of law: what it means (the coordinated collective control of power), why it matters (it constitutes a morally important kind of social equality), and how these properties should be taken into account in social scientific attempts to measure it as well as policy efforts to promote it.",
+        "publink": "http://www.cambridge.org/us/academic/subjects/law/jurisprudence/rule-law-real-world?format=PB",
+        "altlink": "http://rulelaw.net"
         }
     ]
 }
