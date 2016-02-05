@@ -13,18 +13,12 @@
 <div class="row">
 
 
-<div class="five columns" style="margin-top: 2%">
+<div class="twelve columns">
 <h1 id="top"><a href="http://paul-gowder.com">Paul Gowder</a></h1>
-</div>
-<div class="seven columns" style="margin-top: 3%">
-<table class="u-full-width" style="border-bottom: 0px; padding: 0px 2px">
-<tr style="background: none;">
-<td style="border: none; padding: 2px 5px;">{{basics.addr1}}</td>
-<td style="border: none; padding: 2px 5px; text-align: right;"><a href="mailto:{{basics.email}}">{{basics.email}}</a></td>
-</tr><tr>
-<td style="padding: 2px 5px;">{{basics.addr2}}</td>
-<td style="padding: 2px 5px; text-align: right;">{{basics.phone}} ({{basics.phoneid}})</td>
-</tr></table></div></div>
+<p><a href="mailto:{{basics.email}}"><img src="email-icon.svg"></a> <a href="{{basics.cvurl}}"><img src="pdf-icon.svg"></a></p>
+
+
+</div></div>
 
 <div class="row">
 <div class="twelve columns">
@@ -168,7 +162,10 @@
 </tbody></table>
 
 <h3 id="awards">Grants, Awards and Honors</h3>
-<table class="u-full-width"><thead><tr><th>Award</th><th>Year</th></thead><tbody>
+<table class="u-full-width">
+<col style="width:90%">
+<col style="width:7%">
+<thead><tr><th>Award</th><th>Year</th></thead><tbody>
 {% for award in awards %}
 <tr><td>
 {{award.name}}
@@ -307,6 +304,8 @@
 
 <h5>Disciplinary Service</h5>
 <table class="u-full-width">
+<col style="width:90%">
+<col style="width:7%">
 <thead><tr><th>Role</th><th>Dates</th></thead><tbody>
 {% for dserv in dservice %}
 <tr><td>
@@ -318,7 +317,10 @@
 </tbody></table>
 
 <h5>Community Service and Outreach</h5>
-<table class="u-full-width"><thead><tr><th>Role</th><th>Dates</th></thead><tbody>
+<table class="u-full-width">
+<col style="width:90%">
+<col style="width:7%">
+<thead><tr><th>Role</th><th>Dates</th></thead><tbody>
 {% for cserv in cservice %}
 <tr><td>
 {{cserv.activity}}
@@ -348,8 +350,9 @@ Computer:
 </div>
 </div>
 <hr>
-Last revised {{basics.revdate}} <br>
-<a href="{{basics.url}}">return home</a>
+<p>
+<a href="{{basics.url}}"><b>&lt;&lt;</b></a> last rev. {{basics.revdate}} </p>
+<hr style="margin-bottom: 2rem;">
 </div>
   </body>
 </html>
