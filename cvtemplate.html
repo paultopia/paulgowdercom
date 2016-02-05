@@ -1,59 +1,6 @@
  <!DOCTYPE html>
 <html lang="en">
 
-<!-- LIST OF VARIABLES:
-addy1: 407 Boyd Law Building
-addy2: Iowa City, IA 52242
-vox: 319-384-3202 (office)
-positions: list of positions
-          :university  University of Iowa
-          :title  Associate Professor of Law (pre-tenure) <br>Adjunct Associate Professor of Political Science (by courtesy)
-          :year  2012-present
-
-schools: list of schools (education)
-          :name Stanford University
-          :degree Ph.D. in Political Science
-          :year  2012
-
-books: books
-          :title The Rule of Law in the Real World
-          :publisher Cambridge University Press
-          :year forthcoming (early 2016), in press
-
-prarts: peer reviewed articles
-          :title What the Laws Demand of Socrates---and of Us
-          :journal The Monist
-          :cite 98(4):360-374
-          :year 2015
-
-lrarts: law articles
-          [same as prarts]
-
-chapters: book chapters
-        :title Trust and Commitment: How Athens Rebuilt the Rule of Law
-        :editors Corradetti, Eiskovits, and Rotondi
-        :book Theorizing Transitional Justice
-        :publisher Ashgate
-        :pages 225-236
-        :year 2015
-
-miscpubs: misc pubs, as one would expect
-        :title Procedural Due Process: the Missing Casebook Chapter
-        :description open access casebook chapter, released on SSRN
-        :year 2014
-
-awards: awards
-        :name Institute for Advanced Study, Princeton, NJ: Member (School of Social Science)
-        :year 2014-5
-
-need to:
-refactor out the styles to classes
-clean up the html templating
-figure out how to put notes if they exist in publication lines (or maybe just on bottom)
-
-
--->
-
 <head><title>Paul Gowder: C.V.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
@@ -67,9 +14,10 @@ figure out how to put notes if they exist in publication lines (or maybe just on
 <a class="button tooltip" href="#law" style="position:fixed;">law<span>law practice</span></a><br><br>
 <a class="button tooltip" href="#teach" style="position:fixed;">tch<span>teaching</span></a><br><br>
 <a class="button tooltip" href="#service" style="position:fixed;">svc<span>service</span></a><br><br>
-<a class="button tooltip" href="cv.pdf" style="position:fixed;">pdf</a>
+<a class="button tooltip" href="{{basics.cvurl}}" style="position:fixed;">pdf</a>
 <div class="container">
 <div class="row">
+
 
 <div class="five columns" style="margin-top: 5%">
 <h1 id="top"><a href="http://paul-gowder.com">Paul Gowder</a></h1>
@@ -77,11 +25,11 @@ figure out how to put notes if they exist in publication lines (or maybe just on
 <div class="seven columns" style="margin-top: 6%">
 <table class="u-full-width" style="border-bottom: 0px; padding: 0px 2px">
 <tr style="background: none;">
-<td style="border: none; padding: 2px 5px;">{{addy1}}</td>
-<td style="border: none; padding: 2px 5px;"><a href="mailto:pgowder@post.harvard.edu">pgowder@post.harvard.edu</a></td>
+<td style="border: none; padding: 2px 5px;">{{basics.addr1}}</td>
+<td style="border: none; padding: 2px 5px;"><a href="mailto:{{basics.email}}">{{basics.email}}</a></td>
 </tr><tr>
-<td style="padding: 2px 5px;">{{addy2}}</td>
-<td style="padding: 2px 5px;">{{vox}}</td>
+<td style="padding: 2px 5px;">{{basics.addr2}}</td>
+<td style="padding: 2px 5px;">{{basics.phone}} ({{basics.phoneid}})</td>
 </tr></table></div></div>
 
 <div class="row">
@@ -129,7 +77,7 @@ figure out how to put notes if they exist in publication lines (or maybe just on
 </tbody></table>
 
 
-<h5>Peer Reviewed/Faculty Edited Articles</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
+<h5>Peer Reviewed Articles</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
 {% for prart in prarts %}
 <tr>
 <td>
@@ -144,7 +92,7 @@ figure out how to put notes if they exist in publication lines (or maybe just on
 {% endfor %}
 </tbody></table>
 
-<h5>Law Review/Student Edited Articles</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
+<h5>Law Review Articles</h5><br><table class="u-full-width"><thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Year</th></tr></thead><tbody>
 {% for lrart in lrarts %}
 <tr>
 <td>
@@ -194,8 +142,135 @@ figure out how to put notes if they exist in publication lines (or maybe just on
 </td><td>
 {{award.year}}
 </td></tr>
+{% endfor %}
+</tbody></table>
 
-<!-- this is where it gets messy with presentations.  Fixing the layout will be a start. -->
+<h3 id="pres">Presentations</h3>
+
+<h5>Invited Talks</h5>
+<br><table class="u-full-width"><thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
+{% for invitedpres in invited %}
+<tr><td>
+{{invitedpres.venue}}
+</td><td>
+{{invitedpres.title}}
+</td><td>
+{{invitedpres.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+
+<h5>Conference Presentations</h5>
+<br><table class="u-full-width"><thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
+{% for conference in conferences %}
+<tr><td>
+{{conference.venue}}
+</td><td>
+{{conference.title}}
+</td><td>
+{{conference.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+<h5>Campus Talks</h5>
+<br><table class="u-full-width"><thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
+{% for ctalk in campus %}
+<tr><td>
+{{ctalk.venue}}
+</td><td>
+{{ctalk.title}}
+</td><td>
+{{ctalk.year}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+<h3 id="teach">Teaching</h3>
+
+<h5>Lead Instructor</h5>
+<br><table class="u-full-width"><thead><tr><th>Course</th><th>University</th><th>Dates</th></thead><tbody>
+{% for course in courses %}
+<tr><td>
+<strong>{{course.title}}</strong>
+</td><td>
+{{course.school}}
+</td><td>
+{{course.terms}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+<h5>Teaching Assistant</h5>
+<br><table class="u-full-width"><thead><tr><th>Course</th><th>University</th><th>Dates</th></thead><tbody>
+{% for taship in taships %}
+<tr><td>
+<strong>{{taship.title}}</strong>
+</td><td>
+{{taship.school}}
+</td><td>
+{{taship.terms}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+
+<h3 id="law">Legal Practice</h3><br><table class="u-full-width"><thead><tr><th>Employer</th><th>Role</th><th>Years</th></thead><tbody>
+{% for job in practice %}
+<tr><td>
+<strong>{{job.employer}}</strong>
+</td><td>
+{{job.role}}
+</td><td>
+{{job.years}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+
+<h3 id="service">Service</h3>
+<h5>University Service</h5><br><table class="u-full-width"><thead><tr><th>Role</th><th>Context</th><th>Dates</th></thead><tbody>
+{% for userv in uservice %}
+<tr><td>
+{{userv.role}}
+</td><td>
+{{userv.context}}
+</td><td>
+{{userv.dates}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+<h5>Disciplinary Service</h5><br><table class="u-full-width"><thead><tr><th>Role</th><th>Dates</th></thead><tbody>
+{% for dserv in dservice %}
+<tr><td>
+{{dserv.role}}
+</td><td>
+{{dserv.dates}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+<h5>Community Service and Outreach</h5><br><table class="u-full-width"><thead><tr><th>Role</th><th>Dates</th></thead><tbody>
+{% for cserv in cservice %}
+<tr><td>
+{{cserv.activity}}
+</td><td>
+{{cserv.dates}}
+</td></tr>
+{% endfor %}
+</tbody></table>
+
+
+<h5>Notes</h5>
+{% for note in notes %}
+{{note}}
+<br>
+{% endfor %}
 
   </body>
 </html>
+
+
+

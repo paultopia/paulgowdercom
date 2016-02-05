@@ -1,0 +1,100 @@
+LIST OF VARIABLES FROM DATA.JSON AND TEMPLATE:
+
+basics: basic information
+          :addr1 407 Boyd Law Building
+          :addr2 Iowa City, IA 52242
+          :phone 319-384-3202
+          :phoneid office
+          :cvurl http://paul-gowder.com/new/gowdercv.pdf
+          :revdate February 4, 2016
+          :url http://paul-gowder.com
+          :email pgowder@post.harvard.edu
+
+positions: list of positions
+          :university  University of Iowa
+          :title  Associate Professor of Law (pre-tenure) <br>Adjunct Associate Professor of Political Science (by courtesy)
+          :year  2012-present
+
+schools: list of schools (education)
+          :name Stanford University
+          :degree Ph.D. in Political Science
+          :year  2012
+
+books: books
+          :title The Rule of Law in the Real World
+          :publisher Cambridge University Press
+          :year forthcoming (early 2016), in press
+
+prarts: peer reviewed articles
+          :title What the Laws Demand of Socrates---and of Us
+          :journal The Monist
+          :cite 98(4):360-374
+          :year 2015
+
+lrarts: law articles
+          [same as prarts]
+
+chapters: book chapters
+        :title Trust and Commitment: How Athens Rebuilt the Rule of Law
+        :editors Corradetti, Eiskovits, and Rotondi
+        :book Theorizing Transitional Justice
+        :publisher Ashgate
+        :pages 225-236
+        :year 2015
+
+miscpubs: misc pubs, as one would expect
+        :title Procedural Due Process: the Missing Casebook Chapter
+        :description open access casebook chapter, released on SSRN
+        :year 2014
+
+awards: awards
+        :name Institute for Advanced Study, Princeton, NJ: Member (School of Social Science)
+        :year 2014-5
+
+invited: invited presentations
+        :venue
+        :title
+        :year
+
+conferences: (as invited)
+
+campus: (campus talks; as invited)
+
+courses: courses as lead instructor
+        :school 
+        :title
+        :terms
+
+taships: like courses
+
+practice: practice of law
+        :employer 
+        :role
+        :years
+
+uservice: university service
+          :role Chair, Speakers Committee
+          :context University of Iowa, College of Law
+          :dates 
+
+dservice: disciplinary service
+          :role 
+          :dates 
+
+cservice: community service/outreach
+          :activity 
+          :dates 
+
+
+BOTTOM MATTER, JUST PRINT ONE PER LINE FROM EACH ITEM: 
+
+humanlang
+computerlang
+bars
+other
+notes
+
+need to:
+refactor out the styles to classes
+clean up the html templating
+figure out how to put notes if they exist in publication lines (or maybe just on bottom)
