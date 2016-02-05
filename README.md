@@ -8,3 +8,5 @@ This is just an effort to fix the horrible spaghetti code that makes up my perso
 4.  then set up a ring/luminous or flask server plus remote build with fabric etc and github.
 
 )
+
+(also this repo contains tons of code copyrighted by others in the CSS, as well as in the google icons.  it's all open source, but don't be attributing it to me.)
