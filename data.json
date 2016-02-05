@@ -252,7 +252,7 @@
 
     ],
 
-    "basics": [{
+    "basics": {
             "name": "Paul Gowder",
             "url": "http://paul-gowder.com",
             "addr1": "407 Boyd Law Building",
@@ -262,9 +262,7 @@
             "phoneid": "office",
             "cvurl": "http://paul-gowder.com/new/gowdercv.pdf",
             "revdate": "February 4, 2016"
-        }
-
-    ],
+        },
 
 
     "schools": [{
@@ -528,7 +526,7 @@
     }],
 
 
-    "Legal Practice": [{
+    "practice": [{
             "employer": "Victor M. Glasberg & Associates",
             "role": "Attorney (civil rights/liberties practice)",
             "years": "2004-6"
@@ -663,7 +661,7 @@
 
     ],
 
-    "dservice": [{
+    "cservice": [{
             "activity": "Presentation, 'The Leadership Rationale,' The Past, Present, & Future of Diversity and Inclusion Within the Central Iowa Legal Community",
             "dates": "October 23, 2015",
             "url": ""

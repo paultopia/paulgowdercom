@@ -6,17 +6,23 @@
 <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="code/cv/normalize.css">
 <link rel="stylesheet" href="code/cv/skeleton2.css">
-</head>
-<body>
-
+</head><body onload=' location.href="#top" '>
+<a class="button tooltip" href="#top" style="position:fixed;">top<span>back to top</span></a><br><br>
+<a class="button tooltip" href="#pubs" style="position:fixed;">pub<span>publications</span></a><br><br>
+<a class="button tooltip" href="#awards" style="position:fixed;">awd<span>awards</span></a><br><br>
+<a class="button tooltip" href="#pres" style="position:fixed;">prs<span>presentations</span></a><br><br>
+<a class="button tooltip" href="#law" style="position:fixed;">law<span>law practice</span></a><br><br>
+<a class="button tooltip" href="#teach" style="position:fixed;">tch<span>teaching</span></a><br><br>
+<a class="button tooltip" href="#service" style="position:fixed;">svc<span>service</span></a><br><br>
+<a class="button tooltip" href="{{basics.cvurl}}" style="position:fixed;">pdf</a>
 <div class="container">
 <div class="row">
 
 
-<div class="five columns" style="margin-top: 2%">
+<div class="five columns" style="margin-top: 5%">
 <h1 id="top"><a href="http://paul-gowder.com">Paul Gowder</a></h1>
 </div>
-<div class="seven columns" style="margin-top: 3%">
+<div class="seven columns" style="margin-top: 6%">
 <table class="u-full-width" style="border-bottom: 0px; padding: 0px 2px">
 <tr style="background: none;">
 <td style="border: none; padding: 2px 5px;">{{basics.addr1}}</td>
@@ -29,11 +35,7 @@
 <div class="row">
 <div class="twelve columns">
 <h3>Academic Positions</h3>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>University</th><th>Title</th><th>Dates</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>University</th><th>Title</th><th>Dates</th></thead><tbody>
 
 {% for position in positions %}
 <tr><td>
@@ -48,11 +50,7 @@
 
 
 <h3>Education</h3>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>University</th><th>Degree</th><th>Year</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>University</th><th>Degree</th><th>Year</th></thead><tbody>
 
 {% for school in schools %}
 <tr><td>
@@ -69,11 +67,7 @@
 
 <h3 id="pubs">Publications</h3>
 <h5>Books</h5>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>Title</th><th>Publisher</th><th>Year</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>Title</th><th>Publisher</th><th>Year</th></thead><tbody>
 {% for book in books %}
 <tr><td>
 {{book.title}}
@@ -136,11 +130,7 @@
 </tbody></table>
 
 <h5>Miscellany</h5>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>Title</th><th>Description</th><th>Year</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>Title</th><th>Description</th><th>Year</th></thead><tbody>
 {% for misc in miscpubs %}
 <tr><td>
 {{misc.title}}
@@ -166,11 +156,7 @@
 <h3 id="pres">Presentations</h3>
 
 <h5>Invited Talks</h5>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
 {% for invitedpres in invited %}
 <tr><td>
 {{invitedpres.venue}}
@@ -184,11 +170,7 @@
 
 
 <h5>Conference Presentations</h5>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
 {% for conference in conferences %}
 <tr><td>
 {{conference.venue}}
@@ -201,11 +183,7 @@
 </tbody></table>
 
 <h5>Campus Talks</h5>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>Venue</th><th>Title</th><th>Year</th></thead><tbody>
 {% for ctalk in campus %}
 <tr><td>
 {{ctalk.venue}}
@@ -220,11 +198,7 @@
 <h3 id="teach">Teaching</h3>
 
 <h5>Lead Instructor</h5>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>Course</th><th>University</th><th>Dates</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>Course</th><th>University</th><th>Dates</th></thead><tbody>
 {% for course in courses %}
 <tr><td>
 {{course.title}}
@@ -237,11 +211,7 @@
 </tbody></table>
 
 <h5>Teaching Assistant</h5>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>Course</th><th>University</th><th>Dates</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>Course</th><th>University</th><th>Dates</th></thead><tbody>
 {% for taship in taships %}
 <tr><td>
 {{taship.title}}
@@ -255,11 +225,7 @@
 
 
 <h3 id="law">Legal Practice</h3>
-<table class="u-full-width">
-<col style="width:35%">
-<col style="width:50%">
-<col style="width:15%">
-<thead><tr><th>Employer</th><th>Role</th><th>Years</th></thead><tbody>
+<table class="u-full-width"><thead><tr><th>Employer</th><th>Role</th><th>Years</th></thead><tbody>
 {% for job in practice %}
 <tr><td>
 {{job.employer}}
