@@ -10,6 +10,6 @@ env = jinja2.Environment(loader=jinja2.FileSystemLoader(wkdir), trim_blocks=True
 
 rendered = env.get_template('cvtemplate.html').render(data)
 
-with open('newcv.html', 'w') as outfile:
+with open('cv.html', 'w') as outfile:
     outfile.write(rendered)
 

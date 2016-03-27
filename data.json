@@ -18,7 +18,7 @@
             "year": "2014",
             "abstract": "In this paper, I describe a category of political values that I call institutional values. An institutional value (the quintessential examples of which are democracy and the rule of law) is distinct from an ordinary (or abstract) political value like justice by having both descriptive and evaluative components. I defend a method of sorting out correct from incorrect conceptions of an institutional value that relies on two ideas: coherence and verisimilitude.",
             "publink": "http://www.pdcnet.org/pdc/bvdb.nsf/purchase?openform&fp=swphilreview&id=swphilreview_2014_0030_0001_0235_0242",
-            "altlink": "http://paul-gowder.com/wp-content/uploads/2015/01/gowder-IV.pdf"
+            "altlink": "http://paul-gowder.com/iv-paper.pdf"
         },
 
         {
@@ -78,7 +78,7 @@
         {
             "title": "Transnational Litigation as a Prisoners' Dilemma",
             "journal": "North Carolina Law Review",
-            "cite": "94:751-816",
+            "cite": "94(3):751-816",
             "year": "2016",
             "coauthor": "Maya Steinitz",
             "abstract": "We use game theory to argue that perceptions of widespread corruption in the judicial processes in many countries create ex ante incentives to act corruptly. It is rational (though not moral) to preemptively act corruptly when litigating in the courts of such nations. Accordingly, contrary to judicial narratives in individual cases-such as the (in)famous Chevron-Ecuador dispute used herein as an illustration-the problem of corruption in transnational litigation is structural and thus calls for structural solutions. The Article offers one such solution: the establishment of an international court of civil justice.",
@@ -146,7 +146,7 @@
             "year": "2014",
             "abstract": "This essay offers an argument against the proposition that binding judicial review is inconsistent with democracy. The first section considers three versions of this countermajoritarian complaint, and concludes that the only potentially defensible version is the 'respect complaint,' associated with the popular constitutionalists, according to which constitutional courts impermissibly override popular legal judgments. The second section offers an argument against the respect complaint, centered on the notion that courts express rather than override popular legal judgments. The third section draws on the second to argue that 'weak judicial review systems,' in which legislatures may override constitutional rulings, function the same way as 'strong judicial review systems,' such as the U.S., in virtue of the fact that the courts in each system can wield power over legislatures only to the extent they can generally recruit popular support. In light of the empirical fact that the extent to which legislatures defer to constitutional courts varies widely in weak judicial review systems, I conclude that the question of the relationship between judicial review and democracy is really a far more fine-grained problem of institutional design, not the simple binary choice to have or not have what critics of the U.S. system have misguidedly named 'judicial supremacy.'",
             "publink": null,
-            "altlink": "http://paul-gowder.com/wp-content/uploads/2015/01/gowder-CMC.pdf"
+            "altlink": "http://paul-gowder.com/cmc-paper.pdf"
         },
 
         {
@@ -260,8 +260,8 @@
             "email": "pgowder@post.harvard.edu",
             "phone": "319-384-3202",
             "phoneid": "office",
-            "cvurl": "http://paul-gowder.com/new/gowdercv.pdf",
-            "revdate": "February 4, 2016"
+            "cvurl": "http://paul-gowder.com/gowdercv.pdf",
+            "revdate": "March 27, 2016"
         },
 
 
@@ -662,6 +662,10 @@
     ],
 
     "cservice": [{
+            "activity": "Member, Iowa City Telecommunications Commission",
+            "dates": "2016-",
+            "url": ""
+        }, {
             "activity": "Presentation, 'The Leadership Rationale,' The Past, Present, & Future of Diversity and Inclusion Within the Central Iowa Legal Community",
             "dates": "2015",
             "url": ""
