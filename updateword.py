@@ -12,7 +12,7 @@ filename = glob.glob('*.pdf')[0]
 # kill word using very nice cli here https://github.com/nriley/appswitch/
 os.system('appswitch -qi com.microsoft.Word')
 
-moveme = 'mv "%s" /users/pauliglot/github/paulgowdercom/testcv.pdf' % filename
+moveme = 'mv "%s" /users/pauliglot/github/paulgowdercom/gowdercv.pdf' % filename
 os.system(moveme)
 
 # there we go, everything is now where it belongs, word and pdf ready to upload.
