@@ -8,19 +8,11 @@ for x in range(90):
 	time.sleep(1)
 	if glob.glob('*.pdf'):
 		break
-file = glob.glob('*.pdf')[0]
+filename = glob.glob('*.pdf')[0]
 # kill word using very nice cli here https://github.com/nriley/appswitch/
 os.system('appswitch -qi com.microsoft.Word')
-print file
 
-# fixed
+moveme = 'mv "%s" /users/pauliglot/github/paulgowdercom/testcv.pdf' % filename
+os.system(moveme)
 
-# once I get this working (see SO: http://stackoverflow.com/questions/36255898/python-unable-to-find-files-in-recently-changed-directory-osx)
-# next steps are: 
-# 1.  move the pdf and rename with stub code below plus a filename = pdfs[0] to web dir
-# 2.  copy the word cv to cv directory with new name reflecting current date
-# 3. then make my updateweb script call this plus upload the pdf file
-
-#moveme = 'mv %s /users/pauliglot/github/paulgowdercom/testcv.pdf' % filename
-#os.system(moveme)
-#os.chdir('/users/pauliglot/github/paulgowdercom/')
+# there we go, everything is now where it belongs, word and pdf ready to upload.
