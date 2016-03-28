@@ -1,9 +1,15 @@
 # yes, I KNOW how much of a horrible hack this is.  time is short.
-import os
+import os, datetime
 os.system('python pubsworking.py')
 os.system('python rendercv.py')
+os.system('python updateword.py')
 os.system('git add .')
 os.system('git commit -m "update cv"')
 os.system('git push')
 os.system('upload paul-gowder.com/pubslist.html')
 os.system('upload paul-gowder.com/cv.html')
+os.system('upload paul-gowder.com/gowdercv.pdf')
+wordfile= 'cv{:%Y%m%d%H%M%S}.docx'.format(datetime.datetime.now())
+datafile= 'cvdata{:%Y%m%d%H%M%S}.json'.format(datetime.datetime.now())
+os.system('cp gowdercv.docx ~/Dropbox/CVs/automated-backups{}'.format(wordfile))
+os.system('cp data.json ~/Dropbox/CVs/automated-backups{}'.format(datafile))
