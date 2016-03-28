@@ -1,10 +1,15 @@
-import os, time
+import os, time, glob
 os.system('node wordcv.js')
 os.system('launch -p gowdercv.docx')
 os.chdir('/users/shared/PDFwriter/pauliglot')
-time.sleep(1)
-pdfs = [file for file in os.listdir('/users/shared/PDFwriter/pauliglot') if file.endswith(".pdf")]
-print pdfs
+for x in range(90):
+	time.sleep(1)
+	if glob.glob('*.pdf'):
+		break
+file = glob.glob('*.pdf')[0]
+print file
+
+# fixed
 
 # once I get this working (see SO: http://stackoverflow.com/questions/36255898/python-unable-to-find-files-in-recently-changed-directory-osx)
 # next steps are: 
