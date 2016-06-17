@@ -90,6 +90,17 @@
     "lrarts": [
 
         {
+            "title": "Democratic Paternalism, not Libertarian Paternalism",
+            "journal": "Georgetown Journal of Law and Public Policy",
+            "cite": "(forthcoming)",
+            "year": "2016",
+            "abstract": "In this paper, I first defend a broad analogy between our worries about individual level paternalism and our worries about antimajoritarian elite influences in democratic politics. I then argue that the best objections to paternalistic policies in both domains, including those offered by Sunstein and Thaler under the label libertarian paternalism, are rooted in democratic rather than libertarian ideals. Finally, I offer a preliminary account of the conditions under which paternalistic policies are permissible, rooted in their compatability with individual and collective agents conceived as capable of learning and revising decisions over the course of time.",
+            "publink": null,
+            "altlink": null,
+            "wordnote": null,
+            "haswn": false
+        },
+        {
             "title": "Transnational Litigation as a Prisoner's Dilemma",
             "journal": "North Carolina Law Review",
             "cite": "94(3):751-816",
@@ -354,11 +365,18 @@
         "wordyear": "2012-"
     }],
 
-    "invited": [{
+    "invited": [
+        {
+            "venue": "American Bar Association, Rule of Law Initiative",
+            "year": "2016",
+            "title": "The Rule of Law in the Real World (practitioner-oriented book presentation)"
+        },
+        {
         "venue": "Georgetown University McDonough School of Business, Symposium on Nudging",
         "year": "2015",
         "title": "Democratic Paternalism, not Libertarian Paternalism"
-    }, {
+        },
+        {
         "venue": "Stanford University, Freeman Spogli Institute for International Studies and Stanford Law School",
         "year": "2015",
         "title": "Democratic Rule of Law Reform, Circa 403 B.C.E."
@@ -687,10 +705,20 @@
         "dates": "1999-2000"
     }],
 
-    "dservice": [{
+    "dservice": [
+        {
+            "role": "Reviewer, McGill University Press",
+            "dates": "2016"
+        },
+        {
+            "role": "Reviewer, British Journal of Political Science",
+            "dates": "2016"
+        },
+        {
             "role": "Reviewer, Cambridge University Press",
             "dates": "2015"
-        }, {
+        },
+        {
             "role": "Reviewer, Columbia University Press",
             "dates": "2015"
         }, {
