@@ -600,21 +600,28 @@
     ],
 
     "uiteaching": [
-    {"years": "2015-6", "course": "Constitutional Law I---Structure (Spring 2016)"},
+    {"years": "2016-", "course": "Torts (Fall 2016)"},
+    {"years": "2015-", "course": "Constitutional Law I---Structure (Spring 2016, continuing)"},
     {"years": "2015-6", "course": "Policy Lab (yearlong)"},
     {"years": "2012-4", "course": "Professional Responsibility (Spring 2013, Spring 2014)"},
-    {"years": "2012-6", "course": "Constitutional Law II---Individual Rights (Fall 2012, Spring 2014, Fall 2015)"}],
+    {"years": "2012-", "course": "Constitutional Law II---Individual Rights (Fall 2012, Spring 2014, Fall 2015, Fall 2016, continuing)"}],
 
 
-    "courses": [{
+    "courses": [
+	    {
+		    "school": "University of Iowa",
+		    "title": "Torts",
+		    "terms": "2017",
+		    "notes": ""},
+	    {
         "school": "University of Iowa",
         "title": "Constitutional Law I",
-        "terms": "2016",
+        "terms": "2016-",
         "notes": "(covers federalism and separation of powers)"
     }, {
         "school": "University of Iowa",
         "title": "Constitutional Law II",
-        "terms": "2012, 2014, 2015",
+        "terms": "2012, 2014, 2015-",
         "notes": "(covers bill of rights and reconstruction amendments)"
     }, {
         "school": "University of Iowa",
@@ -658,16 +665,24 @@
     ],
 
    "uisvc": [
+   {"years": "2015-", "role": "Service on one S.J.D. committee, and (2016-) adviser to another"},
    {"years": "2015-6", "role": "Chair, Speakers Committee"},
-   {"years": "2014", "role": "Faculty Advisor, AAI Moot Court Problem Creation"},
+   {"years": "2014, 6", "role": "Faculty Advisor, AAI Moot Court Problem Creation"},
    {"years": "2012-4", "role": "Member, Speakers Committee"},
    {"years": "2012-6", "role": "Judge, AAI Moot Court"}],
 
-    "uservice": [{
-        "role": "Chair, Speakers Committee",
-        "context": "University of Iowa, College of Law",
-        "dates": "2015-6"
-    }, {
+    "uservice": [
+	    {
+        	"role": "Service on one S.J.D. committee, and (2016-) adviser to another",
+       		"context": "University of Iowa, College of Law",
+        	"dates": "2015-6"
+	    }, 
+	    {
+        	"role": "Chair, Speakers Committee",
+       		"context": "University of Iowa, College of Law",
+        	"dates": "2015-6"
+	    }, 
+    {
         "role": "Faculty Advisor, AAI Moot Court Problem Creation",
         "context": "University of Iowa, College of Law",
         "dates": "2014, 6"
