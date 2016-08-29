@@ -255,12 +255,20 @@
     }],
 
 
-    "miscpubs": [{
+    "miscpubs": [
+	    {
+            "title": "The Rule of Law",
+            "description": "entry in Oxford Bibliographies in Political Science",
+            "year": "2016",
+        "url": ""
+        }, 
+	    {
             "title": "Procedural Due Process: the Missing Casebook Chapter",
             "description": "open access casebook chapter, released on SSRN",
             "year": "2014",
         "url": "http://paul-gowder.com/PDP-Chapter.pdf"
-        }, {
+        }, 
+	{
             "title": "The Rule of Law",
             "description": "entry in Sage Encyclopedia of Criminal Justice Ethics",
             "year": "2014",
@@ -308,7 +316,7 @@
             "phone": "319-384-3202",
             "phoneid": "office",
             "cvurl": "http://paul-gowder.com/gowdercv.pdf",
-            "revdate": "July 28, 2016"
+            "revdate": "August 29, 2016"
         },
 
 
@@ -418,7 +426,13 @@
         "title": "How Demanding is Occupational Liberty?"
     }],
 
-    "conferences": [{
+    "conferences": [
+    {
+        "venue": "Southeast Association of Law Schools Annual Meeting",
+        "year": "2016",
+        "title": "Scalia, Equality, Rule of Law"
+    }, 
+	    {
         "venue": "American Association of Law Schools Annual Meeting, Law and Humanities Section",
         "year": "2015",
         "title": "Heaven Save Us From Legal Heroes"
@@ -430,11 +444,13 @@
         "venue": "Culp Colloquium at Duke Law School",
         "year": "2014",
         "title": "The Rule of Law in the Real World (two book MS chapters)"
-    }, {
+    }, 
+    {
         "venue": "Southeast Association of Law Schools Annual Meeting",
         "year": "2014",
         "title": "A Respect-Centered Sex Discrimination Jurisprudence"
-    }, {
+    }, 
+    {
         "venue": "Mid-Atlantic People of Color Legal Scholarship Conference",
         "year": "2014",
         "title": "An Islamic Rule of Law"
@@ -673,6 +689,21 @@
 
     "uservice": [
 	    {
+        	"role": "Faculty Adviser, Black Law Students Association",
+       		"context": "University of Iowa, College of Law",
+        	"dates": "2016-"
+	    }, 
+	    {
+        	"role": "Faculty Advisor, American Constitution Society Student Chapter",
+       		"context": "University of Iowa, College of Law",
+        	"dates": "2016-"
+	    }, 
+	    {
+        	"role": "Member, Diversity Committee",
+       		"context": "University of Iowa, College of Law",
+        	"dates": "2016-7"
+	    }, 
+	    {
         	"role": "Service on one S.J.D. committee, and (2016-) adviser to another",
        		"context": "University of Iowa, College of Law",
         	"dates": "2015-6"
@@ -722,6 +753,10 @@
 
     "dservice": [
         {
+            "role": "Reviewer, Oxford University Press",
+            "dates": "2016"
+        },
+        {
             "role": "Reviewer, McGill University Press",
             "dates": "2016"
         },
@@ -731,7 +766,7 @@
         },
         {
             "role": "Reviewer, Cambridge University Press",
-            "dates": "2015"
+            "dates": "2015, 6"
         },
         {
             "role": "Reviewer, Columbia University Press",
@@ -759,11 +794,23 @@
             "activity": "Member, Iowa City Telecommunications Commission",
             "dates": "2016-",
             "url": ""
-        }, {
+        }, 
+	{
+            "activity": "Panelist: 'Family Law', Iowa LGBT Rural Summit (USDA/National Center for Lesbian Rights/Drake Law School)",
+            "dates": "2016",
+            "url": ""
+        }, 
+	{
+            "activity": "Presentation, 'Loving v. Virginia,' African-American Museum of Iowa/Cedar Rapids Public Library",
+            "dates": "2016",
+            "url": ""
+        }, 
+	{
             "activity": "Presentation, 'The Leadership Rationale,' The Past, Present, & Future of Diversity and Inclusion Within the Central Iowa Legal Community",
             "dates": "2015",
             "url": ""
-        }, {
+        }, 
+	{
             "activity": "Presentation, Voting Rights in the United States: Iowa Interfaith Alliance, Intersections speaker series",
             "dates": "2014",
             "url": ""
