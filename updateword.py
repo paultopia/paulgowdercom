@@ -3,6 +3,8 @@ import os, time, glob
 os.system('node wordcv.js')
 os.system('launch -p gowdercv.docx')
 # using tools available here: http://stackoverflow.com/a/10221617/4386239
+# note that on sierra this stopped working, but this new version of pdfwriter seems better: 
+# https://github.com/rodyager/RWTS-PDFwriter
 os.chdir('/users/shared/PDFwriter/pauliglot')
 for x in range(90):
 	time.sleep(1)
