@@ -1,0 +1,24 @@
+{
+    "ordered_categories":
+    [
+        "Rule of Law/Constitutionalism",
+        "Political Virtue",
+        "Legal Commentary",
+        "Teaching and Learning",
+        "Math and Code"
+    ],
+
+    "articles":
+    [
+        {"title": "The Trump Threat to the Rule of Law and the Constitution", "url": "https://niskanencenter.org/blog/trump-threat-rule-law-constitution/", "category": "Rule of Law/Constitutionalism", "month": "02", "year": "2017", "publisher": "Niskanen Center"},
+        {"title": "Should we see ourselves as citizens of the world? (Contribution)", "url": "https://aeon.co/users/paul-gowder", "category": "Political Virtue", "month": "04", "year": "2015", "publisher": "Aeon Ideas"},
+        {"title": "Blame government for political gridlock? Try looking closer to home", "url": "http://theconversation.com/blame-government-for-political-gridlock-try-looking-closer-to-home-32854", "category": "Political Virtue", "month": "11", "year": "2014", "publisher": "The Conversation"},
+        {"title": "Is It Wrong to Make the Supreme Court an Election Issue?", "url": "http://www.cambridgeblog.org/2016/03/is-wrong-to-make-the-supreme-court-an-election-issue/", "category": "Rule of Law/Constitutionalism", "month": "03", "year": "2016", "publisher": "Fifteen Eightyfour (Cambridge University Press blog)"},
+        {"title": "_", "url": "_", "category": "_", "month": "_", "year": "_", "publisher": "_"},
+        {"title": "_", "url": "_", "category": "_", "month": "_", "year": "_", "publisher": "_"},
+        {"title": "_", "url": "_", "category": "_", "month": "_", "year": "_", "publisher": "_"},
+        {"title": "_", "url": "_", "category": "_", "month": "_", "year": "_", "publisher": "_"},
+        {"title": "_", "url": "_", "category": "_", "month": "_", "year": "_", "publisher": "_"},
+
+    ]
+}
