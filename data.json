@@ -92,7 +92,7 @@
         {
             "title": "Democratic Paternalism, not Libertarian Paternalism",
             "journal": "Georgetown Journal of Law and Public Policy",
-            "cite": "(forthcoming)",
+            "cite": "14:747-787",
             "year": "2016",
             "abstract": "In this paper, I first defend a broad analogy between our worries about individual level paternalism and our worries about antimajoritarian elite influences in democratic politics. I then argue that the best objections to paternalistic policies in both domains, including those offered by Sunstein and Thaler under the label libertarian paternalism, are rooted in democratic rather than libertarian ideals. Finally, I offer a preliminary account of the conditions under which paternalistic policies are permissible, rooted in their compatability with individual and collective agents conceived as capable of learning and revising decisions over the course of time.",
             "publink": null,
@@ -366,10 +366,10 @@
 
     "positions": [{
         "university": "University of Iowa",
-        "title": "Associate Professor of Law (pre-tenure) <br>Adjunct Associate Professor of Political Science (by courtesy)",
+        "title": "Associate Professor of Law (pre-tenure) <br>(courtesy appointments in Political Science, Philosophy)",
         "year": "2012-<br>present",
         "wordpos1": "Associate Professor of Law (pre-tenure)",
-        "wordpos2": "Adjunct Associate Professor of Political Science (by courtesy)",
+        "wordpos2": "(courtesy appointments in Political Science, Philosophy)",
         "wordyear": "2012-"
     }],
 
@@ -766,6 +766,10 @@
     }],
 
     "dservice": [
+        {
+            "role": "Reviewer, Journal of Political Philosophy",
+            "dates": "2016"
+        },
         {
             "role": "Reviewer, Oxford University Press",
             "dates": "2016"
