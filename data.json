@@ -316,7 +316,7 @@
             "phone": "319-384-3202",
             "phoneid": "office",
             "cvurl": "http://paul-gowder.com/gowdercv.pdf",
-            "revdate": "November 11, 2016"
+            "revdate": "April 3, 2017"
         },
 
 
@@ -375,6 +375,16 @@
 
     "invited": [
         {
+            "venue": "University of Toronto, Centre for Innovation Law and Policy",
+            "year": "2017",
+            "title": "Two Models of Technological Change in Law"
+        },
+           {
+            "venue": "University of Toronto, Centre for Ethics",
+            "year": "2017",
+            "title": "Ethics of Augmentation"
+        },
+           {
             "venue": "American Bar Association, Rule of Law Initiative",
             "year": "2016",
             "title": "The Rule of Law in the Real World (practitioner-oriented book presentation)"
@@ -427,6 +437,11 @@
     }],
 
     "conferences": [
+            {
+            "venue": "Annual Meeting of the American Philosophical Association., Central Division",
+            "year": "2017",
+            "title": "Author/Respondent for Author Meets Critics session on The Rule of Law in the Real World"
+        },
         {
             "venue": "Loyola Constitutional Law Colloquium",
             "year": "2016",
@@ -687,6 +702,7 @@
 
    "uisvc": [
    {"years": "2015-", "role": "Service on one S.J.D. committee, and (2016-) adviser to another"},
+   {"years": "2017-", "role": "Service on two Ph.D. committees and one M.A. committee (philosophy department)"},
    {"years": "2016-", "role": "Faculty Advisor, Black Law Students Association"},
    {"years": "2016-", "role": "Faculty Advisor, American Constitution Society Student Chapter"},
    {"years": "2016-7", "role": "Member, Diversity Committee"},
@@ -694,9 +710,14 @@
    {"years": "2015-6", "role": "Chair, Speakers Committee"},
    {"years": "2014, 6", "role": "Faculty Advisor, AAI Moot Court Problem Creation"},
    {"years": "2012-4", "role": "Member, Speakers Committee"},
-   {"years": "2012-6", "role": "Judge, AAI Moot Court"}],
+   {"years": "2012-7", "role": "Judge, AAI Moot Court"}],
 
     "uservice": [
+    	    {
+        	"role": "Public/Student Presentation, \"The Unfamiliar Threats to Free Speech\"",
+       		"context": "University of Iowa, Student Governmemt/Lecture Committee",
+        	"dates": "2017"
+	    }, 
 	    {
         	"role": "Faculty Adviser, Black Law Students Association",
        		"context": "University of Iowa, College of Law",
@@ -722,6 +743,11 @@
        		"context": "University of Iowa, College of Law",
         	"dates": "2015-"
 	    }, 
+	    	    {
+        	"role": "Service on two Ph.D. committees and one M.A. committee",
+       		"context": "University of Iowa, Department of Philosophy",
+        	"dates": "2017-"
+	    }, 
 	    {
         	"role": "Chair, Speakers Committee",
        		"context": "University of Iowa, College of Law",
@@ -738,7 +764,7 @@
     }, {
         "role": "Judge, AAI Moot Court",
         "context": "University of Iowa, College of Law",
-        "dates": "2012-6"
+        "dates": "2012-7"
     }, {
         "role": "Graduate Admissions Committee",
         "context": "Stanford University, Department of Political Science",
