@@ -154,3 +154,103 @@ Also should put bio and URL to picture in here then it can be 100% programmatic 
 Everything should have a url field
 
 Notes should just be at the bottom of everthing
+
+So new data model:
+
+publications
+  type
+  title
+  journal
+  book
+  editor
+  publisher
+  firstpage
+  lastpage
+  volume
+  issue
+	year
+	coauthor
+	abstract
+	publink
+	altlink
+	note [will also be description]
+
+positions
+	university
+	title
+	year
+  note
+basics
+	name
+	url
+  addresses
+    {list of: (address, id)}
+	emails
+    {list of: (email, id)}
+  phones
+    {list of: (phone, id)}
+	cvurl
+	revdate 
+schools
+	name
+	degree
+	year
+  note
+awards
+	name
+	year
+  note
+invited
+	venue
+	year
+	title
+  note
+conferences
+	venue
+	year
+	title
+  note
+campus
+	venue
+	year
+	title
+  note
+practice
+	employer
+	title
+	years
+  note
+courses
+	school
+	title
+	terms
+	note
+taships
+	school
+	title
+	terms
+	note
+uservice
+	role
+	context
+	dates
+  note
+dservice 
+	role
+	dates
+  note
+cservice
+	activity
+	dates
+  note
+humanlang
+	{a list}
+computerlang
+	{a list}
+bars
+  bar
+  status
+other
+	{a list}
+notes
+	{a list}
