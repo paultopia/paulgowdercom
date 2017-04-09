@@ -4,15 +4,15 @@ Data model for cv/website
 CURRENT DATA MODEL
 
 prarts
-	title
-	journal
-	cite
-	year
-	coauthor
-	abstract
-	publink
-	altlink
-	wordnote
+	title.
+	journal.
+	cite.
+	year.
+	coauthor.
+	abstract.
+	publink.
+	altlink.
+	wordnote.
 	haswn 
 lrarts
 	title
@@ -20,22 +20,22 @@ lrarts
 	cite
 	year
 	coauthor
-	abstract
+	abstract.
 	publink
-	altlink
-	wordnote
+	altlink.
+	wordnote.
 	haswn 
 chapters
-	 publisher
+	 publisher.
 	title
-	editors
-	book
+	editors.
+	book.
 	year
 	pages
-	abstract
+	abstract.
 	publink
 	altlink
-	wordnote
+	wordnote.
 	haswn
 books
 	publisher
@@ -43,10 +43,10 @@ books
 	title
 	abstract
 	publink
-	altlink 
+	altlink.
 miscpubs 
 	title
-	description
+	description.
 	year
 	url 
 basics
@@ -174,7 +174,6 @@ publications
 	publink
 	altlink
 	note [will also be description]
-
 positions
 	university
 	title
