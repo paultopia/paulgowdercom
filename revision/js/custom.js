@@ -15,6 +15,21 @@ function getData(name){
 
 getData("publications");
 
+function isArticle(pub){
+    return pub.type === "peer review" || pub.type === "law review";
+}
+
+
+function chronThenTitle(a, b){
+    if(parseInt(a.year) > parseInt(b.year)) return -1;
+    if(parseInt(a.year) < parseInt(b.year)) return 1;
+    if(a.type > b.type) return -1;
+    if(a.type < b.type) return 1;
+    if(a.title < b.title) return -1;
+    return 1;
+}
+
+
 
 // dom manipulation code (including most vue code) follows, all needs to be after dom is in, so I'm wrapping it all in an onload.
 
@@ -23,15 +38,10 @@ window.onload = function(){
 
     var pubtitles = new Vue({
         el: "#pubtitles",
-        data: 
+        data:
         {publications: pagedata.publications,
-         books: pagedata.publications.filter(function(pub){
-             return pub.type === "book";
-         }
-         )
-        }
-    }
-                           );
+         articles: pagedata.publications.filter(isArticle).sort(chronThenTitle)}
+    });
 
 
 
