@@ -26,7 +26,9 @@
             <h3>Articles</h3>
                     <ol>
                         <li v-for="art in articles">
-                            {{ art.title }}
+                            <a v-bind:href="art.publink">
+                                {{ art.title }}
+                            </a>
                         </li>
 
             </ol>
