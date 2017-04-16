@@ -16,7 +16,7 @@ function getData(name){
 getData("publications");
 
 
-// VUE code follows, all needs to be after dom is in, so I'm wrapping it all in an onload.
+// dom manipulation code (including most vue code) follows, all needs to be after dom is in, so I'm wrapping it all in an onload.
 
 window.onload = function(){
 
@@ -24,8 +24,14 @@ window.onload = function(){
     var pubtitles = new Vue({
         el: "#pubtitles",
         data: 
-        {publications: pagedata.publications}
-    });
+        {publications: pagedata.publications,
+         books: pagedata.publications.filter(function(pub){
+             return pub.type === "book";
+         }
+         )
+        }
+    }
+                           );
 
 
 
