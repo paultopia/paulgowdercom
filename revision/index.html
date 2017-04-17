@@ -16,9 +16,28 @@
         <title>Paul Gowder</title> 
     </head>
     <body>
-        <p>Loren. Ipsum. Yo.</p>
+        <div class="container" id="app">
+
+
+            <p>Loren. Ipsum. Yo.</p>
+            <div id="navbox">
+
+                <div class="row" v-if="navboxFullsize">
+                    <div class="three columns" >
+                        <span class="fa-stack fa-3x">
+                            <i class="fa fa-phone fa-2x"></i>
+                            <span class="fa fa-stack-1x" style="margin-top:50%; font-size:20px; font-weight:bold;" >
+                                    contact
+                            </span>
+                        </span>
+                    </div>
+
+            </div>
+
+
+
+        <div id="pubtitles" style="margin-top:5%;">
         <h3>Books</h3>
-        <div id="pubtitles">
             <ol>
                 <li v-for="book in publications" v-if="book.type === 'book'">
                     {{ book.title }}
@@ -33,6 +52,9 @@
                         </li>
 
             </ol>
+        </div>
+
+
         </div>
     </body>
 </html>
