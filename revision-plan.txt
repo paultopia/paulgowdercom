@@ -1,0 +1,261 @@
+Data model for cv/website
+
+
+CURRENT DATA MODEL
+
+prarts
+	title.
+	journal.
+	cite.
+	year.
+	coauthor.
+	abstract.
+	publink.
+	altlink.
+	wordnote.
+	haswn 
+lrarts
+	title
+	journal
+	cite
+	year
+	coauthor
+	abstract.
+	publink
+	altlink.
+	wordnote.
+	haswn 
+chapters
+	 publisher.
+	title
+	editors.
+	book.
+	year
+	pages
+	abstract.
+	publink
+	altlink
+	wordnote.
+	haswn
+books
+	publisher
+	year
+	title
+	abstract
+	publink
+	altlink.
+miscpubs 
+	title
+	description.
+	year
+	url 
+basics
+	name
+	url
+	addr1
+	addr2 
+	email
+	phone
+	phoneid
+	cvurl
+	revdate 
+schools
+	name
+	degree
+	year
+awards
+	name
+	year
+positions
+	university
+	title
+	year
+	wordpos1
+	wordpos2
+	wordyear
+invited
+	venue
+	year
+	title
+conferences
+	venue
+	year
+	title
+campus
+	venue
+	year
+	title
+practice
+	employer
+	role
+	years
+uiteaching 
+	years
+	course
+courses
+	school
+	title
+	terms
+	notes
+taships
+	school
+	title
+	terms
+	notes
+uisvc
+	years
+	role
+uservice
+	role
+	context
+	dates
+dservice 
+	role
+	dates
+cservice
+	activity
+	dates
+	url
+humanlang
+	{a list}
+computerlang
+	{a list}
+bars
+	{a list}
+other
+	{a list}
+notes
+	{a list}
+barnote 
+	{a list}
+
+
+Move from printing from word to latex via
+https://github.com/posquit0/Awesome-CV  -- just template that sucker with jinja like the page.  (Well, actually, with clojure version because I'm going to switch this all to reagent I think.)
+
+Also when publication models are generated properly can also generate bibtex file for individual pieces or the whole thing.  And can generate bluebook vs normal format cv programmatically 
+
+Should just have one unified publication format with every field.  Nulls can be handled.  Also "wordnotes" should just be notes, and should get appended to abstract for web, not repeated in abstract.  
+
+Phone and phoneid should be a map, so, for that matter, should be email and emailid, make it possible to make multiple different versions for different audiences. 
+
+For addresses and "wordpos" stuff, I really need some way to just automatically break based on number of characters and word breaks or something. Also ridiculous with position years and such 
+
+I also need a personal interface to add stuff damnit.
+
+And need media/blogging to get in here.
+
+And to combine teaching, courses, etc.  
+
+And to combine service this duplication is ridiculous
+
+Also should put bio and URL to picture in here then it can be 100% programmatic and also open-sourceable to the rest of the world.
+
+Everything should have a url field
+
+Notes should just be at the bottom of everthing
+
+So new data model:
+
+publications
+  type
+  title
+  journal
+  book
+  editor
+  publisher
+  firstpage
+  lastpage
+  volume
+  issue
+	year
+	coauthor
+	abstract
+	publink
+	altlink
+	note [will also be description]
+positions
+	university
+	title
+	year
+  note
+basics
+	name
+	url
+  addresses
+    {list of: (address, id)}
+	emails
+    {list of: (email, id)}
+  phones
+    {list of: (phone, id)}
+	cvurl
+	revdate 
+schools
+	name
+	degree
+	year
+  note
+awards
+	name
+	year
+  note
+invited
+	venue
+	year
+	title
+  note
+conferences
+	venue
+	year
+	title
+  note
+campus
+	venue
+	year
+	title
+  note
+practice
+	employer
+	title
+	years
+  note
+courses
+	school
+	title
+	terms
+	note
+taships
+	school
+	title
+	terms
+	note
+uservice
+	role
+	context
+	dates
+  note
+dservice 
+	role
+	dates
+  note
+cservice
+	activity
+	dates
+  note
+humanlang
+	{a list}
+computerlang
+	{a list}
+bars
+  bar
+  status
+other
+	{a list}
+notes
+	{a list}
+
+
+FOR EASE OF EDITING: 
+
+1.  Put bios and other text in markdown format, use this markdown parser: https://www.npmjs.com/package/vue-markdown 
+2. Compile markdown and JSON individual files into one big file---just write a quick python compiler that grabs everything with a .md or .json except the target argument (e.g. python compilemarkdown data.json) and puts it into a json with object name of file name.  So if directory has foo.json, bar.md, and an old data.json, python compilemarkdown data.json will yield a data.json with {"foo": contents-of-foo-json, "bar": contents-of-bar.md}
