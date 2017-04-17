@@ -33,7 +33,19 @@ function chronThenTitle(a, b){
 
 
 
-// dom manipulation code (including most vue code) follows, all needs to be after dom is in, so I'm calling it onload.  It also needs to depend on the existence of the data, so I'm just calling it twice: once on page load and once every time the data fetch executes.  inloaders() has the actual code.  loaders() checks to see if inloaders() has successfully run before, and if not, calls the inload stuff.
+// vue components follow
+
+
+Vue.component("big-nav-item", {
+    props: ["icon", "word"],
+    template: '<div class="three columns"><span class="fa-stack fa-3x"><i class="fa fa-stack-2x" :class="icon"></i><span class="fa fa-stack-1x big-nav-label">{{ word }}</span></span></div>'
+});
+
+// see https://vuejs.org/v2/guide/class-and-style.html and http://stackoverflow.com/questions/43460661/workaround-for-setting-part-of-attribute-for-font-awesome-icon-in-vue-2-templa for how this works with the second class binding on the icon. 
+
+
+
+// dom manipulation code (including core vue render) follows, all needs to be after dom is in, so I'm calling it onload.  It also needs to depend on the existence of the data, so I'm just calling it twice: once on page load and once every time the data fetch executes.  inloaders() has the actual code.  loaders() checks to see if inloaders() has successfully run before, and if not, calls the inload stuff.
 
 var pubtitles;
 
