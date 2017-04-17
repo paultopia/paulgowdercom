@@ -5,6 +5,7 @@ function getData(name){
         if(request.readyState === request.DONE && request.status === 200) {
             pagedata[name] = request.response;
             console.log("got data: " + name);
+            loaders();
         }
     };
     var url = name + ".json"
@@ -31,10 +32,13 @@ function chronThenTitle(a, b){
 
 
 
-// dom manipulation code (including most vue code) follows, all needs to be after dom is in, so I'm wrapping it all in an onload.
+// dom manipulation code (including most vue code) follows, all needs to be after dom is in, so I'm calling it onload.  It also needs to depend on the existence of the data, so I'm just calling it twice: once on page load and once every time the data fetch executes.
 
-window.onload = function(){
 
+
+function loaders(){
+
+    console.log("trying to load virtual dom, may not work if data isn't here or page isn't loaded yet, but don't worry about it, I'll try again.");
 
     var pubtitles = new Vue({
         el: "#pubtitles",
@@ -45,5 +49,7 @@ window.onload = function(){
 
 
 
-// this close bracket is the one that ends the onload block.
+// this close bracket is the one that ends the loaders functionality.
 };
+
+window.onload = loaders();
