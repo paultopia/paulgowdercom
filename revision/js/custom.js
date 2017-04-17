@@ -1,4 +1,5 @@
 var pagedata = {};
+var pageNotPainted = true
 function getData(name){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
@@ -32,11 +33,11 @@ function chronThenTitle(a, b){
 
 
 
-// dom manipulation code (including most vue code) follows, all needs to be after dom is in, so I'm calling it onload.  It also needs to depend on the existence of the data, so I'm just calling it twice: once on page load and once every time the data fetch executes.
+// dom manipulation code (including most vue code) follows, all needs to be after dom is in, so I'm calling it onload.  It also needs to depend on the existence of the data, so I'm just calling it twice: once on page load and once every time the data fetch executes.  inloaders() has the actual code.  loaders() checks to see if inloaders() has successfully run before, and if not, calls the inload stuff.
 
 
 
-function loaders(){
+function inloaders(){
 
     console.log("trying to load virtual dom, may not work if data isn't here or page isn't loaded yet, but don't worry about it, I'll try again.");
 
@@ -47,9 +48,24 @@ function loaders(){
          articles: pagedata.publications.filter(isArticle).sort(chronThenTitle)}
     });
 
-
+    //not sure if these vue objects have to be globals or not, might try declaring them outside if problems arise with updating.
 
 // this close bracket is the one that ends the loaders functionality.
 };
+
+function loaders(){
+    if(pageNotPainted){
+        try {
+            inloaders();
+            pageNotPainted = false;
+            console.log("successfully painted page");
+
+        }
+        catch(error) {
+            console.log("did not paint page.  trying again later. Here's the error:");
+            console.error(error);
+        }
+    }
+}
 
 window.onload = loaders();
