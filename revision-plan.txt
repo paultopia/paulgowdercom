@@ -253,3 +253,9 @@ other
 	{a list}
 notes
 	{a list}
+
+
+FOR EASE OF EDITING: 
+
+1.  Put bios and other text in markdown format, use this markdown parser: https://www.npmjs.com/package/vue-markdown 
+2. Compile markdown and JSON individual files into one big file---just write a quick python compiler that grabs everything with a .md or .json except the target argument (e.g. python compilemarkdown data.json) and puts it into a json with object name of file name.  So if directory has foo.json, bar.md, and an old data.json, python compilemarkdown data.json will yield a data.json with {"foo": contents-of-foo-json, "bar": contents-of-bar.md}
