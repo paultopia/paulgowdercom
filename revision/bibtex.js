@@ -42,7 +42,7 @@ function compositor(pubitem, funcs){
 // now all I have to do is actually write the logic to generate the lines of each bibtex entry from pub object.  all of the functions below take the publication object and generate a single line reflecting the appropriate piece of the bibtex entry.  all the stuff above composes them and puts the ultimate string together in stages.
 
 function authorMaker(pubitem){
-	return null;
+	return pubitem.coauthor ? "author={" + pubitem.coauthor.split(" ").reverse().join(", ") + " and Gowder, Paul}" : "author={Gowder, Paul}";
 }
 
 function collectionTitleMaker(pubitem){
