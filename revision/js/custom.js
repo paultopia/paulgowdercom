@@ -41,6 +41,10 @@ Vue.component("big-nav-item", {
     template: '<div class="three columns"><span class="fa-stack fa-3x"><i class="fa fa-stack-2x" :class="icon"></i><span class="fa fa-stack-1x big-nav-label">{{ word }}</span></span></div>'
 });
 
+Vue.component("double-big-nav-item", {
+    props: ["icon1", "icon2", "word"],
+    template: '<div class="three columns"><span class="fa-stack fa-3x"><i class="fa fa-stack-2x" :class="icon1"></i><i class="fa fa-stack-1x fa-inverse" :class="icon2"></i><span class="fa fa-stack-1x big-nav-label">{{ word }}</span></span></div>'
+});
 // see https://vuejs.org/v2/guide/class-and-style.html and http://stackoverflow.com/questions/43460661/workaround-for-setting-part-of-attribute-for-font-awesome-icon-in-vue-2-templa for how this works with the second class binding on the icon. 
 
 
