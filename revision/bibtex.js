@@ -20,7 +20,7 @@ function articleBT(pubitem){
 }
 
 function chapterBT(pubitem){
-	return compositor(pubitem, [nameMaker, authormaker, titleMaker, editorMaker, collectionTitleMaker, pagesMaker, publisherMaker, yearMaker]);
+	return compositor(pubitem, [nameMaker, authorMaker, titleMaker, editorMaker, collectionTitleMaker, pagesMaker, publisherMaker, yearMaker]);
 }
 
 function bookBT(pubitem){
@@ -29,7 +29,7 @@ function bookBT(pubitem){
 
 function compositor(pubitem, funcs){
 	return funcs.map(function(func){
-		func(pubitem);
+		return func(pubitem);
 	}).join(",\n") + "\n}";
 	// apply array of functions to pubitem in order and join results as a string representing single bibtex object.  Functional programming idioms FTW, also.
 }
@@ -39,7 +39,7 @@ function authorMaker(pubitem){
 }
 
 function collectionTitleMaker(pubitem){
-	return "booktitle={" + pubitem.book + "}";
+    return "booktitle={" + pubitem.book + "}";
 }
 
 function editorMaker(pubitem){
