@@ -46,43 +46,48 @@ function authorMaker(pubitem){
 }
 
 function collectionTitleMaker(pubitem){
-	return null;
+	return "booktitle={" + pubitem.book + "}";
 }
 
 function editorMaker(pubitem){
-	return null;
+	return "editor={" + pubitem.editor + "}"; // right now my json doesnt have full names, need to add then get logic in to format differently for web/cv and bibtex.
 }
 
 function journalMaker(pubitem){
-	return null;
+	return "journal={" + pubitem.journal + "}";
 }
 
+// i should really refactor these oneliners into some function that just takes name and pubitem and builds string from name = params.  will require matching json params to names, but thats easy to do with an object...
+
 function nameMaker(pubitem){
-	return null;
+	var bibtextype = {"law review": "article", "peer review": "article", "chapter": "incollection", "book": "book"}[pubitem.type];
+	var nom1 = pubitem.coauthor ? pubitem.coauthor.split(" ")[1].toLowerCase() + "gowder" : "gowder"; 
+	var nom2 = pubitem.title.split(" ").map(function(word){return word[0];}).join("").toLowerCase(); //I like to think title initials will be unique in a year...
+	return "@" + bibtextype + "{" + nom1 + pubitem.year + nom2;
 }
 
 function numberMaker(pubitem){
-	return null;
+	return "number={" + pubitem.issue + "}";
 }
 
 function pagesMaker(pubitem){
-	return null;
+	return "pages={" + pubitem.firstpage + "--" + pubitem.lastpage + "}";
 }
 
 function publisherMaker(pubitem){
-	return null;
+	return "publisher={" + pubitem.publisher + "}";
 }
 
 function titleMaker(pubitem){
-	return null;
+	return "title={" + pubitem.title + "}";
 }
 
 function volumeMaker(pubitem){
-	return null;
+	return "volume={" + pubitem.volume + "}";
 }
 
 function yearMaker(pubitem){
-	return null;
+	return "year={" + pubitem.year + "}";
 }
 
 //also need to write the plumbing to make this exportable to node/browserify, but perhaps only after testing.
