@@ -9,9 +9,9 @@ function makebibtex(pubs){
 			case "peer review": return articleBT(pubitem);
 			case "chapter": return chapterBT(pubitem);
 			case "book": return bookBT(pubitem);
-			default: return "";
+			default: return null;
 		}
-	}).join(",\n\n");
+	}).filter(function(elem){return elem;}).join(",\n\n");
 }
 
 function articleBT(pubitem){
