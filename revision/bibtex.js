@@ -1,10 +1,5 @@
-// module to generate bibtex strings--- will expose as a node module and also plug into browser with browserify 
+// module to generate bibtex strings--- will expose as a node module and also plug into browser with webpack 
 
-function servefile(string, extension) {
-// produce a text file with given extension containing string -- this should probably be on web-side
-// TODO
-	return null;
-}
 
 // array of publication objects --> string containing bibtex of all of them suitable for delivery as a file
 function makebibtex(pubs){
@@ -38,8 +33,6 @@ function compositor(pubitem, funcs){
 	}).join(",\n") + "\n}";
 	// apply array of functions to pubitem in order and join results as a string representing single bibtex object.  Functional programming idioms FTW, also.
 }
-
-// now all I have to do is actually write the logic to generate the lines of each bibtex entry from pub object.  all of the functions below take the publication object and generate a single line reflecting the appropriate piece of the bibtex entry.  all the stuff above composes them and puts the ultimate string together in stages.
 
 function authorMaker(pubitem){
 	return pubitem.coauthor ? "author={" + pubitem.coauthor.split(" ").reverse().join(", ") + " and Gowder, Paul}" : "author={Gowder, Paul}";
@@ -90,4 +83,5 @@ function yearMaker(pubitem){
 	return "year={" + pubitem.year + "}";
 }
 
-//also need to write the plumbing to make this exportable to node/browserify, but perhaps only after testing.
+module.exports.string = makebibtex;
+// expected usage pattern: var bibtex = require(...); bibtex.string(array_of_pubs) (including a singleton array if necc)
