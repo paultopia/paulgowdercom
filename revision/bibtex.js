@@ -1,7 +1,6 @@
 // module to generate bibtex strings--- will expose as a node module and also plug into browser with webpack 
 
-
-// array of publication objects --> string containing bibtex of all of them suitable for delivery as a file
+// main function--- array of publication objects --> string containing bibtex of all of them suitable for delivery as a file
 function makebibtex(pubs){
 	return pubs.map(function(pubitem){
 		switch (pubitem.type) {
@@ -16,15 +15,15 @@ function makebibtex(pubs){
 
 function articleBT(pubitem){
 // if there's no issue number I don't want to have to handle a blank line or null value upstream
-	return pubitem.issue ? compositor(pubitem, [nameMaker, authorMaker, basicMaker.bind(null, "title"), basicMaker.bind(null, "journal"), basicMaker.bind(null, "volume"), basicMaker.bind(null, "number"), pagesMaker, basicMaker.bind(null, "year")]) : compositor(pubitem, [nameMaker, authorMaker, basicMaker.bind(null, "title"), basicMaker.bind(null, "journal"), basicMaker.bind(null, "volume"), pagesMaker, basicMaker.bind(null, "year")]);
+	return pubitem.issue ? compositor(pubitem, [nameMaker, authorMaker, basicB("title"), basicB("journal"), basicB("volume"), basicB("number"), pagesMaker, basicB("year")]) : compositor(pubitem, [nameMaker, authorMaker, basicB("title"), basicB("journal"), basicB("volume"), pagesMaker, basicB("year")]);
 }
 
 function chapterBT(pubitem){
-	return compositor(pubitem, [nameMaker, authorMaker, basicMaker.bind(null, "title"), editorMaker, collectionTitleMaker, pagesMaker, basicMaker.bind(null, "publisher"), basicMaker.bind(null, "year")]);
+	return compositor(pubitem, [nameMaker, authorMaker, basicB("title"), editorMaker, collectionTitleMaker, pagesMaker, basicB("publisher"), basicB("year")]);
 }
 
 function bookBT(pubitem){
-	return compositor(pubitem, [nameMaker, authorMaker, basicMaker.bind(null, "title"), basicMaker.bind(null, "publisher"), basicMaker.bind(null, "year")]);
+	return compositor(pubitem, [nameMaker, authorMaker, basicB("title"), basicB("publisher"), basicB("year")]);
 }
 
 function compositor(pubitem, funcs){
@@ -34,9 +33,9 @@ function compositor(pubitem, funcs){
 	// apply array of functions to pubitem in order and join results as a string representing single bibtex object.  Functional programming idioms FTW, also.
 }
 
-function basicMaker(entry, pubitem){
-	return entry + "={" + pubitem[entry] + "}";
-}
+function basicB(entry){
+	return function(pubitem){return entry + "={" + pubitem[entry] + "}";};
+} // this is just totally abusing closures to avoid having a separate function for each entry where bibtex label == json object field and text transformation is just "slap bibtex format around it with no mods." 
 
 function authorMaker(pubitem){
 	return pubitem.coauthor ? "author={" + pubitem.coauthor.split(" ").reverse().join(", ") + " and Gowder, Paul}" : "author={Gowder, Paul}";
