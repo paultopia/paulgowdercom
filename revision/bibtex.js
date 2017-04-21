@@ -15,11 +15,18 @@ function makebibtex(pubs){
 
 function articleBT(pubitem){
 // if there's no issue number I don't want to have to handle a blank line or null value upstream
-	return pubitem.issue ? compositor(pubitem, [nameMaker, authorMaker, basicB("title"), basicB("journal"), basicB("volume"), basicB("number"), pagesMaker, basicB("year")]) : compositor(pubitem, [nameMaker, authorMaker, basicB("title"), basicB("journal"), basicB("volume"), pagesMaker, basicB("year")]);
+	return pubitem.issue ?
+		compositor(pubitem, [nameMaker, authorMaker, basicB("title"), 
+			basicB("journal"), basicB("volume"), basicB("number"), 
+			pagesMaker, basicB("year")]) :
+		compositor(pubitem, [nameMaker, authorMaker, basicB("title"), 
+			basicB("journal"), basicB("volume"), pagesMaker, basicB("year")]);
 }
 
 function chapterBT(pubitem){
-	return compositor(pubitem, [nameMaker, authorMaker, basicB("title"), editorMaker, collectionTitleMaker, pagesMaker, basicB("publisher"), basicB("year")]);
+	return compositor(pubitem, [nameMaker, authorMaker, basicB("title"), 
+		editorMaker, collectionTitleMaker, pagesMaker, basicB("publisher"), 
+		basicB("year")]);
 }
 
 function bookBT(pubitem){
@@ -30,15 +37,15 @@ function compositor(pubitem, funcs){
 	return funcs.map(function(func){
 		return func(pubitem);
 	}).join(",\n") + "\n}";
-	// apply array of functions to pubitem in order and join results as a string representing single bibtex object.  Functional programming idioms FTW, also.
 }
 
 function basicB(entry){
 	return function(pubitem){return entry + "={" + pubitem[entry] + "}";};
-} // this is just totally abusing closures to avoid having a separate function for each entry where bibtex label == json object field and text transformation is just "slap bibtex format around it with no mods." 
+} 
 
 function authorMaker(pubitem){
-	return pubitem.coauthor ? "author={" + pubitem.coauthor.split(" ").reverse().join(", ") + " and Gowder, Paul}" : "author={Gowder, Paul}";
+	return pubitem.coauthor ? "author={" + pubitem.coauthor.split(" ")
+		.reverse().join(", ") + " and Gowder, Paul}" : "author={Gowder, Paul}";
 }
 
 function collectionTitleMaker(pubitem){
@@ -46,13 +53,17 @@ function collectionTitleMaker(pubitem){
 }
 
 function editorMaker(pubitem){
-	return "editor={" + pubitem.editor + "}"; // kept as own function right now my json doesnt have full names, need to add then get logic in to format differently for web/cv and bibtex.
+	return "editor={" + pubitem.editor + "}"; 
+	// json doesnt have full names, need to add then get logic in to format differently for web/cv and bibtex.
 }
 
 function nameMaker(pubitem){
-	var bibtextype = {"law review": "article", "peer review": "article", "chapter": "incollection", "book": "book"}[pubitem.type];
-	var nom1 = pubitem.coauthor ? pubitem.coauthor.split(" ")[1].toLowerCase() + "gowder" : "gowder"; 
-	var nom2 = pubitem.title.split(" ").map(function(word){return word[0];}).join("").toLowerCase(); //I like to think title initials will be unique in a year...
+	var bibtextype = {"law review": "article", "peer review": "article", 
+		"chapter": "incollection", "book": "book"}[pubitem.type];
+	var nom1 = pubitem.coauthor ? pubitem.coauthor.split(" ")[1]
+		.toLowerCase() + "gowder" : "gowder"; 
+	var nom2 = pubitem.title.split(" ").map(function(word){return word[0];})
+		.join("").toLowerCase();
 	return "@" + bibtextype + "{" + nom1 + pubitem.year + nom2;
 }
 
@@ -61,4 +72,3 @@ function pagesMaker(pubitem){
 }
 
 module.exports.string = makebibtex;
-// expected usage pattern: var bibtex = require(...); bibtex.string(array_of_pubs) (including a singleton array if necc)
