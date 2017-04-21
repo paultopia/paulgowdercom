@@ -2,19 +2,14 @@
 
 // main function--- array of publication objects --> string containing bibtex of all of them suitable for delivery as a file
 
-Object.prototype.get = function(key, def){return this[key] || def};
+function get(obj, key, def){return obj[key] || def};
 
 function makebibtex(pubs){
 	return pubs.map(function(pubitem){
-      return 
-
-      switch (pubitem.type) {
-			case "law review": return articleBT(pubitem);
-			case "peer review": return articleBT(pubitem);
-			case "chapter": return chapterBT(pubitem);
-			case "book": return bookBT(pubitem);
-			default: return null;
-		}
+      return get({"law review": articleBT,
+      	"peer review": articleBT,
+      	"chapter": chapterBT,
+      	"book": bookBT}, pubitem.type, function(_){return null;})(pubitem);
 	}).filter(function(elem){return elem;}).join(",\n\n");
 }
 
