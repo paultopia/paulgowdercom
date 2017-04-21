@@ -1,9 +1,14 @@
 // module to generate bibtex strings--- will expose as a node module and also plug into browser with webpack 
 
 // main function--- array of publication objects --> string containing bibtex of all of them suitable for delivery as a file
+
+Object.prototype.get = function(key, def){return this[key] || def};
+
 function makebibtex(pubs){
 	return pubs.map(function(pubitem){
-		switch (pubitem.type) {
+      return 
+
+      switch (pubitem.type) {
 			case "law review": return articleBT(pubitem);
 			case "peer review": return articleBT(pubitem);
 			case "chapter": return chapterBT(pubitem);
