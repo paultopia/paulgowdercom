@@ -16,15 +16,15 @@ function makebibtex(pubs){
 
 function articleBT(pubitem){
 // if there's no issue number I don't want to have to handle a blank line or null value upstream
-	return pubitem.issue ? compositor(pubitem, [nameMaker, authorMaker, titleMaker, journalMaker, volumeMaker, numberMaker, pagesMaker, yearMaker]) : compositor(pubitem, [nameMaker, authorMaker, titleMaker, journalMaker, volumeMaker, pagesMaker, yearMaker]);
+	return pubitem.issue ? compositor(pubitem, [nameMaker, authorMaker, basicMaker.bind(null, "title"), basicMaker.bind(null, "journal"), basicMaker.bind(null, "volume"), basicMaker.bind(null, "number"), pagesMaker, basicMaker.bind(null, "year")]) : compositor(pubitem, [nameMaker, authorMaker, basicMaker.bind(null, "title"), basicMaker.bind(null, "journal"), basicMaker.bind(null, "volume"), pagesMaker, basicMaker.bind(null, "year")]);
 }
 
 function chapterBT(pubitem){
-	return compositor(pubitem, [nameMaker, authorMaker, titleMaker, editorMaker, collectionTitleMaker, pagesMaker, publisherMaker, yearMaker]);
+	return compositor(pubitem, [nameMaker, authorMaker, basicMaker.bind(null, "title"), editorMaker, collectionTitleMaker, pagesMaker, basicMaker.bind(null, "publisher"), basicMaker.bind(null, "year")]);
 }
 
 function bookBT(pubitem){
-	return compositor(pubitem, [nameMaker, authorMaker, titleMaker, publisherMaker, yearMaker]);
+	return compositor(pubitem, [nameMaker, authorMaker, basicMaker.bind(null, "title"), basicMaker.bind(null, "publisher"), basicMaker.bind(null, "year")]);
 }
 
 function compositor(pubitem, funcs){
@@ -32,6 +32,10 @@ function compositor(pubitem, funcs){
 		return func(pubitem);
 	}).join(",\n") + "\n}";
 	// apply array of functions to pubitem in order and join results as a string representing single bibtex object.  Functional programming idioms FTW, also.
+}
+
+function basicMaker(entry, pubitem){
+	return entry + "={" + pubitem[entry] + "}";
 }
 
 function authorMaker(pubitem){
@@ -43,14 +47,8 @@ function collectionTitleMaker(pubitem){
 }
 
 function editorMaker(pubitem){
-	return "editor={" + pubitem.editor + "}"; // right now my json doesnt have full names, need to add then get logic in to format differently for web/cv and bibtex.
+	return "editor={" + pubitem.editor + "}"; // kept as own function right now my json doesnt have full names, need to add then get logic in to format differently for web/cv and bibtex.
 }
-
-function journalMaker(pubitem){
-	return "journal={" + pubitem.journal + "}";
-}
-
-// i should really refactor these oneliners into some function that just takes name and pubitem and builds string from name = params.  will require matching json params to names, but thats easy to do with an object...
 
 function nameMaker(pubitem){
 	var bibtextype = {"law review": "article", "peer review": "article", "chapter": "incollection", "book": "book"}[pubitem.type];
@@ -59,28 +57,8 @@ function nameMaker(pubitem){
 	return "@" + bibtextype + "{" + nom1 + pubitem.year + nom2;
 }
 
-function numberMaker(pubitem){
-	return "number={" + pubitem.issue + "}";
-}
-
 function pagesMaker(pubitem){
 	return "pages={" + pubitem.firstpage + "--" + pubitem.lastpage + "}";
-}
-
-function publisherMaker(pubitem){
-	return "publisher={" + pubitem.publisher + "}";
-}
-
-function titleMaker(pubitem){
-	return "title={" + pubitem.title + "}";
-}
-
-function volumeMaker(pubitem){
-	return "volume={" + pubitem.volume + "}";
-}
-
-function yearMaker(pubitem){
-	return "year={" + pubitem.year + "}";
 }
 
 module.exports.string = makebibtex;
