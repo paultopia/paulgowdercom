@@ -57,14 +57,20 @@ Vue.component("double-big-nav-item", {
 
 Vue.component("articlerow", {
     props: ["art"],
+    methods: {show () {
+        this.$modal.show(this.art.title);},
+              clog (){console.log(this.art.title)}},
+
     template: `<tr>
 <td> <a v-bind:href="art.publink">{{ art.title }}</a></td>
 <td>{{ art.journal}}</td>
 <td>{{ art.year }}</td>
-<td>.</td>
-<td><span class="hint--bottom" aria-label="abstract"><icon name="file-text"></icon></span></td>
+<td><span class="hint--bottom" aria-label="abstract" v-on:click="show()"><icon name="file-text"></icon></span></td>
+<modal :name="art.title" :resizable="true" :adaptive="true">
+  {{ art.abstract }}
+</modal>
 </tr>`
-});
+             });
 
 
 
