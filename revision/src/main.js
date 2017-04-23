@@ -64,7 +64,8 @@ function inloaders(){
         el: '#app',
         data: {publications: pagedata.publications,
                articles: pagedata.publications.filter(isArticle).sort(chronThenTitle),
-               navboxFullsize: true
+               navboxFullsize: true,
+               showPubs: true
               },
         computed: {btstring: function () {return bibtex.string(this.publications);},
                    bturl: function () {return io.downloadURL(bibtex.string(this.publications));}

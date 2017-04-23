@@ -34,7 +34,12 @@
             </div>
             </div>
 
-        <div id="pubtitles" style="margin-top:5%;">
+            <p><button v-on:click="showPubs = true">show pubs</button>
+            </p>
+            <p><button v-on:click="showPubs = false">hide pubs</button>
+            </p>
+
+        <div id="pubtitles" style="margin-top:5%;" v-if="showPubs">
         <h3>Books</h3>
             <ol>
                 <li v-for="book in publications" v-if="book.type === 'book'">
