@@ -4,4 +4,7 @@
 /revision/js/vue.min.js
 /revision/css/normalize.css
 /revision/css/skeleton.css
-/revision/font-awesome/
+/revision/css/font-awesome/
+.DS_Store
+revision/node_modules/
+revision/vue-experiments/
