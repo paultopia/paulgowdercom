@@ -2,7 +2,7 @@ import Vue from "vue";
 import bibtex from "./bibtex.js"
 import VueMarkdown from 'vue-markdown'
 import Icon from 'vue-awesome'
-import download from "./download.js"
+import io from "./io.js"
 
 Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
@@ -13,22 +13,8 @@ import 'vue-awesome/icons/cogs';
 
 var pagedata = {};
 var pageNotPainted = true
-function getData(name){
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function(){
-        if(request.readyState === request.DONE && request.status === 200) {
-            pagedata[name] = request.response;
-            console.log("got data: " + name);
-            loaders();
-        }
-    };
-    var url = name + ".json"
-    request.responseType = "json"
-    request.open('GET', url, true);
-    request.send();
-}
 
-getData("publications");
+io.getData("publications", pagedata, loaders);
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
@@ -81,7 +67,7 @@ function inloaders(){
                navboxFullsize: true
               },
         computed: {btstring: function () {return bibtex.string(this.publications);},
-                   bturl: function () {return download.url(bibtex.string(this.publications));}
+                   bturl: function () {return io.downloadURL(bibtex.string(this.publications));}
                   }
 
         
