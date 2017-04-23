@@ -2,6 +2,7 @@ import Vue from "vue";
 import bibtex from "./bibtex.js"
 import VueMarkdown from 'vue-markdown'
 import Icon from 'vue-awesome'
+import download from "./download.js"
 
 Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
@@ -47,6 +48,8 @@ function chronThenTitle(a, b){
 
 // vue components follow
 
+
+
 Vue.component("big-nav-item", {
     props: ["icon", "word"],
     template: '<div class="three columns">\
@@ -77,9 +80,12 @@ function inloaders(){
                articles: pagedata.publications.filter(isArticle).sort(chronThenTitle),
                navboxFullsize: true
               },
-        computed: {btstring: function () {return bibtex.string(this.publications)}}
-        //,
-        //components: {VueMarkdown}
+        computed: {btstring: function () {return bibtex.string(this.publications);},
+                   bturl: function () {return download.url(bibtex.string(this.publications));}
+                  }
+
+        
+
     });
 
 
