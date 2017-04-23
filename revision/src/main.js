@@ -41,17 +41,17 @@ function chronThenTitle(a, b){
 
 Vue.component("big-nav-item", {
     props: ["icon", "word"],
-    template: '<div class="three columns">\
-<icon :name="icon" scale=6></icon>\
-<p class="big-nav-label">{{ word }}</p></div>'
+    template: `<div class="three columns">
+<icon :name="icon" scale=6></icon>
+<p class="big-nav-label">{{ word }}</p></div>`
 });
 
 Vue.component("double-big-nav-item", {
     props: ["bottomicon", "topicon", "word"],
-    template: '<div class="three columns"><icon>\
-<icon :name="bottomicon" scale=6></icon>\
-<icon :name="topicon" scale=6 class="topiconcolor"></icon></icon>\
-<p class="big-nav-label">{{ word }}</p></div>'
+    template: `<div class="three columns"><icon>
+<icon :name="bottomicon" scale=6></icon>
+<icon :name="topicon" scale=6 class="topiconcolor"></icon></icon>
+<p class="big-nav-label">{{ word }}</p></div>`
 });
 
 
@@ -59,15 +59,14 @@ Vue.component("articlerow", {
     props: ["art"],
     methods: {show () {
         this.$modal.show(this.art.title);},
-              clog (){console.log(this.art.title)}},
-
+             },
     template: `<tr>
 <td> <a v-bind:href="art.publink">{{ art.title }}</a></td>
 <td>{{ art.journal}}</td>
 <td>{{ art.year }}</td>
 <td><span class="hint--bottom" aria-label="abstract" v-on:click="show()"><icon name="file-text"></icon></span></td>
-<modal :name="art.title" :resizable="true" :adaptive="true">
-  {{ art.abstract }}
+<modal :name="art.title" :resizable="true">
+  <div style="padding:2em;">{{ art.abstract }}</div>
 </modal>
 </tr>`
              });
