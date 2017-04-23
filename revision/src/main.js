@@ -62,7 +62,7 @@ Vue.component("articlerow", {
              },
     template: `<tr v-if="this.infoline">
 <td> <a v-bind:href="art.publink">{{ art.title }}</a></td>
-<td>{{ art.journal}}</td>
+<td>{{ art.journal }} {{ art.volume }}<span v-if="art.issue">({{ art.issue }})</span>:{{ art.firstpage }}-{{ art.lastpage }}<span v-if="art.coauthor"> (with {{ art.coauthor }})</span></td>
 <td>{{ art.year }}</td>
 <td><span class="hint--bottom" aria-label="abstract" v-on:click="abs()"><icon name="file-text"></icon></span></td>
 </tr>
@@ -71,7 +71,7 @@ Vue.component("articlerow", {
 <td><span class="hint--bottom" aria-label="close abstract" v-on:click="line()"><icon name="file-text"></icon></span></td>
 </tr>
 `
-             });
+});
 
 
 
