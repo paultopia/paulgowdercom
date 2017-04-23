@@ -34,9 +34,7 @@
             </div>
             </div>
 
-            <p><button v-on:click="showPubs = true">show pubs</button>
-            </p>
-            <p><button v-on:click="showPubs = false">hide pubs</button>
+            <p><button v-on:click="toggle('showPubs')">toggle pubs</button>
             </p>
 
         <div id="pubtitles" style="margin-top:5%;" v-if="showPubs">

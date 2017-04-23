@@ -69,10 +69,9 @@ function inloaders(){
               },
         computed: {btstring: function () {return bibtex.string(this.publications);},
                    bturl: function () {return io.downloadURL(bibtex.string(this.publications));}
-                  }
-
-        
-
+                  },
+        methods: {toggle: function(bool){
+            this[bool] = this[bool] ? false : true;}} // pass bool as single-quoted string
     });
 
 
