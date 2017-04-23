@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/hint.min.css">
         <link rel="stylesheet" href="css/custom.css">
         <script src="/dist/build.js"></script>
         <title>Paul Gowder</title> 
@@ -27,7 +28,7 @@
 
                 <div class="row" v-if="navboxFullsize">
                     
-                    <big-nav-item icon="phone" word="contact"></big-nav-item>
+                    <big-nav-item icon="phone" word="contact" class="hint--bottom" aria-label="Thank you!"></big-nav-item>
                     <big-nav-item icon="phone" word="contact"></big-nav-item>
                     <double-big-nav-item bottomicon="certificate" topicon="cogs" word="test"></double-big-nav-item>
 
@@ -45,12 +46,26 @@
                 </li></ol>
 
             <h3>Articles</h3>
-                    <ol>
-                        <li v-for="art in articles">
-                            <a v-bind:href="art.publink">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Journal</th>
+                        <th>Year</th>
+                        <th>More Info</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr v-for="art in articles">
+                          <td>  <a v-bind:href="art.publink">
                                 {{ art.title }}
-                            </a>
-                        </li>
+                          </a></td>
+                          <td>{{ art.journal }}</td>
+                          <td>{{ art.year }}</td>
+                          <td><span class="hint--bottom" aria-label="abstract"><icon name="file-text"></icon></span></td></tr>
+                    </tbody></table>
+
+                        </tr>
 
                     </ol>
                     <p>

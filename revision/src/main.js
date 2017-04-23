@@ -10,6 +10,7 @@ Vue.component('icon', Icon);
 import 'vue-awesome/icons/phone';
 import 'vue-awesome/icons/certificate';
 import 'vue-awesome/icons/cogs';
+import 'vue-awesome/icons/file-text';
 
 var pagedata = {};
 var pageNotPainted = true
