@@ -2,6 +2,6 @@
 
 var bibtex = require("./bibtex");
 var fs = require("fs");
-var pubs = JSON.parse(fs.readFileSync("publications.json", "utf8"));
+var pubs = JSON.parse(fs.readFileSync("../publications.json", "utf8"));
 var btString = bibtex.string(pubs);
 fs.writeFile("gowder.bib", btString, function(err){console.log(err ? err : "success!");});

@@ -17,7 +17,7 @@ function articleBT(pubitem){
 // if there's no issue number I don't want to have to handle a blank line or null value upstream
 	return pubitem.issue ?
 		compositor(pubitem, [nameMaker, authorMaker, basicB("title"), 
-			basicB("journal"), basicB("volume"), basicB("number"), 
+			basicB("journal"), basicB("volume"), numberMaker, 
 			pagesMaker, basicB("year")]) :
 		compositor(pubitem, [nameMaker, authorMaker, basicB("title"), 
 			basicB("journal"), basicB("volume"), pagesMaker, basicB("year")]);
@@ -65,6 +65,10 @@ function nameMaker(pubitem){
 	var nom2 = pubitem.title.split(" ").map(function(word){return word[0];})
 		.join("").toLowerCase();
 	return "@" + bibtextype + "{" + nom1 + pubitem.year + nom2;
+}
+
+function numberMaker(pubitem){
+    return "number={" + pubitem.issue + "}";
 }
 
 function pagesMaker(pubitem){
