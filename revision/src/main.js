@@ -1,4 +1,5 @@
-import Vue from 'vue';
+import Vue from "vue";
+var bibtex = require("./bibtex.js");
 var pagedata = {};
 var pageNotPainted = true
 function getData(name){
@@ -36,7 +37,6 @@ function chronThenTitle(a, b){
 
 // vue components follow
 
-
 Vue.component("big-nav-item", {
     props: ["icon", "word"],
     template: '<div class="three columns"><span class="fa-stack fa-3x"><i class="fa fa-stack-2x" :class="icon"></i><span class="fa fa-stack-1x big-nav-label">{{ word }}</span></span></div>'
@@ -63,7 +63,8 @@ function inloaders(){
         data: {publications: pagedata.publications,
                articles: pagedata.publications.filter(isArticle).sort(chronThenTitle),
                navboxFullsize: true
-              }
+              },
+        computed: {btstring: function () {return bibtex.string(this.publications)}}
     });
 
 
