@@ -3,11 +3,9 @@ import bibtex from "./bibtex.js"
 import VueMarkdown from 'vue-markdown'
 import Icon from 'vue-awesome'
 import io from "./io.js"
-import vmodal from 'vue-js-modal';
 
 Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
-Vue.use(vmodal);
 
 import 'vue-awesome/icons/phone';
 import 'vue-awesome/icons/certificate';
@@ -57,18 +55,22 @@ Vue.component("double-big-nav-item", {
 
 Vue.component("articlerow", {
     props: ["art"],
-    methods: {show () {
-        this.$modal.show(this.art.title);},
+    data: function(){return {infoline: true};},
+    methods: {
+              abs(){this.infoline = false;},
+              line(){this.infoline = true;}
              },
-    template: `<tr>
+    template: `<tr v-if="this.infoline">
 <td> <a v-bind:href="art.publink">{{ art.title }}</a></td>
 <td>{{ art.journal}}</td>
 <td>{{ art.year }}</td>
-<td><span class="hint--bottom" aria-label="abstract" v-on:click="show()"><icon name="file-text"></icon></span></td>
-<modal :name="art.title" :resizable="true">
-  <div style="padding:2em;">{{ art.abstract }}</div>
-</modal>
-</tr>`
+<td><span class="hint--bottom" aria-label="abstract" v-on:click="abs()"><icon name="file-text"></icon></span></td>
+</tr>
+
+<tr v-else> <td colspan="3">{{ art.abstract }}</td>
+<td><span class="hint--bottom" aria-label="close abstract" v-on:click="line()"><icon name="file-text"></icon></span></td>
+</tr>
+`
              });
 
 
