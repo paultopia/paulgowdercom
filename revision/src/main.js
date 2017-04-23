@@ -5,8 +5,10 @@ import Icon from 'vue-awesome'
 
 Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
-import 'vue-awesome/icons/flag';
-import 'vue-awesome/icons/camera';
+
+import 'vue-awesome/icons/phone';
+import 'vue-awesome/icons/certificate';
+import 'vue-awesome/icons/cogs';
 
 var pagedata = {};
 var pageNotPainted = true
@@ -45,32 +47,20 @@ function chronThenTitle(a, b){
 
 // vue components follow
 
-Vue.component("new-big-nav-item", {
+Vue.component("big-nav-item", {
     props: ["icon", "word"],
     template: '<div class="three columns">\
 <icon :name="icon" scale=6></icon>\
-<p class="better-big-nav-label">{{ word }}</p></div>'
+<p class="big-nav-label">{{ word }}</p></div>'
 });
 
-Vue.component("new-double-big-nav-item", {
+Vue.component("double-big-nav-item", {
     props: ["bottomicon", "topicon", "word"],
     template: '<div class="three columns"><icon>\
 <icon :name="bottomicon" scale=6></icon>\
 <icon :name="topicon" scale=6 class="topiconcolor"></icon></icon>\
-<p class="better-big-nav-label">{{ word }}</p></div>'
+<p class="big-nav-label">{{ word }}</p></div>'
 });
-
-Vue.component("big-nav-item", {
-    props: ["icon", "word"],
-    template: '<div class="three columns"><span class="fa-stack fa-3x"><i class="fa fa-stack-2x" :class="icon"></i><span class="fa fa-stack-1x big-nav-label">{{ word }}</span></span></div>'
-});
-
-Vue.component("double-big-nav-item", {
-    props: ["icon1", "icon2", "word"],
-    template: '<div class="three columns"><span class="fa-stack fa-3x"><i class="fa fa-stack-2x" :class="icon1"></i><i class="fa fa-stack-1x fa-inverse" :class="icon2"></i><span class="fa fa-stack-1x big-nav-label">{{ word }}</span></span></div>'
-});
-// see https://vuejs.org/v2/guide/class-and-style.html and http://stackoverflow.com/questions/43460661/workaround-for-setting-part-of-attribute-for-font-awesome-icon-in-vue-2-templa for how this works with the second class binding on the icon. 
-
 
 
 // dom manipulation code (including core vue render) follows, all needs to be after dom is in, so I'm calling it onload.  It also needs to depend on the existence of the data, so I'm just calling it twice: once on page load and once every time the data fetch executes.  inloaders() has the actual code.  loaders() checks to see if inloaders() has successfully run before, and if not, calls the inload stuff.
