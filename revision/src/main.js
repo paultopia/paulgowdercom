@@ -1,5 +1,8 @@
 import Vue from "vue";
-var bibtex = require("./bibtex.js");
+import bibtex from "./bibtex.js"
+import VueMarkdown from 'vue-markdown'
+Vue.use(VueMarkdown);
+
 var pagedata = {};
 var pageNotPainted = true
 function getData(name){
@@ -64,7 +67,8 @@ function inloaders(){
                articles: pagedata.publications.filter(isArticle).sort(chronThenTitle),
                navboxFullsize: true
               },
-        computed: {btstring: function () {return bibtex.string(this.publications)}}
+        computed: {btstring: function () {return bibtex.string(this.publications)}},
+        components: {VueMarkdown}
     });
 
 
