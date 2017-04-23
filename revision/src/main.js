@@ -1,7 +1,12 @@
 import Vue from "vue";
 import bibtex from "./bibtex.js"
 import VueMarkdown from 'vue-markdown'
-Vue.use(VueMarkdown);
+import Icon from 'vue-awesome'
+
+Vue.component('VueMarkdown', VueMarkdown);
+Vue.component('icon', Icon);
+import 'vue-awesome/icons/flag';
+import 'vue-awesome/icons/camera';
 
 var pagedata = {};
 var pageNotPainted = true
@@ -40,6 +45,21 @@ function chronThenTitle(a, b){
 
 // vue components follow
 
+Vue.component("new-big-nav-item", {
+    props: ["icon", "word"],
+    template: '<div class="three columns">\
+<icon :name="icon" scale=6></icon>\
+<p class="better-big-nav-label">{{ word }}</p></div>'
+});
+
+Vue.component("new-double-big-nav-item", {
+    props: ["bottomicon", "topicon", "word"],
+    template: '<div class="three columns"><icon>\
+<icon :name="bottomicon" scale=6></icon>\
+<icon :name="topicon" scale=6 class="topiconcolor"></icon></icon>\
+<p class="better-big-nav-label">{{ word }}</p></div>'
+});
+
 Vue.component("big-nav-item", {
     props: ["icon", "word"],
     template: '<div class="three columns"><span class="fa-stack fa-3x"><i class="fa fa-stack-2x" :class="icon"></i><span class="fa fa-stack-1x big-nav-label">{{ word }}</span></span></div>'
@@ -67,8 +87,9 @@ function inloaders(){
                articles: pagedata.publications.filter(isArticle).sort(chronThenTitle),
                navboxFullsize: true
               },
-        computed: {btstring: function () {return bibtex.string(this.publications)}},
-        components: {VueMarkdown}
+        computed: {btstring: function () {return bibtex.string(this.publications)}}
+        //,
+        //components: {VueMarkdown}
     });
 
 

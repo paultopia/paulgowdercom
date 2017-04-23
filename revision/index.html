@@ -22,7 +22,20 @@
             <p>
                 <vue-markdown>This is a *markdown* test.</vue-markdown>
             </p>
+            
             <div id="navbox">
+
+                <div class="row" >
+                    <div class="three columns" >
+                        <icon label="cameraflag" >
+                        <icon name="flag" scale="6"></icon>
+                        <icon name="camera" scale ="5" style="fill: rgba(229, 81, 229, 0.68);"></icon>
+                        </icon>
+                        <p class="better-big-nav-label">Doom</p>
+                    </div>
+                    <new-big-nav-item icon="flag" word="flag"></new-big-nav-item>
+                    <new-double-big-nav-item bottomicon="camera" topicon="flag" word="experiment"></new-double-big-nav-item>
+                </div>
 
                 <div class="row" v-if="navboxFullsize">
                     
