@@ -3,9 +3,11 @@ import bibtex from "./bibtex.js"
 import VueMarkdown from 'vue-markdown'
 import Icon from 'vue-awesome'
 import io from "./io.js"
+import vmodal from 'vue-js-modal';
 
 Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
+Vue.use(vmodal);
 
 import 'vue-awesome/icons/phone';
 import 'vue-awesome/icons/certificate';
@@ -53,6 +55,19 @@ Vue.component("double-big-nav-item", {
 });
 
 
+Vue.component("articlerow", {
+    props: ["art"],
+    template: `<tr>
+<td> <a v-bind:href="art.publink">{{ art.title }}</a></td>
+<td>{{ art.journal}}</td>
+<td>{{ art.year }}</td>
+<td>.</td>
+<td><span class="hint--bottom" aria-label="abstract"><icon name="file-text"></icon></span></td>
+</tr>`
+});
+
+
+
 // dom manipulation code (including core vue render) follows, all needs to be after dom is in, so I'm calling it onload.  It also needs to depend on the existence of the data, so I'm just calling it twice: once on page load and once every time the data fetch executes.  inloaders() has the actual code.  loaders() checks to see if inloaders() has successfully run before, and if not, calls the inload stuff.
 
 var pubtitles;
@@ -71,8 +86,12 @@ function inloaders(){
         computed: {btstring: function () {return bibtex.string(this.publications);},
                    bturl: function () {return io.downloadURL(bibtex.string(this.publications));}
                   },
-        methods: {toggle: function(bool){
-            this[bool] = this[bool] ? false : true;}} // pass bool as single-quoted string
+        methods: {
+            toggle: function(bool){
+                this[bool] = this[bool] ? false : true;}, // pass bool as single-quoted string
+            showModal: function(modal){
+                this.$modal.show(modal);}
+        } 
     });
 
 

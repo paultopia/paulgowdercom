@@ -56,18 +56,15 @@
                     </tr>
                 </thead>
                     <tbody>
-                        <tr v-for="art in articles">
-                          <td>  <a v-bind:href="art.publink">
-                                {{ art.title }}
-                          </a></td>
-                          <td>{{ art.journal }}</td>
-                          <td>{{ art.year }}</td>
-                          <td><span class="hint--bottom" aria-label="abstract"><icon name="file-text"></icon></span></td></tr>
+
+                        <tr is="articlerow" v-for="art in articles" v-bind:art="art" v-bind:key="art.title"></tr>
+
+
                     </tbody></table>
 
                         </tr>
 
-                    </ol>
+                    
                     <p>
                         <a :href="bturl" download="gowder.bib">download bibtex</a>
                     </p>
