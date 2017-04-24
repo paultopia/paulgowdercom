@@ -42,34 +42,48 @@ function chronThenTitle(a, b){
 
 
 Vue.component("big-nav-item", {
-    props: ["icon", "word"],
-    template: `<div class="three columns">
+    props: ["icon", "word", "toggle"],
+    template: `<div class="three columns" v-on:click="focusme">
 <icon :name="icon" scale=6></icon>
-<p class="big-nav-label">{{ word }}</p></div>`
+<p class="big-nav-label">{{ word }}</p></div>`,
+    methods: {
+        focusme: function(){this.$emit('focuspage', this.toggle)}
+    }
 });
 
+
 Vue.component("double-big-nav-item", {
-    props: ["bottomicon", "topicon", "word"],
-    template: `<div class="three columns"><icon>
+    props: ["bottomicon", "topicon", "word", "toggle"],
+    template: `<div class="three columns" v-on:click="focusme"><icon>
 <icon :name="bottomicon" scale=6></icon>
 <icon :name="topicon" scale=6 class="topiconcolor"></icon></icon>
 <p class="big-nav-label">{{ word }}</p></div>`
+    ,
+    methods: {
+        focusme: function(){this.$emit('focuspage', this.toggle)}
+    }
 });
 
 
 Vue.component("little-nav-item", {
-    props: ["icon", "word"],
-    template: `<div class="two columns">
+    props: ["icon", "word", "toggle"],
+    template: `<div class="two columns" v-on:click="focusme">
 <icon :name="icon" scale=2></icon>
-<p class="little-nav-label">{{ word }}</p></div>`
+<p class="little-nav-label">{{ word }}</p></div>`,
+    methods: {
+        focusme: function(){this.$emit('focuspage', this.toggle)}
+    }
 });
 
 Vue.component("double-little-nav-item", {
-    props: ["bottomicon", "topicon", "word"],
-    template: `<div class="two columns"><icon>
+    props: ["bottomicon", "topicon", "word", "toggle"],
+    template: `<div class="two columns" v-on:click="focusme"><icon>
 <icon :name="bottomicon" scale=2></icon>
 <icon :name="topicon" scale=2 class="topiconcolor"></icon></icon>
-<p class="little-nav-label">{{ word }}</p></div>`
+<p class="little-nav-label">{{ word }}</p></div>`,
+    methods: {
+        focusme: function(){this.$emit('focuspage', this.toggle)}
+    }
 });
 
 Vue.component("articlerow", {

@@ -22,15 +22,17 @@
                 <div class="row" v-if="toggles.navboxFullsize">
                     <p><vue-typer text="Paul Gowder" caret-animation="solid" :type-delay="300" :repeat="0" @typed='onTypedExperiment'></vue-typer>
                     </p>
-                    <span v-on:click="focus('bio')"><big-nav-item icon="phone" word="bio"></big-nav-item></span>
-                    <span v-on:click="focus('pubs')"><double-big-nav-item bottomicon="certificate" topicon="cogs" word="pubs"></double-big-nav-item></span>
+
+                   <big-nav-item icon="phone" word="bio" toggle="bio" v-on:focuspage="focus"></big-nav-item>
+
+                   <double-big-nav-item bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs" v-on:focuspage="focus"></double-big-nav-item>
 
             </div>
 
             <div class="row" v-else>
-                <span v-on:click="focus('navboxFullsize')"><little-nav-item icon="home" word="home"></big-nav-item></span>
-                <span v-on:click="focus('bio')"><little-nav-item icon="phone" word="bio"></big-nav-item></span>
-                <span v-on:click="focus('pubs')"><double-little-nav-item bottomicon="certificate" topicon="cogs" word="pubs"></double-big-nav-item></span>
+                <little-nav-item icon="home" word="home" toggle="navboxFullsize" v-on:focuspage="focus"></little-nav-item>
+                <little-nav-item icon="phone" word="bio" toggle="bio" v-on:focuspage="focus"></little-nav-item>
+                <double-little-nav-item bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs" v-on:focuspage="focus"></double-little-nav-item>
 
             </div>
 
