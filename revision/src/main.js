@@ -83,9 +83,8 @@ Vue.component("articlerow", {
 
 
 
-// dom manipulation code (including core vue render) follows, all needs to be after dom is in, so I'm calling it onload.  It also needs to depend on the existence of the data, so I'm just calling it twice: once on page load and once every time the data fetch executes.  inloaders() has the actual code.  loaders() checks to see if inloaders() has successfully run before, and if not, calls the inload stuff.
+// the below is all a horrendous hack to attempt to render the page twice---once on page load and once on data load, because I can't convince vue to react to data from an ajax call. 
 
-var pubtitles;
 
 function inloaders(){
     console.log("trying to load virtual dom, may not work if data isn't here or page isn't loaded yet, but don't worry about it, I'll try again.");
@@ -110,20 +109,7 @@ function inloaders(){
         } 
     });
 
-
-
-
-
-
-    //not sure if these vue objects have to be globals or not, might try declaring them outside if problems arise with updating.
-
-// this close bracket is the one that ends the loaders functionality.
 };
-
-
-
-
-
 
 
 function loaders(){
