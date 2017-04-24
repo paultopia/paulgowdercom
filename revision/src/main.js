@@ -86,17 +86,22 @@ function loader(){
         el: '#app',
         data: {publications: pagedata.bigdata.publications,
                articles: pagedata.bigdata.publications.filter(isArticle).sort(chronThenTitle),
-               navboxFullsize: true,
                biotext: pagedata.bigdata.bio,
-               showPubs: true,
-               showBio: false
+               toggles: {
+                   navboxFullsize: true,
+                   showPubs: true,
+                   showBio: false
+               }
               },
         computed: {
             bturl: function () {return io.downloadURL(bibtex.string(this.publications));}
         },
         methods: {
             toggle: function(bool){
-                this[bool] = this[bool] ? false : true;}, // pass bool as single-quoted string
+                this.toggles[bool] = this.toggles[bool] ? false : true;}, // pass bool as single-quoted string
+            focus: function(k){
+                for (let i in this.toggles) this.toggles[i] = false;
+                this.toggles[k] = true;},
             showModal: function(modal){
                 this.$modal.show(modal);}
         }
