@@ -19,9 +19,6 @@
 
 
             <p>Loren. Ipsum. Yo.</p>
-            <p>
-                <vue-markdown>{{ biotext }}</vue-markdown>
-            </p>
             
             <div id="navbox">
 
@@ -29,11 +26,16 @@
                 <div class="row" v-if="navboxFullsize">
                     
                     <big-nav-item icon="phone" word="contact" class="hint--bottom" aria-label="Thank you!"></big-nav-item>
-                    <big-nav-item icon="phone" word="contact"></big-nav-item>
+                    <span   v-on:click="toggle('showBio')"><big-nav-item icon="phone" word="bio"></big-nav-item></span>
                     <double-big-nav-item bottomicon="certificate" topicon="cogs" word="test"></double-big-nav-item>
 
             </div>
             </div>
+
+            <p>
+                <vue-markdown v-if="showBio">{{ biotext }}</vue-markdown>
+            </p>
+
 
             <p><button v-on:click="toggle('showPubs')">toggle pubs</button>
             </p>
@@ -68,7 +70,7 @@
                     <p>
                         <a :href="bturl" download="gowder.bib">download bibtex</a>
                     </p>
-                    <pre>{{ btstring }}</pre>
+
         </div>
 
 

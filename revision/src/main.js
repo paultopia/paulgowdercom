@@ -88,10 +88,10 @@ function loader(){
                articles: pagedata.bigdata.publications.filter(isArticle).sort(chronThenTitle),
                navboxFullsize: true,
                biotext: pagedata.bigdata.bio,
-               showPubs: true
+               showPubs: true,
+               showBio: false
               },
         computed: {
-            btstring: function () {return bibtex.string(this.publications);},
             bturl: function () {return io.downloadURL(bibtex.string(this.publications));}
         },
         methods: {
