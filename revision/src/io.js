@@ -13,20 +13,6 @@ function getData(name, datastore, loadercallback){
     request.send();
 }
 
-function getText(name, context){
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function(){
-        if(request.readyState === request.DONE && request.status === 200) {
-            context.$set(context.texts, name, request.responseText);
-            console.log("got data: " + name);
-            console.log(context);
-        }
-    };
-    var url = name + ".md"
-    request.open('GET', url, true);
-    request.send();
-}
-
 function makeDownloadUrl(text){
     var b = new Blob([text], {type: "text/plain"});
     return URL.createObjectURL(b);
@@ -34,4 +20,3 @@ function makeDownloadUrl(text){
 
 module.exports.downloadURL = makeDownloadUrl;
 module.exports.getData = getData;
-module.exports.getText = getText;

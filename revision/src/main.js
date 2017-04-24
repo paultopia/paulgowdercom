@@ -19,7 +19,7 @@ import 'vue-awesome/icons/times';
 var pagedata = {};
 var pageNotPainted = true
 
-io.getData("publications", pagedata, loaders);
+io.getData("bigdata", pagedata, loaders);
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
@@ -92,21 +92,16 @@ function inloaders(){
 
     var app = new Vue({
         el: '#app',
-        data: {publications: pagedata.publications,
-               articles: pagedata.publications.filter(isArticle).sort(chronThenTitle),
+        data: {publications: pagedata.bigdata.publications,
+               articles: pagedata.bigdata.publications.filter(isArticle).sort(chronThenTitle),
                navboxFullsize: true,
-               texts: {},
+               biotext: pagedata.bigdata.bio,
                showPubs: true
               },
         computed: {
             btstring: function () {return bibtex.string(this.publications);},
-            biotext: function () {
-                console.log(this.texts.bio);
-                return this.texts.bio;},
             bturl: function () {return io.downloadURL(bibtex.string(this.publications));}
         },
-        mounted: function () {io.getText("bio", this);
-                                  },
         methods: {
             toggle: function(bool){
                 this[bool] = this[bool] ? false : true;}, // pass bool as single-quoted string
