@@ -4,6 +4,21 @@
     font-weight:bold;
 }
 
+.little-nav-label {
+    margin-top:-5%;
+    font-size:8px;
+}
+
 svg.topiconcolor {
     fill: rgba(229, 81, 229, 0.68);
+}
+
+.vue-typer .custom.caret {
+  width: 10px;
+  background-color: rgba(229, 81, 229, 0.68);
+}
+
+.vue-typer {
+    font-size:30px;
+    font-weight:bold;
 }

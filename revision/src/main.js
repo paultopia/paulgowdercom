@@ -3,9 +3,12 @@ import bibtex from "./bibtex.js"
 import VueMarkdown from 'vue-markdown'
 import Icon from 'vue-awesome'
 import io from "./io.js"
+import VueTyperPlugin from 'vue-typer'
 
 Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
+
+Vue.use(VueTyperPlugin);
 
 import 'vue-awesome/icons/phone';
 import 'vue-awesome/icons/certificate';
@@ -54,6 +57,21 @@ Vue.component("double-big-nav-item", {
 });
 
 
+Vue.component("little-nav-item", {
+    props: ["icon", "word"],
+    template: `<div class="two columns">
+<icon :name="icon" scale=2></icon>
+<p class="little-nav-label">{{ word }}</p></div>`
+});
+
+Vue.component("double-little-nav-item", {
+    props: ["bottomicon", "topicon", "word"],
+    template: `<div class="two columns"><icon>
+<icon :name="bottomicon" scale=2></icon>
+<icon :name="topicon" scale=2 class="topiconcolor"></icon></icon>
+<p class="little-nav-label">{{ word }}</p></div>`
+});
+
 Vue.component("articlerow", {
     props: ["art"],
     data: function(){return {infoline: true};},
@@ -89,8 +107,8 @@ function loader(){
                biotext: pagedata.bigdata.bio,
                toggles: {
                    navboxFullsize: true,
-                   showPubs: true,
-                   showBio: false
+                   pubs: false,
+                   bio: false
                }
               },
         computed: {

@@ -16,31 +16,33 @@
     </head>
     <body>
         <div class="container" id="app">
-
-
-            <p>Loren. Ipsum. Yo.</p>
-            
             <div id="navbox">
 
 
                 <div class="row" v-if="toggles.navboxFullsize">
-                    
-                    <big-nav-item icon="phone" word="contact" class="hint--bottom" aria-label="Thank you!"></big-nav-item>
-                    <span   v-on:click="focus('showBio')"><big-nav-item icon="phone" word="bio"></big-nav-item></span>
-                    <double-big-nav-item bottomicon="certificate" topicon="cogs" word="test"></double-big-nav-item>
+                    <p><vue-typer text="Paul Gowder" caret-animation="solid" type-delay="300" :repeat="0"></vue-typer>
+                    </p>
+                    <span v-on:click="focus('bio')"><big-nav-item icon="phone" word="bio"></big-nav-item></span>
+                    <span v-on:click="focus('pubs')"><double-big-nav-item bottomicon="certificate" topicon="cogs" word="pubs"></double-big-nav-item></span>
 
             </div>
+
+            <div class="row" v-else>
+                <span v-on:click="focus('navboxFullsize')"><little-nav-item icon="home" word="home"></big-nav-item></span>
+                <span v-on:click="focus('bio')"><little-nav-item icon="phone" word="bio"></big-nav-item></span>
+                <span v-on:click="focus('pubs')"><double-little-nav-item bottomicon="certificate" topicon="cogs" word="pubs"></double-big-nav-item></span>
+
+            </div>
+
             </div>
 
             <p>
-                <vue-markdown v-if="toggles.showBio">{{ biotext }}</vue-markdown>
+                <vue-markdown v-if="toggles.bio">{{ biotext }}</vue-markdown>
             </p>
 
-
-            <p><button v-on:click="toggle('showPubs')">toggle pubs</button>
-            </p>
-
-        <div id="pubtitles" style="margin-top:5%;" v-if="toggles.showPubs">
+            <!-- <p><button v-on:click="toggle('pubs')">toggle pubs</button></p>
+               -->
+        <div id="pubtitles" style="margin-top:5%;" v-if="toggles.pubs">
         <h3>Books</h3>
             <ol>
                 <li v-for="book in publications" v-if="book.type === 'book'">
