@@ -17,9 +17,6 @@ import 'vue-awesome/icons/download';
 import 'vue-awesome/icons/times';
 
 var pagedata = {};
-var pageNotPainted = true
-
-io.getData("bigdata", pagedata, loaders);
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
@@ -83,12 +80,8 @@ Vue.component("articlerow", {
 
 
 
-// the below is all a horrendous hack to attempt to render the page twice---once on page load and once on data load, because I can't convince vue to react to data from an ajax call. 
 
-
-function inloaders(){
-    console.log("trying to load virtual dom, may not work if data isn't here or page isn't loaded yet, but don't worry about it, I'll try again.");
-
+function loader(){
     var app = new Vue({
         el: '#app',
         data: {publications: pagedata.bigdata.publications,
@@ -106,25 +99,9 @@ function inloaders(){
                 this[bool] = this[bool] ? false : true;}, // pass bool as single-quoted string
             showModal: function(modal){
                 this.$modal.show(modal);}
-        } 
+        }
     });
-
 };
 
 
-function loaders(){
-    if(pageNotPainted){
-        try {
-            inloaders();
-            pageNotPainted = false;
-            console.log("successfully painted page");
-
-        }
-        catch(error) {
-            console.log("did not paint page.  trying again later. Here's the error:");
-            console.error(error);
-        }
-    }
-}
-
-window.onload = loaders();
+window.onload = io.getData("bigdata", pagedata, loader);
