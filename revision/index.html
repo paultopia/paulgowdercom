@@ -22,7 +22,6 @@
                     <p><vue-typer text="Paul Gowder" caret-animation="solid" :type-delay="300" :repeat="0" @typed='onTypedExperiment'></vue-typer>
                     </p>
 
-                    <p><bio></bio></p>
 
                    <big-nav-item icon="phone" word="bio" toggle="bio" v-on:focuspage="focus"></big-nav-item>
 
@@ -39,9 +38,7 @@
 
             </div>
 
-            <p>
-                <vue-markdown v-if="toggles.bio">{{ biotext }}</vue-markdown>
-            </p>
+                <p><bio v-if="toggles.bio"></bio></p>
 
             <!-- <p><button v-on:click="toggle('pubs')">toggle pubs</button></p>
                -->

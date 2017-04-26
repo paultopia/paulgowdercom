@@ -1,19 +1,14 @@
 import Vue from "vue";
 import bibtex from "./bibtex.js"
-import VueMarkdown from 'vue-markdown'
 import Icon from 'vue-awesome'
 import io from "./io.js"
 import VueTyperPlugin from 'vue-typer'
 
 import bio from '../bio.md';
 
-console.log(bio);
-
-Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
 
-import * as mydata from '../bigdata.json';
-console.log(mydata);
+import mydata from '../bigdata.json';
 
 Vue.use(VueTyperPlugin);
 
@@ -26,7 +21,6 @@ import 'vue-awesome/icons/external-link-square';
 import 'vue-awesome/icons/download';
 import 'vue-awesome/icons/times';
 
-var pagedata = {};
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
@@ -148,6 +142,5 @@ function loader(){
 };
 
 
-// window.onload = io.getData("bigdata", pagedata, loader);
 
 window.onload = loader();
