@@ -10,6 +10,7 @@ import VueTyperPlugin from 'vue-typer'
 
 import bio from '../data/bio.md';
 import pubs from '../data/publications.json';
+import olddata from '../data/data.json';
 
 // activating external components (need consistent syntax for this, one is in the main vue object too, the markdown one...)
 Vue.use(VueTyperPlugin);
