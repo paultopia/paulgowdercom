@@ -9,8 +9,8 @@ function makebibtex(pubs){
       return get({"law review": articleBT,
       	"peer review": articleBT,
       	"chapter": chapterBT,
-      	"book": bookBT}, pubitem.type, function(_){return null;})(pubitem);
-	}).filter(function(elem){return elem;}).join(",\n\n");
+      	"book": bookBT}, pubitem.type, _=>null)(pubitem);
+	}).filter(elem=>elem).join(",\n\n");
 }
 
 function articleBT(pubitem){
@@ -40,8 +40,9 @@ function compositor(pubitem, funcs){
 }
 
 function basicB(entry){
-	return function(pubitem){return entry + "={" + pubitem[entry] + "}";};
-} 
+    //	return function(pubitem){return entry + "={" + pubitem[entry] + "}";};
+    return pubitem => entry + "={" + pubitem[entry] + "}";
+}
 
 function authorMaker(pubitem){
 	return pubitem.coauthor ? "author={" + pubitem.coauthor.split(" ")
