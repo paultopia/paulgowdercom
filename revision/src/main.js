@@ -8,6 +8,9 @@ import VueTyperPlugin from 'vue-typer'
 Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
 
+import * as mydata from '../bigdata.json';
+console.log(mydata);
+
 Vue.use(VueTyperPlugin);
 
 import 'vue-awesome/icons/phone';
@@ -116,9 +119,9 @@ Vue.component("articlerow", {
 function loader(){
     var app = new Vue({
         el: '#app',
-        data: {publications: pagedata.bigdata.publications,
-               articles: pagedata.bigdata.publications.filter(isArticle).sort(chronThenTitle),
-               biotext: pagedata.bigdata.bio,
+        data: {publications: mydata.publications,
+               articles: mydata.publications.filter(isArticle).sort(chronThenTitle),
+               biotext: mydata.bio,
                toggles: {
                    navboxFullsize: true,
                    pubs: false,
@@ -140,4 +143,6 @@ function loader(){
 };
 
 
-window.onload = io.getData("bigdata", pagedata, loader);
+// window.onload = io.getData("bigdata", pagedata, loader);
+
+window.onload = loader();
