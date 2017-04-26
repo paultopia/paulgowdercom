@@ -24,6 +24,10 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
+        {
+            test: /\.md$/,
+            loader: 'vue-markdown-loader',
+        },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',

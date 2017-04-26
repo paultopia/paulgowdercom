@@ -5,6 +5,10 @@ import Icon from 'vue-awesome'
 import io from "./io.js"
 import VueTyperPlugin from 'vue-typer'
 
+import bio from '../bio.md';
+
+console.log(bio);
+
 Vue.component('VueMarkdown', VueMarkdown);
 Vue.component('icon', Icon);
 
@@ -119,6 +123,7 @@ Vue.component("articlerow", {
 function loader(){
     var app = new Vue({
         el: '#app',
+        components: {bio},
         data: {publications: mydata.publications,
                articles: mydata.publications.filter(isArticle).sort(chronThenTitle),
                biotext: mydata.bio,
