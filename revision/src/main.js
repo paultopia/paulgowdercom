@@ -1,16 +1,21 @@
+
+// code and resource imports
 import Vue from "vue";
 import bibtex from "./bibtex.js"
 import Icon from 'vue-awesome'
 import io from "./io.js"
 import VueTyperPlugin from 'vue-typer'
 
-import bio from '../bio.md';
+// personal data imports 
 
+import bio from '../data/bio.md';
+import pubs from '../data/publications.json';
+
+// activating external components (need consistent syntax for this, one is in the main vue object too, the markdown one...)
+Vue.use(VueTyperPlugin);
 Vue.component('icon', Icon);
 
-import mydata from '../bigdata.json';
-
-Vue.use(VueTyperPlugin);
+// icon imports
 
 import 'vue-awesome/icons/phone';
 import 'vue-awesome/icons/certificate';
@@ -21,11 +26,16 @@ import 'vue-awesome/icons/external-link-square';
 import 'vue-awesome/icons/download';
 import 'vue-awesome/icons/times';
 
+// css imports
+
 import '../css/normalize.css'
 import '../css/skeleton.css'
 import '../css/hint.min.css'
 import '../css/custom.css'
 
+// image imports
+
+import headshotURL from '../images/headshot.jpg';
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
@@ -123,9 +133,9 @@ function loader(){
     var app = new Vue({
         el: '#app',
         components: {bio},
-        data: {publications: mydata.publications,
-               articles: mydata.publications.filter(isArticle).sort(chronThenTitle),
-               biotext: mydata.bio,
+        data: {publications: pubs,
+               headshotURL: headshotURL,
+               articles: pubs.filter(isArticle).sort(chronThenTitle),
                toggles: {
                    navboxFullsize: true,
                    pubs: false,

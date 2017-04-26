@@ -26,22 +26,19 @@ module.exports = {
       },
         {
             test: /\.css$/,
-            loaders: ['style-loader', 'css-loader'],
+            loaders: ['style-loader', 'css-loader']
         },
         {
             test: /\.scss$/,
-            loaders: ['style-loader', 'css-loader', 'sass-loader'],
+            loaders: ['style-loader', 'css-loader', 'sass-loader']
         },
         {
             test: /\.md$/,
-            loader: 'vue-markdown-loader',
+            loader: 'vue-markdown-loader'
         },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
+        loader: 'url-loader'
       }
     ]
   },
