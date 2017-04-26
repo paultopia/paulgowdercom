@@ -21,6 +21,11 @@ import 'vue-awesome/icons/external-link-square';
 import 'vue-awesome/icons/download';
 import 'vue-awesome/icons/times';
 
+import '../css/normalize.css'
+import '../css/skeleton.css'
+import '../css/hint.min.css'
+import '../css/custom.css'
+
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";

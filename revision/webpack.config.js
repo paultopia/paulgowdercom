@@ -25,6 +25,14 @@ module.exports = {
         exclude: /node_modules/
       },
         {
+            test: /\.css$/,
+            loaders: ['style-loader', 'css-loader'],
+        },
+        {
+            test: /\.scss$/,
+            loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        },
+        {
             test: /\.md$/,
             loader: 'vue-markdown-loader',
         },
