@@ -1,6 +1,8 @@
 
 // THIS IS BARELY STARTED
 
+<template>
+
 <div class="row">
 
 
@@ -18,7 +20,7 @@
                 <col style="width:35%">
                 <col style="width:55%">
                 <col style="width:7%">
-                <thead><tr><th>University</th><th>Title</th><th>Years</th></thead><tbody>
+                <thead><tr><th>University</th><th>Title</th><th>Years</th></tr></thead><tbody>
 
                     {% for position in positions %}
                     <tr><td>
@@ -37,7 +39,7 @@
                 <col style="width:35%">
                 <col style="width:55%">
                 <col style="width:7%">
-                <thead><tr><th>University</th><th>Degree</th><th>Years</th></thead><tbody>
+                <thead><tr><th>University</th><th>Degree</th><th>Years</th></tr></thead><tbody>
 
                     {% for school in schools %}
                     <tr><td>
@@ -58,7 +60,7 @@
                 <col style="width:35%">
                 <col style="width:55%">
                 <col style="width:7%">
-                <thead><tr><th>Title</th><th>Publisher</th><th>Years</th></thead><tbody>
+                <thead><tr><th>Title</th><th>Publisher</th><th>Years</th></tr></thead><tbody>
                     {% for book in books %}
                     <tr><td>
                         {{book.title}}
@@ -152,7 +154,7 @@
                 <col style="width:40%">
                 <col style="width:50%">
                 <col style="width:7%">
-                <thead><tr><th>Title</th><th>Description</th><th>Years</th></thead><tbody>
+                <thead><tr><th>Title</th><th>Description</th><th>Years</th></tr></thead><tbody>
                     {% for misc in miscpubs %}
                     <tr><td>
                         {{misc.title}}
@@ -168,7 +170,7 @@
             <table class="u-full-width">
                 <col style="width:90%">
                 <col style="width:7%">
-                <thead><tr><th>Award</th><th>Years</th></thead><tbody>
+                <thead><tr><th>Award</th><th>Years</th></tr></thead><tbody>
                     {% for award in awards %}
                     <tr><td>
                         {{award.name}}
@@ -180,93 +182,17 @@
 
             <h3 id="pres">Presentations</h3>
 
-            <h5>Invited Talks</h5>
-            <table class="u-full-width">
-                <col style="width:40%">
-                <col style="width:50%">
-                <col style="width:7%">
-                <thead><tr><th>Venue</th><th>Title</th><th>Years</th></thead><tbody>
-                    {% for invitedpres in invited %}
-                    <tr><td>
-                        {{invitedpres.venue}}
-                    </td><td>
-                        {{invitedpres.title}}
-                    </td><td>
-                        {{invitedpres.year}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
+// PRESENTATIONS AND TEACHING ARE PROBABLY GOOD ONCE DATA MODEL IS FIT IN
+
+            <presentations header="Invited Talks" presentationlist="pres.invited"></presentations>
+            <presentations header="Conference Presentations" :presentationlist="pres.conferences"></presentations>
+            <presentations header="Campus Talks" :presentationlist="pres.campus"></presentations>
 
 
-            <h5>Conference Presentations</h5>
-            <table class="u-full-width">
-                <col style="width:40%">
-                <col style="width:50%">
-                <col style="width:7%">
-                <thead><tr><th>Venue</th><th>Title</th><th>Years</th></thead><tbody>
-                    {% for conference in conferences %}
-                    <tr><td>
-                        {{conference.venue}}
-                    </td><td>
-                        {{conference.title}}
-                    </td><td>
-                        {{conference.year}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
-
-            <h5>Campus Talks</h5>
-            <table class="u-full-width">
-                <col style="width:40%">
-                <col style="width:50%">
-                <col style="width:7%">
-                <thead><tr><th>Venue</th><th>Title</th><th>Years</th></thead><tbody>
-                    {% for ctalk in campus %}
-                    <tr><td>
-                        {{ctalk.venue}}
-                    </td><td>
-                        {{ctalk.title}}
-                    </td><td>
-                        {{ctalk.year}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
 
             <h3 id="teach">Teaching</h3>
-
-            <h5>Lead Instructor</h5>
-            <table class="u-full-width">
-                <col style="width:40%">
-                <col style="width:50%">
-                <col style="width:7%">
-                <thead><tr><th>Course</th><th>University</th><th>Years</th></thead><tbody>
-                    {% for course in courses %}
-                    <tr><td>
-                        {{course.title}}
-                    </td><td>
-                        {{course.school}}
-                    </td><td>
-                        {{course.terms}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
-
-            <h5>Teaching Assistant</h5>
-            <table class="u-full-width">
-                <col style="width:40%">
-                <col style="width:50%">
-                <col style="width:7%">
-                <thead><tr><th>Course</th><th>University</th><th>Years</th></thead><tbody>
-                    {% for taship in taships %}
-                    <tr><td>
-                        {{taship.title}}
-                    </td><td>
-                        {{taship.school}}
-                    </td><td>
-                        {{taship.terms}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
+            <teaching header="Lead Instructor" :classlist="courses.lead"></teaching>
+            <teaching header="Teaching Assistant" :classlist="courses.ta"></teaching>
 
 
             <h3 id="law">Legal Practice</h3>
@@ -274,7 +200,7 @@
                 <col style="width:40%">
                 <col style="width:50%">
                 <col style="width:7%">
-                <thead><tr><th>Employer</th><th>Role</th><th>Years</th></thead><tbody>
+                <thead><tr><th>Employer</th><th>Role</th><th>Years</th></tr></thead><tbody>
                     {% for job in practice %}
                     <tr><td>
                         {{job.employer}}
@@ -323,7 +249,7 @@
             <table class="u-full-width">
                 <col style="width:90%">
                 <col style="width:7%">
-                <thead><tr><th>Role</th><th>Years</th></thead><tbody>
+                <thead><tr><th>Role</th><th>Years</th></tr></thead><tbody>
                     {% for cserv in cservice %}
                     <tr><td>
                         {{cserv.activity}}
@@ -355,3 +281,19 @@
     <hr>
 
     <p style="float: left;"><a href="{{basics.url}}"><b>&lt;&lt;---</b></a></p> <p style="float: right;">Last Revised {{basics.revdate}} </p>
+
+
+</template>
+
+<script>
+
+ import presentations from "./presentations.vue/";
+ import teaching from "./teaching.vue";
+ import generictable from "./generictable.vue";
+
+ module.exports = {
+     props: ["pubs", "pres", "courses"],
+     components: {presentations, teaching, generictable}
+ }
+
+</script>

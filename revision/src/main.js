@@ -40,7 +40,7 @@ import headshotURL from '../images/headshot.jpg';
 
 // my external components (declared in global vue object below)
 
-import articlerow from './articlerow.vue';
+import articlerow from './components/articlerow.vue';
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
