@@ -126,23 +126,30 @@
                     
                 </tbody></table>
 
-<!-- THIS ONE ISN'T DONE YET STILL IN JINJA FORM!  -->
-
             <h5>Miscellany</h5>
             <table class="u-full-width">
                 <col style="width:40%">
                 <col style="width:50%">
                 <col style="width:7%">
                 <thead><tr><th>Title</th><th>Description</th><th>Years</th></tr></thead><tbody>
-                    {% for misc in miscpubs %}
-                    <tr><td>
-                        {{misc.title}}
+                    
+                    <tr v-for="misc in sortedPubs" v-if="misc.type === 'misc'">              
+                    
+                    <tr>
+                    <td>
+                        {{ misc.title }}
+                        
+                        <span v-if="misc.coauthor">
+                        <br>(Co-Author with {{ misc.coauthor }})
+                        </span>
+    
+                        
                     </td><td>
-                        {{misc.description}}
+                        {{ misc.description }}
                     </td><td>
-                        {{misc.year}}
+                        {{ misc.year }}
                     </td></tr>
-                    {% endfor %}
+                    
                 </tbody></table>
 
 
