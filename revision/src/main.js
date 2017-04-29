@@ -46,7 +46,7 @@ function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
 }
 
-function chronThenTitle(a, b){
+function chronThenTypeThenTitle(a, b){
     if(parseInt(a.year) > parseInt(b.year)) return -1;
     if(parseInt(a.year) < parseInt(b.year)) return 1;
     if(a.type > b.type) return -1;
@@ -112,7 +112,7 @@ function loader(){
         components: {bio, articlerow},
         data: {publications: pubs,
                headshotURL: headshotURL,
-               articles: pubs.filter(isArticle).sort(chronThenTitle),
+               articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),
                toggles: {
                    navboxFullsize: true,
                    pubs: false,

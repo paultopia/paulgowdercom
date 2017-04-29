@@ -3,6 +3,16 @@
 
 <template>
 
+<!-- CONVERTED: 
+Presentations
+Teaching
+Legal Practice
+
+Need to redo data to have the field names right, conform as much as possible to headers to allow generic table use.  Component here is assuming that's already been done, so will blow up as it stands.
+
+-->
+
+
 <div class="row">
 
 
@@ -15,156 +25,21 @@
 
     <div class="row">
         <div class="twelve columns">
-            <h3>Academic Positions</h3>
-            <table class="u-full-width">
-                <col style="width:35%">
-                <col style="width:55%">
-                <col style="width:7%">
-                <thead><tr><th>University</th><th>Title</th><th>Years</th></tr></thead><tbody>
 
-                    {% for position in positions %}
-                    <tr><td>
-                        {{position.university}}
-                    </td><td>
-                        {{position.title}}
-                    </td><td>
-                        {{position.year}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
+            <generictable :ismajor="true" header="Academic Positions" :itemslist="basic.positions"></generictable>
+
+<!-- this might be worth hard-coding, since it obv changes rarely and requires special formatting for things like promotion, courtesy appointments, etc. -->
 
 
-            <h3>Education</h3>
-            <table class="u-full-width">
-                <col style="width:35%">
-                <col style="width:55%">
-                <col style="width:7%">
-                <thead><tr><th>University</th><th>Degree</th><th>Years</th></tr></thead><tbody>
+            <generictable :ismajor="true" header="Education" :itemslist="basic.education"></generictable>
 
-                    {% for school in schools %}
-                    <tr><td>
-                        {{school.name}}
-                    </td><td>
-                        {{school.degree}}
-                    </td><td>
-                        {{school.year}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
+<!-- pubs are too annoyingly messy to separate out into individual components for now.  Maybe later. -->
 
+<publications :pubs="pubs"></publications>
 
 
             <h3 id="pubs">Publications</h3>
-            <h5>Books</h5>
-            <table class="u-full-width">
-                <col style="width:35%">
-                <col style="width:55%">
-                <col style="width:7%">
-                <thead><tr><th>Title</th><th>Publisher</th><th>Years</th></tr></thead><tbody>
-                    {% for book in books %}
-                    <tr><td>
-                        {{book.title}}
-                        {% if book.coauthor %}
-                        <br>(Co-Author with {{book.coauthor}})
-                        {% endif %}
-                    </td><td>
-                        {{book.publisher}}
-                    </td><td>
-                        {{book.year}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
 
-
-            <h5>Peer Reviewed Articles</h5>
-            <table class="u-full-width">
-                <col style="width:35%">
-                <col style="width:35%">
-                <col style="width:20%">
-                <col style="width:7%">
-                <thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Years</th></tr></thead><tbody>
-                    {% for prart in prarts %}
-                    <tr>
-                        <td>
-                            {{prart.title}}
-                            {% if prart.coauthor %}
-                            <br>(Co-Author with {{prart.coauthor}})
-                            {% endif %}
-                        </td><td>
-                            {{prart.journal}}
-                        </td><td>
-                            {{prart.cite}}
-                        </td><td>
-                            {{prart.year}}
-                        </td></tr>
-                    {% endfor %}
-                </tbody></table>
-
-            <h5>Law Review Articles</h5>
-            <table class="u-full-width">
-                <col style="width:35%">
-                <col style="width:35%">
-                <col style="width:20%">
-                <col style="width:7%">
-                <thead><tr><th>Title</th><th>Journal</th><th>Citation</th><th>Years</th></tr></thead><tbody>
-                    {% for lrart in lrarts %}
-                    <tr>
-                        <td>
-                            {{lrart.title}}
-                            {% if lrart.coauthor %}
-                            <br>(Co-Author with {{lrart.coauthor}})
-                            {% endif %}
-                        </td><td>
-                            {{lrart.journal}}
-                        </td><td>
-                            {{lrart.cite}}
-                        </td><td>
-                            {{lrart.year}}
-                        </td></tr>
-                    {% endfor %}
-                </tbody></table>
-
-
-            <h5>Book Chapters</h5>
-            <table class="u-full-width">
-                <col style="width:35%">
-                <col style="width:35%">
-                <col style="width:20%">
-                <col style="width:7%">
-                <thead><tr><th>Title</th><th>Book</th><th>Pages</th><th>Years</th></tr></thead><tbody>
-                    {% for chapter in chapters %}
-                    <tr><td>
-                        {{chapter.title}}
-                        {% if chapter.coauthor %}
-                        <br>(Co-Author with {{chapter.coauthor}})
-                        {% endif %}
-                    </td>
-                    <td>
-                        {{chapter.editors}}, eds., <em>{{chapter.book}}</em> ({{chapter.publisher}})
-                    </td><td>
-                        {{chapter.pages}}
-                    </td><td>
-                        {{chapter.year}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
-
-            <h5>Miscellany</h5>
-            <table class="u-full-width">
-                <col style="width:40%">
-                <col style="width:50%">
-                <col style="width:7%">
-                <thead><tr><th>Title</th><th>Description</th><th>Years</th></tr></thead><tbody>
-                    {% for misc in miscpubs %}
-                    <tr><td>
-                        {{misc.title}}
-                    </td><td>
-                        {{misc.description}}
-                    </td><td>
-                        {{misc.year}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
 
             <h3 id="awards">Grants, Awards and Honors</h3>
             <table class="u-full-width">
@@ -182,7 +57,6 @@
 
             <h3 id="pres">Presentations</h3>
 
-// PRESENTATIONS AND TEACHING ARE PROBABLY GOOD ONCE DATA MODEL IS FIT IN
 
             <presentations header="Invited Talks" presentationlist="pres.invited"></presentations>
             <presentations header="Conference Presentations" :presentationlist="pres.conferences"></presentations>
@@ -194,7 +68,7 @@
             <teaching header="Lead Instructor" :classlist="courses.lead"></teaching>
             <teaching header="Teaching Assistant" :classlist="courses.ta"></teaching>
 
-            <generictable :ismajor="true" header="Legal Practice" :itemslist="misc.practice">
+            <generictable :ismajor="true" header="Legal Practice" :itemslist="misc.practice"></generictable>
 
 
 
@@ -275,10 +149,11 @@
  import presentations from "./presentations.vue/";
  import teaching from "./teaching.vue";
  import generictable from "./generictable.vue";
+ import publications from "./publications.vue";
 
  module.exports = {
-     props: ["pubs", "pres", "courses"],
-     components: {presentations, teaching, generictable}
+     props: ["pubs", "pres", "courses", "misc", "basics"],
+     components: {presentations, teaching, generictable, publications}
  }
 
 </script>
