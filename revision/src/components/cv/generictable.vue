@@ -12,13 +12,13 @@
         <col style="width:7%">
         <thead>
             <tr>
-                <th v-for="heading in titleCase(headingslist)">
+                <th v-for="heading in titleCase(headings)">
                     {{ heading }} </th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="item in itemslist">
-                <td v-for="heading in headingslist">
+                <td v-for="heading in headings">
                     {{ item[heading] }}
                 </td>
 
@@ -33,7 +33,8 @@
 <script>
 
  module.exports = {
-     props: ["header", "headingslist", "itemslist", "ismajor"],
+     props: ["header", "itemslist", "ismajor"],
+     computed: {headings: function () {return this.itemslist[0].keys()}},
      methods: {titleCase: arr => arr.map(s=>s.slice(0,1).toUpperCase() + s.slice(1))}
  }
 </script>

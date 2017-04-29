@@ -194,23 +194,8 @@
             <teaching header="Lead Instructor" :classlist="courses.lead"></teaching>
             <teaching header="Teaching Assistant" :classlist="courses.ta"></teaching>
 
+            <generictable :ismajor="true" header="Legal Practice" :itemslist="misc.practice">
 
-            <h3 id="law">Legal Practice</h3>
-            <table class="u-full-width">
-                <col style="width:40%">
-                <col style="width:50%">
-                <col style="width:7%">
-                <thead><tr><th>Employer</th><th>Role</th><th>Years</th></tr></thead><tbody>
-                    {% for job in practice %}
-                    <tr><td>
-                        {{job.employer}}
-                    </td><td>
-                        {{job.role}}
-                    </td><td>
-                        {{job.years}}
-                    </td></tr>
-                    {% endfor %}
-                </tbody></table>
 
 
             <h3 id="service">Service</h3>
