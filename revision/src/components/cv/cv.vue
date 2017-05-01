@@ -65,7 +65,8 @@ Need to redo data to have the field names right, conform as much as possible to 
 
             <h3 id="teach">Teaching</h3>
             <teaching header="Lead Instructor" :classlist="courses.lead"></teaching>
-            <teaching header="Teaching Assistant" :classlist="courses.ta"></teaching>
+
+<p>Graduate School teaching assistantships ommitted for brevity, but included courses on introductory political philosophy, global justice, the philosophy of race, and corruption.</p>
 
             <generictable :ismajor="true" header="Legal Practice" :itemslist="misc.practice"></generictable>
 
