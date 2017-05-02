@@ -1,10 +1,10 @@
 
 // code and resource imports
 import Vue from "vue";
-import bibtex from "./bibtex.js"
-import Icon from 'vue-awesome'
-import io from "./io.js"
-import VueTyperPlugin from 'vue-typer'
+import bibtex from "./bibtex.js";
+import Icon from 'vue-awesome';
+import io from "./io.js";
+import VueTyperPlugin from 'vue-typer';
 
 // personal data imports 
 
