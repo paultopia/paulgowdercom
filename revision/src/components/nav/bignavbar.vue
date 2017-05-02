@@ -1,0 +1,30 @@
+<template>
+
+                <div class="row">
+                    <p><vue-typer text="Paul Gowder" caret-animation="solid" :type-delay="300" :repeat="0" @typed='onTypedExperiment'></vue-typer>
+                    </p>
+
+
+                   <bigsingle icon="phone" word="bio" toggle="bio" v-on:focuspage="focus"></big-nav-item>
+
+                   <bigdouble bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs" v-on:focuspage="focus"></double-big-nav-item>
+
+            </div>
+
+
+</template>
+
+<script>
+
+import VueTyperPlugin from 'vue-typer';
+
+
+import bigsingle from "./bigsinglenav.vue";
+import bigdouble from "./bigdoublenav.vue";
+module.exports = {
+     components: {bigsingle, bigdouble, vue-typer}
+}
+
+// this is also an experiment, it might not let me use methods from the global vue instance in here... might have to have them as mixins or something.
+
+</script>

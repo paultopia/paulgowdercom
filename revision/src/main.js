@@ -56,55 +56,7 @@ function chronThenTypeThenTitle(a, b){
 }
 
 
-// vue component mixins
 
-var navMixin = {
-    methods: {
-        focusme: function(){this.$emit('focuspage', this.toggle)}
-    }
-};
-
-var singleNavMixin = {
-    props: ["icon", "word", "toggle"]
-};
-
-var doubleNavMixin = {
-    props: ["bottomicon", "topicon", "word", "toggle"]
-};
-
-// nav components
-
-Vue.component("big-nav-item", {
-    mixins: [navMixin, singleNavMixin],
-    template: `<div class="three columns" v-on:click="focusme">
-<icon :name="icon" scale=6></icon>
-<p class="big-nav-label">{{ word }}</p></div>`
-});
-
-
-Vue.component("double-big-nav-item", {
-    mixins: [navMixin, doubleNavMixin],
-    template: `<div class="three columns" v-on:click="focusme"><icon>
-<icon :name="bottomicon" scale=6></icon>
-<icon :name="topicon" scale=6 class="topiconcolor"></icon></icon>
-<p class="big-nav-label">{{ word }}</p></div>`
-});
-
-
-Vue.component("little-nav-item", {
-    mixins: [navMixin, singleNavMixin],
-    template: `<div class="two columns" v-on:click="focusme">
-<icon :name="icon" scale=2></icon>
-<p class="little-nav-label">{{ word }}</p></div>`
-});
-
-Vue.component("double-little-nav-item", {
-    mixins: [navMixin, doubleNavMixin],
-    template: `<div class="two columns" v-on:click="focusme"><icon>
-<icon :name="bottomicon" scale=2></icon>
-<icon :name="topicon" scale=2 class="topiconcolor"></icon></icon>
-<p class="little-nav-label">{{ word }}</p></div>`
-});
 
 function loader(){
     var app = new Vue({
