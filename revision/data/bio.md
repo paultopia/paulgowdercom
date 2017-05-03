@@ -12,3 +12,15 @@ I approach all these questions with an eclectic toolbox including normative and 
 In the classroom, I usually find myself teaching Constitutional Law (I and II), Torts soon, and in the past and possible future the Policy Lab, Professional Responsibility (legal ethics). Back in grad school, I participated in teaching a number of topical courses in contemporary political theory in various ways. One day, I intend to find an excuse to teach Classical Athenian Law, Jurisprudence, and/or Quantitative and Computational methods for lawyers, and a hybrid political theory/social scientific methods seminar, all of which I've been scheming up for years.
 
 Past affiliations include the Institute for Advanced Study (Member, School of Social Science, 2014-5), and, long, long ago, the Cal State LA [Early Entrance Program](http://www.calstatela.edu/academic/eep). Toward the end of summer 2017, I'll be a member of a batch at the Recurse Center.
+
+TO ADD
+
+tenure stuff
+
+links (maybe exclusively here instead of on some links page?)
+
+informatics and obermann
+
+recurse center and key sw projects
+
+key media appearances and publications and such?
