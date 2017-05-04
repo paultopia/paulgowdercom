@@ -1,8 +1,8 @@
 <template>
             <div class="row">
-                <littlesingle icon="home" word="home" toggle="navboxFullsize" v-on:focuspage="focus"></little-nav-item>
-                <littlesingle icon="phone" word="bio" toggle="bio" v-on:focuspage="focus"></little-nav-item>
-                <littledouble bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs" v-on:focuspage="focus"></double-little-nav-item>
+                <littlesingle icon="home" word="home" toggle="navboxFullsize" v-on:focuspage="focus"></littlesingle>
+                <littlesingle icon="phone" word="bio" toggle="bio" v-on:focuspage="focus"></littlesingle>
+                <littledouble bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs" v-on:focuspage="focus"></littledouble>
 
             </div>
 
