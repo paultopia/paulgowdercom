@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="container" id="app">
-            <img :src="headshotURL" v-on:click="clog(currentView)">
+            <img :src="headshotURL" v-on:click="logState()">
         <div id="navbox">
             <component :is="currentView"></component>
 

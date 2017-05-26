@@ -1,16 +1,21 @@
 
 // code and resource imports
 import Vue from "vue";
+import Vuex from 'vuex';
+Vue.use(Vuex);
 import bibtex from "./bibtex.js";
 import Icon from 'vue-awesome';
 import io from "./io.js";
 import VueTyperPlugin from 'vue-typer';
 
-// personal data imports 
+// personal data imports
 
-import bio from '../data/bio.md';
-import pubs from '../data/publications.json';
-import olddata from '../data/data.json';
+import bio from '../data/bio.md'; // dumps directly to markdown.  KEEP THIS ONE.
+import pubs from '../data/publications.json';  // to remove 
+import olddata from '../data/data.json';  // to remove
+
+// get the store in...
+import store from "./state.js";
 
 // activating external components (need consistent syntax for this, one is in the main vue object too, the markdown one...)
 Vue.use(VueTyperPlugin);
@@ -63,6 +68,7 @@ function chronThenTypeThenTitle(a, b){
 function loader(){
     var app = new Vue({
         el: '#app',
+        store,
         components: {bio, articlerow, bignav, cvwrapper},
         data: {publications: pubs,
                headshotURL: headshotURL,
@@ -83,7 +89,8 @@ function loader(){
             focus: function(k){
                 for (let i in this.toggles) this.toggles[i] = false;
                 this.toggles[k] = true;},
-            clog: x => console.log(x)
+            clog: x => console.log(x),
+            logState: function(){store.getters.logState}
         }
     });
 };
