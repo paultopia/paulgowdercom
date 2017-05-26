@@ -14,11 +14,11 @@
     <div class="row">
         <div class="twelve columns">
 
-            <generictable :ismajor="true" header="Academic Positions" :itemslist="basic.positions"></generictable>
+            <generictable :ismajor="true" header="Academic Positions" :itemslist="basics.positions"></generictable>
 
 <!-- this might be worth hard-coding, since it obv changes rarely and requires special formatting for things like promotion, courtesy appointments, etc. -->
 
-            <generictable :ismajor="true" header="Education" :itemslist="basic.education"></generictable>
+            <generictable :ismajor="true" header="Education" :itemslist="basics.education"></generictable>
 
 <!-- pubs are too annoyingly messy to separate out into individual components for now.  Maybe later. -->
 

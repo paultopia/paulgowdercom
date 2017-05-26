@@ -44,7 +44,7 @@ import headshotURL from '../images/headshot.jpg';
 
 import articlerow from './components/articlerow.vue';
 import bignav from './components/nav/bignavbar.vue';
-import cv from './components/cv/cv.vue';
+import cvwrapper from './components/cv/cvwrapper.vue';
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
@@ -63,11 +63,11 @@ function chronThenTypeThenTitle(a, b){
 function loader(){
     var app = new Vue({
         el: '#app',
-        components: {bio, articlerow, bignav, cv},
+        components: {bio, articlerow, bignav, cvwrapper},
         data: {publications: pubs,
                headshotURL: headshotURL,
                articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),
-               currentView: 'bignav',
+               currentView: 'cvwrapper',
                toggles: {
                    navboxFullsize: true,
                    pubs: false,
