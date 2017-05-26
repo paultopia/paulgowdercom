@@ -21,8 +21,8 @@ import VueTyperPlugin from 'vue-typer';
 
 import bigsingle from "./bigsinglenav.vue";
 import bigdouble from "./bigdoublenav.vue";
-module.exports = {
-     components: {bigsingle, bigdouble, vue-typer}
+export default {
+     components: {bigsingle, bigdouble, VueTyperPlugin}
 }
 
 // this is also an experiment, it might not let me use methods from the global vue instance in here... might have to have them as mixins or something.

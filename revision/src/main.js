@@ -41,6 +41,7 @@ import headshotURL from '../images/headshot.jpg';
 // my external components (declared in global vue object below)
 
 import articlerow from './components/articlerow.vue';
+import bignav from './components/nav/bignavbar.vue';
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
@@ -61,7 +62,7 @@ function chronThenTypeThenTitle(a, b){
 function loader(){
     var app = new Vue({
         el: '#app',
-        components: {bio, articlerow},
+        components: {bio, articlerow, bignav},
         data: {publications: pubs,
                headshotURL: headshotURL,
                articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),

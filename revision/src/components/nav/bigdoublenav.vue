@@ -13,7 +13,7 @@
 
 import mixins from "../../mixins.js";
 
-module.exports = {
+export default {
 mixins: [mixins.nav, mixins.doubleNav]
 };
 
