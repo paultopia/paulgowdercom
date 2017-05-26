@@ -67,7 +67,7 @@ function loader(){
         data: {publications: pubs,
                headshotURL: headshotURL,
                articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),
-               currentView: 'cvwrapper',
+               currentView: 'bignav',
                toggles: {
                    navboxFullsize: true,
                    pubs: false,

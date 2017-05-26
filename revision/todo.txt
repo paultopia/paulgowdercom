@@ -1,0 +1,3 @@
+1.  Fix cv component: right now a bunch of data doesn't show up, but no errors---so I think I'm just getting the data shape wrong after all the changes to underlying files.
+
+2.  Fix nav: figure out how to call methods on global vue instance from component.  Maybe I can mutate directly per https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch via 
