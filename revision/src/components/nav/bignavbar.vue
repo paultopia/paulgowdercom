@@ -5,9 +5,9 @@
                     </p>
 
 
-                   <bigsingle icon="phone" word="bio" toggle="bio" v-on:focuspage="focus"></bigsingle>
+                   <bigsingle icon="phone" word="bio" toggle="bio"></bigsingle>
 
-                   <bigdouble bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs" v-on:focuspage="focus"></bigdouble>
+                   <bigdouble bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs"></bigdouble>
 
             </div>
 

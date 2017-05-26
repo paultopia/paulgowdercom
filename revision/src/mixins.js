@@ -1,6 +1,6 @@
 var nav = {
     methods: {
-        focusme: function(){this.$emit('focuspage', this.toggle)}
+        navto: function(){this.$store.commit('navigate', this.toggle)}
     }
 };
 
@@ -12,4 +12,4 @@ var doubleNav = {
     props: ["bottomicon", "topicon", "word", "toggle"]
 };
 
-module.exports = {doubleNav, singleNav, nav} // let's see if the es6 object shorthand works here
+export default {doubleNav, singleNav, nav} 

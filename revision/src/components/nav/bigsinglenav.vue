@@ -1,5 +1,5 @@
 <template>
-<div class="three columns" v-on:click="focusme">
+<div class="three columns" v-on:click="navto">
 <icon :name="icon" scale=6></icon>
 <p class="big-nav-label">{{ word }}</p>
 </div>

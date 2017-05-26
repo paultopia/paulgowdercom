@@ -1,5 +1,5 @@
 <template>
-<div class="three columns" v-on:click="focusme">
+<div class="three columns" v-on:click="navto">
 <icon>
 <icon :name="bottomicon" scale=6></icon>
 <icon :name="topicon" scale=6 class="topiconcolor"></icon>

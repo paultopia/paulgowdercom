@@ -48,7 +48,7 @@ import headshotURL from '../images/headshot.jpg';
 // my external components (declared in global vue object below)
 
 import articlerow from './components/articlerow.vue';
-import bignav from './components/nav/bignavbar.vue';
+import navigation from './components/nav/bignavbar.vue';
 import cvwrapper from './components/cv/cvwrapper.vue';
 
 function isArticle(pub){
@@ -69,11 +69,10 @@ function loader(){
     var app = new Vue({
         el: '#app',
         store,
-        components: {bio, articlerow, bignav, cvwrapper},
+        components: {bio, articlerow, navigation, cvwrapper},
         data: {publications: pubs,
                headshotURL: headshotURL,
                articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),
-               currentView: 'bignav',
                toggles: {
                    navboxFullsize: true,
                    pubs: false,
@@ -81,7 +80,8 @@ function loader(){
                }
               }, 
         computed: {
-            bturl: function () {return io.downloadURL(bibtex.string(this.publications));}
+            bturl: function () {return io.downloadURL(bibtex.string(this.publications));},
+            currentView: function(){return store.state.currentView;}
         },
         methods: {
             toggle: function(bool){

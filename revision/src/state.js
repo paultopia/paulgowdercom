@@ -16,7 +16,7 @@ import svc from '../data/service.json';
 
 // load up the state object
 
-var currentView = "bignav"
+var currentView = "navigation"
 
 var state = {currentView,
              pubs,
