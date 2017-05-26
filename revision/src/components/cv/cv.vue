@@ -1,7 +1,7 @@
 
 
 <template>
-
+<div>
 <div class="row">
 
 
@@ -60,24 +60,23 @@
         </div>
     </div>
     <hr />
-    <p style="float: left;"><a :href="{{ basics.url }}"><b>&lt;&lt;---</b></a></p> <p style="float: right;">Last Revised {{ basics.revdate }} </p>
+    <p style="float: left;"><a :href="basics.url"><b>&lt;&lt;---</b></a></p> <p style="float: right;">Last Revised {{ basics.revdate }} </p>
+
+</div>
 
 </template>
 
 <script>
 
-import Icon from 'vue-awesome';
-import 'vue-awesome/icons/file-pdf-o';
-import 'vue-awesome/icons/envelope-o';
-Vue.component('icon', Icon);
-
-import presentations from "./presentations.vue/";
+import presentations from "./presentations.vue";
 import teaching from "./teaching.vue";
 import generictable from "./generictable.vue";
 import publications from "./publications.vue";
 import service from "./service.vue";
+import icon from 'vue-awesome';
 
-module.exports = {
+
+export default {
      props: ["pubs", "pres", "courses", "misc", "basics", "svc"],
      components: {presentations, teaching, generictable, publications, service, icon}
 }

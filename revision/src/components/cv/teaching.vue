@@ -1,5 +1,5 @@
 <template>
-
+<div>
     <h5> {{ heading }} </h5>
     <table class="u-full-width">
         <col style="width:40%">
@@ -13,18 +13,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="class in classlist">
-            <td>{{ class.title }}</td>
-            <td>{{ class.school }}</td>
-            <td>{{ class.terms }}</td>
+            <tr v-for="cl in classlist">
+            <td>{{ cl.title }}</td>
+            <td>{{ cl.school }}</td>
+            <td>{{ cl.terms }}</td>
             </tr>
         </tbody></table>
+</div>
 </template>
  
 
 <script>
 
- module.exports = {
+ export default {
      props: ["header", "classlist"]
  }
 </script>

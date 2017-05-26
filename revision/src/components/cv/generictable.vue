@@ -1,5 +1,7 @@
 <template>
 
+<div>
+
 <!-- This is only suitable for when the header is just a capitalized version of the items.  headingslist will be lowercase and I'll just uppercase the first word in a method. -->
 
     <h3 v-if="ismajor"> {{ header }} </h3>
@@ -27,12 +29,12 @@
         </tbody></table>
 
 <!-- I can swap existing subcomponents for this maybe? -->
-
+</div>
 </template>
 
 <script>
 
- module.exports = {
+ export default {
      props: ["header", "itemslist", "ismajor"],
      computed: {headings: function () {return this.itemslist[0].keys()}},
      methods: {titleCase: arr => arr.map(s=>s.slice(0,1).toUpperCase() + s.slice(1))}

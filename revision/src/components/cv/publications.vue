@@ -1,5 +1,5 @@
 <template>
-
+<div>
 
 
             <h5>Books</h5>
@@ -152,16 +152,11 @@
                     
                 </tbody></table>
 
-
+</div>
 
 </template>
 
 <script>
-
- import presentations from "./presentations.vue/";
- import teaching from "./teaching.vue";
- import generictable from "./generictable.vue";
- import publications from "./publications.vue";
 
 function chronThenTitle(a, b){
     if(parseInt(a.year) != parseInt(b.year)) return parseInt(b.year) - parseInt(a.year);
@@ -170,7 +165,7 @@ function chronThenTitle(a, b){
 }
 
 
- module.exports = {
+export default {
      props: ["pubs"],
      computed: {sortedPubs: function(){return this.pubs.sort(chronThenTitle);},
      methods: {makeCitation: function(art){

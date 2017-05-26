@@ -1,4 +1,5 @@
 <template>
+<div>
 
     <h5> {{ header }} </h5>
     <table class="u-full-width">
@@ -23,11 +24,12 @@
             </tr>
         </tbody></table>
 
+</div>
 </template>
 
 <script>
 
- module.exports = {
+export default {
      props: ["header", "presentationlist"]
      }
 </script>

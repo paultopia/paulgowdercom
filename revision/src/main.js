@@ -26,6 +26,8 @@ import 'vue-awesome/icons/external-link-square';
 import 'vue-awesome/icons/external-link-square';
 import 'vue-awesome/icons/download';
 import 'vue-awesome/icons/times';
+import 'vue-awesome/icons/file-pdf-o';
+import 'vue-awesome/icons/envelope-o';
 
 // css imports
 
@@ -42,6 +44,7 @@ import headshotURL from '../images/headshot.jpg';
 
 import articlerow from './components/articlerow.vue';
 import bignav from './components/nav/bignavbar.vue';
+import cv from './components/cv/cv.vue';
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
@@ -57,12 +60,10 @@ function chronThenTypeThenTitle(a, b){
 }
 
 
-
-
 function loader(){
     var app = new Vue({
         el: '#app',
-        components: {bio, articlerow, bignav},
+        components: {bio, articlerow, bignav, cv},
         data: {publications: pubs,
                headshotURL: headshotURL,
                articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),
@@ -72,7 +73,7 @@ function loader(){
                    pubs: false,
                    bio: false
                }
-              },
+              }, 
         computed: {
             bturl: function () {return io.downloadURL(bibtex.string(this.publications));}
         },
