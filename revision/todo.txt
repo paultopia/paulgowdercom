@@ -1,3 +1,13 @@
 1.  Fix cv component: right now a bunch of data doesn't show up, but no errors---so I think I'm just getting the data shape wrong after all the changes to underlying files.
 
-2.  Fix nav: figure out how to call methods on global vue instance from component.  Maybe I can mutate directly per https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch via 
+1.5. Move photo into nav/home component.
+
+2.  Fix pubs: it doesn't have its own component file yet, it's sitting around in obsolete land.
+
+3.  Get rid of old garbage code, there's huge amounts of it from pre-refactor-into-components.
+
+4.  Finish navigation and building out components for other pages.
+
+5.  Get content for media and such, and generally finalize page choice.
+
+6.  Style it.

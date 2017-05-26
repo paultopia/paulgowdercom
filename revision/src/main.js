@@ -10,7 +10,7 @@ import VueTyperPlugin from 'vue-typer';
 
 // personal data imports
 
-import bio from '../data/bio.md'; // dumps directly to markdown.  KEEP THIS ONE.
+
 import pubs from '../data/publications.json';  // to remove 
 import olddata from '../data/data.json';  // to remove
 
@@ -50,6 +50,7 @@ import headshotURL from '../images/headshot.jpg';
 import articlerow from './components/articlerow.vue';
 import navigation from './components/nav/bignavbar.vue';
 import cvwrapper from './components/cv/cvwrapper.vue';
+import bio from "./components/bio.vue";
 
 function isArticle(pub){
     return pub.type === "peer review" || pub.type === "law review";
