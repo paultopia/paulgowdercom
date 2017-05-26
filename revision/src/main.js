@@ -66,6 +66,7 @@ function loader(){
         data: {publications: pubs,
                headshotURL: headshotURL,
                articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),
+               currentView: 'bignav',
                toggles: {
                    navboxFullsize: true,
                    pubs: false,
@@ -81,7 +82,7 @@ function loader(){
             focus: function(k){
                 for (let i in this.toggles) this.toggles[i] = false;
                 this.toggles[k] = true;},
-            onTypedExperiment: function(typedstring){console.log(typedstring)} // this is an experiment, see https://github.com/cngu/vue-typer for how to receive events in global vue and line 323-4 of https://github.com/cngu/vue-typer/blob/master/src/vue-typer/components/VueTyper.vue for an example of how to emit the word "typed" which gets picked up in <vue-typer text="Paul Gowder" @typed='onTypedExperiment'>
+            clog: x => console.log(x)
         }
     });
 };

@@ -11,9 +11,9 @@
     </head>
     <body>
         <div class="container" id="app">
-            <img :src="headshotURL" >
+            <img :src="headshotURL" v-on:click="clog(currentView)">
         <div id="navbox">
-            <bignav></bignav>
+            <component :is="currentView"></component>
 
 
             </div>

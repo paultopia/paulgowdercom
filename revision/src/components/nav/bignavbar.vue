@@ -1,7 +1,7 @@
 <template>
 
                 <div class="row">
-                    <p><vue-typer text="Paul Gowder" caret-animation="solid" :type-delay="300" :repeat="0" @typed='onTypedExperiment'></vue-typer>
+                    <p><vue-typer text="Paul Gowder" caret-animation="solid" :type-delay="300" :repeat="0"></vue-typer>
                     </p>
 
 
