@@ -77,7 +77,7 @@ import icon from 'vue-awesome';
 
 
 export default {
-     props: ["pubs", "pres", "courses", "misc", "basics", "svc"],
+     props: ["pubs", "pres", "courses", "misc", "basics", "svc", "awards"],
      components: {presentations, teaching, generictable, publications, service, icon}
 }
 

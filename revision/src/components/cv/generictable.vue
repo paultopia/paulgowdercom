@@ -36,7 +36,7 @@
 
  export default {
      props: ["header", "itemslist", "ismajor"],
-     computed: {headings: function () {return this.itemslist[0].keys()}},
+     computed: {headings: function () {return Object.keys(this.itemslist[0])}},
      methods: {titleCase: arr => arr.map(s=>s.slice(0,1).toUpperCase() + s.slice(1))}
  }
 </script>

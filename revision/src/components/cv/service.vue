@@ -34,6 +34,7 @@
 import generictable from "./generictable.vue";
 
 export default {
-     props: ["servicelist"]
+     props: ["servicelist"],
+     components: {generictable}
  }
 </script>
