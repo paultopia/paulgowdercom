@@ -3,6 +3,8 @@
                 <littlesingle icon="home" word="home" toggle="navigation"></littlesingle>
                 <littlesingle icon="phone" word="bio" toggle="bio"></littlesingle>
                 <littledouble bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs"></littledouble>
+                <littlesingle icon="list-ul" word="cv" toggle="cv"></littlesingle>
+
 
             </div>
 

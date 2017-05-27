@@ -1,7 +1,8 @@
 <template>
-
+<div>
+<littlenav></littlenav>
 <cv :pubs="pubs" :pres="pres" :courses="courses" :misc="misc" :basics="basics" :svc="svc"> </cv>
-
+</div>
 </template>
 
 <script>
@@ -14,9 +15,10 @@ import courses from '../../../data/courses.json';
 import misc from '../../../data/misc.json';
 import basics from '../../../data/basic.json';
 import svc from '../../../data/service.json';
+import littlenav from '../nav/littlenavbar.vue';
 
 export default {
-components: {cv},
+components: {cv, littlenav},
 data: function(){return {pubs, pres, courses, misc, basics, svc};}
 }
 

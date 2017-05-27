@@ -26,6 +26,7 @@ import 'vue-awesome/icons/download';
 import 'vue-awesome/icons/times';
 import 'vue-awesome/icons/file-pdf-o';
 import 'vue-awesome/icons/envelope-o';
+import 'vue-awesome/icons/list-ul';
 
 // css imports
 
@@ -47,6 +48,7 @@ function loader(){
     var app = new Vue({
         el: '#app',
         store,
+        data: {notloaded: false}, // the point of this is to have placeholder text that goes away on load.
         components: {bio, navigation, cv, pubs},
         computed: {
             currentView: function(){return store.state.currentView;}

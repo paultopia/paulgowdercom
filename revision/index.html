@@ -11,9 +11,12 @@
     </head>
     <body>
         <div class="container" id="app">
-           
-        <div id="view">
-            <component :is="currentView"></component>
+            <p v-if="notloaded">Loading... if you have JavaScript turned on, the page should appear soon!</p>
+
+            <div id="view">
+                <keep-alive>
+                    <component :is="currentView"></component>
+                </keep-alive>
 
 
             </div>

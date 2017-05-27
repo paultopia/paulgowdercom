@@ -4,10 +4,10 @@
                     <p><vue-typer text="Paul Gowder" caret-animation="solid" :type-delay="300" :repeat="0"></vue-typer>
                     </p>
 
-
                    <bigsingle icon="phone" word="bio" toggle="bio"></bigsingle>
 
                    <bigdouble bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs"></bigdouble>
+                   <bigsingle icon="list-ul" word="cv" toggle="cv"></bigsingle>
 
             </div>
 
