@@ -12,6 +12,7 @@ import courses from '../data/courses.json';
 import misc from '../data/misc.json';
 import basics from '../data/basic.json';
 import svc from '../data/service.json';
+import headshotURL from '../images/headshot.jpg';
 
 
 // load up the state object
@@ -24,7 +25,8 @@ var state = {currentView,
              courses,
              misc,
              basics,
-             svc};
+             svc,
+             headshotURL};
 
 var mutations = {navigate (state, view) {state.currentView = view;}};
 

@@ -1,6 +1,7 @@
 <template>
 <div>
 <littlenav></littlenav>
+ <p><img :src="headshot"></p>
 <bio></bio>
 </div>
 </template>
@@ -10,7 +11,8 @@ import bio from '../../data/bio.md'; // dumps directly to markdown component fro
 import littlenav from './nav/littlenavbar.vue';
 
 export default {
-     components: {bio, littlenav}
+     components: {bio, littlenav},
+     computed: {headshot: function () {return this.$store.state.headshotURL;}}
 }
 
 </script>

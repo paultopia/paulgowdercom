@@ -41,9 +41,6 @@ import '../css/skeleton.css';
 import '../css/hint.min.css';
 import '../css/custom.css';
 
-// image imports
-
-import headshotURL from '../images/headshot.jpg';
 
 // my external components (declared in global vue object below)
 
@@ -72,7 +69,6 @@ function loader(){
         store,
         components: {bio, articlerow, navigation, cvwrapper},
         data: {publications: pubs,
-               headshotURL: headshotURL,
                articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),
                toggles: {
                    navboxFullsize: true,
