@@ -28,7 +28,7 @@
 
             <h3 id="pres">Presentations</h3>
 
-            <presentations header="Invited Talks" presentationlist="pres.invited"></presentations>
+            <presentations header="Invited Talks" :presentationlist="pres.invited"></presentations>
             <presentations header="Conference Presentations" :presentationlist="pres.conferences"></presentations>
             <presentations header="Campus Talks" :presentationlist="pres.campus"></presentations>
 

@@ -1,7 +1,6 @@
 <template>
 <div>
 
-
             <h5>Books</h5>
             <table class="u-full-width">
                 <col style="width:35%">
@@ -135,7 +134,6 @@
                     
                     <tr v-for="misc in sortedPubs" v-if="misc.type === 'misc'">              
                     
-                    <tr>
                     <td>
                         {{ misc.title }}
                         
@@ -168,11 +166,13 @@ function chronThenTitle(a, b){
 export default {
      props: ["pubs"],
      computed: {sortedPubs: function(){return this.pubs.sort(chronThenTitle);},
+     displayPubs: function(){return JSON.stringify(this.pubs);}
+     },
      methods: {makeCitation: function(art){
      var iss = art.issue ? "(" + art.issue + ")" : "";
      return art.volume + art.issue + ":" + art.firstpage + "-" + art.lastpage;}
       }
     }
- }
+ 
 
 </script>

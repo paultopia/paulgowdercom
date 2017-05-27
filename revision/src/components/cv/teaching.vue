@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h5> {{ heading }} </h5>
+    <h5> {{ header }} </h5>
     <table class="u-full-width">
         <col style="width:40%">
         <col style="width:50%">
