@@ -12,18 +12,13 @@
     <body>
         <div class="container" id="app">
            
-        <div id="navbox">
+        <div id="view">
             <component :is="currentView"></component>
 
 
             </div>
 
-                <p><bio v-if="toggles.bio"></bio></p>
-
-        <div id="pubtitles"  v-if="toggles.pubs">
  
-        </div>
-
 
         </div>
         <script src="/dist/build.js"></script>

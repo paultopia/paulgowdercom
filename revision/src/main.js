@@ -6,9 +6,6 @@ Vue.use(Vuex);
 import Icon from 'vue-awesome';
 import VueTyperPlugin from 'vue-typer';
 
-// personal data imports
-
-import olddata from '../data/data.json';  // to remove
 
 // get the store in...
 import store from "./state.js";
@@ -41,7 +38,7 @@ import '../css/custom.css';
 // my external components (declared in global vue object below)
 
 import navigation from './components/nav/bignavbar.vue';
-import cvwrapper from './components/cv/cvwrapper.vue';
+import cv from './components/cv/cvwrapper.vue';
 import bio from "./components/bio.vue";
 import pubs from './components/pubs/publications.vue';  // to remove 
 
@@ -50,19 +47,12 @@ function loader(){
     var app = new Vue({
         el: '#app',
         store,
-        components: {bio, navigation, cvwrapper, pubs},
-        data: {
-               toggles: {
-                   navboxFullsize: true,
-                   pubs: false,
-                   bio: false
-               }
-              }, 
+        components: {bio, navigation, cv, pubs},
         computed: {
             currentView: function(){return store.state.currentView;}
         },
         methods: {
-            clog: x => console.log(x)
+            clog: x => console.log(x) // for debugging
         }
     });
 };
