@@ -20,39 +20,8 @@
 
                 <p><bio v-if="toggles.bio"></bio></p>
 
-            <!-- <p><button v-on:click="toggle('pubs')">toggle pubs</button></p>
-               -->
-        <div id="pubtitles" style="margin-top:5%;" v-if="toggles.pubs">
-        <h3>Books</h3>
-            <ol>
-                <li v-for="book in publications" v-if="book.type === 'book'">
-                    {{ book.title }}
-                </li></ol>
-
-            <h3>Articles</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Citation</th>
-                        <th>Year</th>
-                        <th>options</th>
-                    </tr>
-                </thead>
-                    <tbody>
-
-                        <tr is="articlerow" v-for="art in articles" v-bind:art="art" v-bind:key="art.title"></tr>
-
-
-                    </tbody></table>
-
-                        </tr>
-
-                    
-                    <p>
-                        <a :href="bturl" download="gowder.bib">download bibtex</a>
-                    </p>
-
+        <div id="pubtitles"  v-if="toggles.pubs">
+ 
         </div>
 
 

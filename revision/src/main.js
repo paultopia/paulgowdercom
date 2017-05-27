@@ -3,15 +3,11 @@
 import Vue from "vue";
 import Vuex from 'vuex';
 Vue.use(Vuex);
-import bibtex from "./bibtex.js";
 import Icon from 'vue-awesome';
-import io from "./io.js";
 import VueTyperPlugin from 'vue-typer';
 
 // personal data imports
 
-
-import pubs from '../data/publications.json';  // to remove 
 import olddata from '../data/data.json';  // to remove
 
 // get the store in...
@@ -44,32 +40,18 @@ import '../css/custom.css';
 
 // my external components (declared in global vue object below)
 
-import articlerow from './components/articlerow.vue';
 import navigation from './components/nav/bignavbar.vue';
 import cvwrapper from './components/cv/cvwrapper.vue';
 import bio from "./components/bio.vue";
-
-function isArticle(pub){
-    return pub.type === "peer review" || pub.type === "law review";
-}
-
-function chronThenTypeThenTitle(a, b){
-    if(parseInt(a.year) > parseInt(b.year)) return -1;
-    if(parseInt(a.year) < parseInt(b.year)) return 1;
-    if(a.type > b.type) return -1;
-    if(a.type < b.type) return 1;
-    if(a.title < b.title) return -1;
-    return 1;
-}
+import pubs from './components/pubs/publications.vue';  // to remove 
 
 
 function loader(){
     var app = new Vue({
         el: '#app',
         store,
-        components: {bio, articlerow, navigation, cvwrapper},
-        data: {publications: pubs,
-               articles: pubs.filter(isArticle).sort(chronThenTypeThenTitle),
+        components: {bio, navigation, cvwrapper, pubs},
+        data: {
                toggles: {
                    navboxFullsize: true,
                    pubs: false,
@@ -77,17 +59,10 @@ function loader(){
                }
               }, 
         computed: {
-            bturl: function () {return io.downloadURL(bibtex.string(this.publications));},
             currentView: function(){return store.state.currentView;}
         },
         methods: {
-            toggle: function(bool){
-                this.toggles[bool] = this.toggles[bool] ? false : true;}, // pass bool as single-quoted string
-            focus: function(k){
-                for (let i in this.toggles) this.toggles[i] = false;
-                this.toggles[k] = true;},
-            clog: x => console.log(x),
-            logState: function(){store.getters.logState}
+            clog: x => console.log(x)
         }
     });
 };
