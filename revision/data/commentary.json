@@ -1,0 +1,261 @@
+{
+	"orderedcategories": [
+		"Rule of Law/Constitutionalism",
+		"Political Virtue",
+		"Legal Commentary",
+		"Math and Code",
+		"Other"
+	],
+
+	"articles": [{
+			"title": "The Trump Threat to the Rule of Law and the Constitution",
+			"url": "https://niskanencenter.org/blog/trump-threat-rule-law-constitution/",
+			"category": "Rule of Law/Constitutionalism",
+			"month": "02",
+			"year": "2017",
+			"publisher": "Niskanen Center"
+		},
+		{
+			"title": "Should we see ourselves as citizens of the world? (Contribution)",
+			"url": "https://aeon.co/users/paul-gowder",
+			"category": "Political Virtue",
+			"month": "04",
+			"year": "2015",
+			"publisher": "Aeon Ideas"
+		},
+		{
+			"title": "Blame government for political gridlock? Try looking closer to home",
+			"url": "http://theconversation.com/blame-government-for-political-gridlock-try-looking-closer-to-home-32854",
+			"category": "Political Virtue",
+			"month": "11",
+			"year": "2014",
+			"publisher": "The Conversation"
+		},
+		{
+			"title": "Is It Wrong to Make the Supreme Court an Election Issue?",
+			"url": "http://www.cambridgeblog.org/2016/03/is-wrong-to-make-the-supreme-court-an-election-issue/",
+			"category": "Rule of Law/Constitutionalism",
+			"month": "03",
+			"year": "2016",
+			"publisher": "Fifteen Eightyfour (Cambridge University Press blog)"
+		},
+		{
+			"title": "Under Trump, Two Contradictory Factions Are Butting Heads",
+			"url": "http://www.huffingtonpost.com/entry/trump-contradictory-factions_us_589cda29e4b04061313c688b",
+			"category": "Rule of Law/Constitutionalism",
+			"month": "02",
+			"year": "2017",
+			"publisher": "Huffington Post/World Post/Berggruen Institute"
+		},
+		{
+			"title": "Independent Judiciary (with Nick Johnson)",
+			"url": "http://thegazette.com/2012/10/27/independent-judiciary/",
+			"category": "Rule of Law/Constitutionalism",
+			"month": "10",
+			"year": "2012",
+			"publisher": "The Gazette"
+		},
+		{
+			"title": "Ted Cruz is Probably a Natural Born Citizen (alas)",
+			"url": "https://medium.com/@PaulGowder/ted-cruz-is-probably-a-natural-born-citizen-alas-fcabb558dfce#.xucmgb803",
+			"category": "Legal Commentary",
+			"month": "01",
+			"year": "2016",
+			"publisher": "Personal blog on Medium.com"
+		},
+		{
+			"title": "In Defense of Facebook Copyright Disclaimer Status Updates (!!!)",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/in-defense-of-facebook-copyright-disclaimer-status-updates-.html",
+			"category": "Legal Commentary",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Is Internet Space 'Property'? (Follow-up to Facebook status update disclaimers piece)",
+			"url": "https://medium.com/@PaulGowder/is-internet-space-property-d9667191bd6b#.3bxtvjlca",
+			"category": "Legal Commentary",
+			"month": "09",
+			"year": "2015",
+			"publisher": "Personal blog on Medium.com"
+		},
+		{
+			"title": "I, for one, welcome our new robot Law Lords.",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2016/02/i-for-one-welcome-our-new-robot-law-lords.html",
+			"category": "Legal Commentary",
+			"month": "02",
+			"year": "2016",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Scope Restrictions vs. Magnitude Restrictions on Congress (don’t fear the broccoli tax!)",
+			"url": "https://concurringopinions.com/archives/2013/09/scope-restrictions-vs-magnitude-restrictions-on-congress-dont-fear-the-broccoli-tax.html",
+			"category": "Legal Commentary",
+			"month": "09",
+			"year": "2013",
+			"publisher": "Concurring Opinions (law blog)"
+		},
+		{
+			"title": "The Problem with Petty, Pedantic, Penny-Ante Policing",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/the-problem-with-petty-pedantic-penny-ante-policing.html",
+			"category": "Legal Commentary",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Policing Part 3: Some Unoriginal Thoughts on Cost-Benefit Analysis",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/policing-part-3-some-unoriginal-thoughts-on-cost-benefit-analysis.html",
+			"category": "Legal Commentary",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Too long, yet not long enough: attempting to defend an originalist equal protection in a blog post.",
+			"url": "https://concurringopinions.com/archives/2013/09/too-long-yet-not-long-enough-attempting-to-defend-an-originalist-equal-protection-in-a-blog-post.html",
+			"category": "Rule of Law/Constitutionalism",
+			"month": "09",
+			"year": "2013",
+			"publisher": "Concurring Opinions (law blog)"
+		},
+		{
+			"title": "Some unanswered questions about private prison quotas",
+			"url": "https://concurringopinions.com/archives/2013/09/some-unanswered-questions-about-private-prison-quotas.html",
+			"category": "Legal Commentary",
+			"month": "09",
+			"year": "2013",
+			"publisher": "Concurring Opinions (law blog)"
+		},
+		{
+			"title": "Suppressed Premises in the Rule of Law Argument for Defending the Guilty?",
+			"url": "https://concurringopinions.com/archives/2013/09/suppressed-premises-in-the-rule-of-law-argument-for-defending-the-guilty.html",
+			"category": "Rule of Law/Constitutionalism",
+			"month": "09",
+			"year": "2013",
+			"publisher": "Concurring Opinions (law blog)"
+		},
+		{
+			"title": "Experimental Game Theory Series #1 of ???",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/experimental-game-theory-series-1-of-.html",
+			"category": "Math and Code",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Game theory post #2 of ????: Basic Concepts",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/game-theory-post-2-of-basic-concepts.html",
+			"category": "Math and Code",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Game theory post 3 of N: some classic (one-shot, strategic form) games",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/game-theory-post-3-of-n-some-classic-one-shot-strategic-form-games.html",
+			"category": "Math and Code",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Game theory post 4 of N: extensive form games, a deep dive",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/game-theory-post-4-of-n-extensive-form-games-a-deep-dive.html",
+			"category": "Math and Code",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Game theory post 5 of N: the joy and madness of repeated games",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/game-theory-post-5-of-n-the-joy-and-madness-of-repeated-games.html",
+			"category": "Math and Code",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+		{
+			"title": "Game theory post 6 of N: the anxiety of rationality",
+			"url": "http://prawfsblawg.blogs.com/prawfsblawg/2015/01/game-theory-post-6-of-n-the-anxiety-of-rationality.html",
+			"category": "Math and Code",
+			"month": "01",
+			"year": "2015",
+			"publisher": "Prawfsblawg (law blog)"
+		},
+
+		{
+			"title": "Why the Gay Marriage Decision is Awesome",
+			"url": "https://medium.com/@PaulGowder/why-the-gay-marriage-decision-is-awesome-c2f089455c46#.ps1h97j7j",
+			"category": "Legal Commentary",
+			"month": "08",
+			"year": "2015",
+			"publisher": "Personal blog on Medium.com"
+		},
+		{
+			"title": "Why Obamacare is Awesome 101",
+			"url": "https://medium.com/@PaulGowder/why-obamacare-is-awesome-101-72388c2f6ee6#.jgx804hrw",
+			"category": "Legal Commentary",
+			"month": "08",
+			"year": "2015",
+			"publisher": "Personal blog on Medium.com"
+		},
+		{
+			"title": "Iowa's members of the Electoral College don't have to vote for Donald Trump",
+			"url": "http://www.thegazette.com/subject/opinion/guest-columnists/iowas-members-of-the-electoral-college-dont-have-to-vote-for-donald-trump-20161211",
+			"category": "Political Virtue",
+			"month": "12",
+			"year": "2016",
+			"publisher": "The Gazette"
+		},
+		{
+			"title": "Letter to a high school journalist about malapportionment, the slave power, and the patriotic duty of the electoral college.",
+			"url": "https://medium.com/@PaulGowder/letter-to-a-high-school-journalist-about-malapportionment-the-slave-power-and-the-patriotic-duty-2530bc91afba#.nbh6xf4ae",
+			"category": "Political Virtue",
+			"month": "11",
+			"year": "2016",
+			"publisher": "Personal blog on Medium.com"
+		},
+		{
+			"title": "Figwheel + Spacemacs (a Clojurescript tooling tutorial)",
+			"url": "https://paultopia.github.io/posts-output/figwheel-emacs/",
+			"category": "Math and Code",
+			"month": "12",
+			"year": "2016",
+			"publisher": "Personal blog on Github"
+		},
+		{
+			"title": "Devcards for Testing Clojurescript Projects: a Beginner Introduction",
+			"url": "https://paultopia.github.io/posts-output/devcards-testing/",
+			"category": "Math and Code",
+			"month": "12",
+			"year": "2016",
+			"publisher": "Personal blog on Github"
+		},
+		{
+			"title": "Deployment for Dummies? (Clojure + Luminus + Mongodb + Digitalocean)",
+			"url": "https://medium.com/@PaulGowder/deployment-for-dummies-clojure-luminus-mongodb-digitalocean-1c72b4e78c0f",
+			"category": "Math and Code",
+			"month": "09",
+			"year": "2016",
+			"publisher": "Personal blog on Medium.com"
+		},
+		{
+			"title": "Rape Culture and the Drunken Boxing Match",
+			"url": "https://medium.com/@PaulGowder/rape-culture-and-the-drunken-boxing-match-1af175129ab5",
+			"category": "Legal Commentary",
+			"month": "06",
+			"year": "2016",
+			"publisher": "Personal blog on Medium.com"
+		},
+		{
+			"title": "SSRN Has Been Captured by the Enemy of Open Knowledge",
+			"url": "https://medium.com/@PaulGowder/ssrn-has-been-captured-by-the-enemy-of-open-knowledge-b3e5bca6751d",
+			"category": "Other",
+			"month": "05",
+			"year": "2016",
+			"publisher": "Personal blog on Medium.com"
+		}
+
+	]
+}

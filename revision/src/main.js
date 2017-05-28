@@ -27,6 +27,7 @@ import 'vue-awesome/icons/times';
 import 'vue-awesome/icons/file-pdf-o';
 import 'vue-awesome/icons/envelope-o';
 import 'vue-awesome/icons/list-ul';
+import 'vue-awesome/icons/pencil';
 
 // css imports
 
@@ -41,7 +42,8 @@ import '../css/custom.css';
 import navigation from './components/nav/bignavbar.vue';
 import cv from './components/cv/cvwrapper.vue';
 import bio from "./components/bio.vue";
-import pubs from './components/pubs/publications.vue';  // to remove 
+import pubs from './components/pubs/publications.vue';
+import writing from './components/writing.vue';
 
 
 function loader(){
@@ -49,7 +51,7 @@ function loader(){
         el: '#app',
         store,
         data: {notloaded: false}, // the point of this is to have placeholder text that goes away on load.
-        components: {bio, navigation, cv, pubs},
+        components: {bio, navigation, cv, pubs, writing},
         computed: {
             currentView: function(){return store.state.currentView;}
         },
