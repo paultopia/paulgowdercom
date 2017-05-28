@@ -24,13 +24,16 @@ function articleBT(pubitem){
 }
 
 function chapterBT(pubitem){
-	return compositor(pubitem, [nameMaker, authorMaker, basicB("title"), 
-		editorMaker, collectionTitleMaker, pagesMaker, basicB("publisher"), 
-		basicB("year")]);
+	return compositor(pubitem, [nameMaker, authorMaker, basicB("title"),
+		                          editorMaker, collectionTitleMaker, pagesMaker,
+                              basicB("address"), basicB("publisher"),
+                              basicB("year")]);
 }
 
 function bookBT(pubitem){
-	return compositor(pubitem, [nameMaker, authorMaker, basicB("title"), basicB("publisher"), basicB("year")]);
+	  return compositor(pubitem, [nameMaker, authorMaker, basicB("title"),
+                                basicB("address"), basicB("publisher"),
+                                basicB("year")]);
 }
 
 function compositor(pubitem, funcs){
