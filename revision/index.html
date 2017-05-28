@@ -14,10 +14,11 @@
             <p v-if="notloaded">Loading... if you have JavaScript turned on, the page should appear soon!</p>
 
             <div id="view">
+                <transition name="fade">
                 <keep-alive>
                     <component :is="currentView"></component>
                 </keep-alive>
-
+                </transition>
 
             </div>
 
