@@ -26,9 +26,9 @@ svg.topiconcolor {
 
 /* animations */
 
-.fade-enter-active, .fade-leave-active {
+.main-view-anim-enter-active, .main-view-anim-leave-active {
     transition: opacity .5s
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.main-view-anim-enter, .main-view-anim-leave-to /* .fade-leave-active in <2.1.8 */ {
     opacity: 0
 }
