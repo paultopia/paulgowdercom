@@ -58,9 +58,7 @@ function loader(){
         },
         methods: {
             clog: x => console.log(x), // for debugging
-            checkViewForTransition: function(){console.log(store.state.currentView);
-                                  console.log(store.state.lastView);
-                                               return (store.state.currentView == "navigation" || store.state.lastView == "navigation") ? "main-view-anim" : "main-view-nonav";}
+            checkViewForTransition: function(){return (store.state.currentView == "navigation" || store.state.lastView == "navigation") ? "main-view-anim" : "main-view-nonav";}
         }
     });
 };

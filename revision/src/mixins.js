@@ -1,6 +1,9 @@
 var nav = {
     methods: {
-        navto: function(){this.$store.commit('navigate', this.toggle)}
+        navto(){this.$store.commit('navigate', this.toggle)}
+    },
+    computed: {
+        isActive(){return this.$store.state.currentView == this.toggle ? "greyedout" : "live";}
     }
 };
 
@@ -9,7 +12,9 @@ var singleNav = {
 };
 
 var doubleNav = {
-    props: ["bottomicon", "topicon", "word", "toggle"]
-};
+    props: ["bottomicon", "topicon", "word", "toggle"],
+    computed: {
+        isTopActive(){return this.$store.state.currentView == this.toggle ? "greyedout" : "topiconcolor";}
+    }};
 
 export default {doubleNav, singleNav, nav} 

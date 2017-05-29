@@ -17,6 +17,20 @@ svg.topiconcolor {
     fill: rgba(229, 81, 229, 0.68);
 }
 
+/* classes to manage greying out little icons */
+
+.live {
+    transition: all 0.3s;
+}
+
+.greyedout {
+    fill: rgba(229, 81, 229, 0.35);
+    color: rgba(229, 81, 229, 0.35);
+    transition: all 0.3s;
+}
+
+/* typer, obvs. */
+
 .vue-typer .custom.caret {
   width: 10px;
   background-color: rgba(229, 81, 229, 0.68);
