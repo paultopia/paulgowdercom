@@ -57,7 +57,10 @@ function loader(){
             currentView: function(){return store.state.currentView;}
         },
         methods: {
-            clog: x => console.log(x) // for debugging
+            clog: x => console.log(x), // for debugging
+            checkView: function(){console.log(store.state.currentView);
+                                  console.log(store.state.lastView);
+                                 return 'main-view-anim'}
         }
     });
 };

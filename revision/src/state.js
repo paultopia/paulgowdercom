@@ -18,10 +18,12 @@ import headshotURL from '../images/headshot.jpg';
 
 // load up the state object
 
-var currentView = "navigation"
+var currentView = "navigation";
+var lastView = null;
 var typerOn = true;
 
 var state = {currentView,
+             lastView,
              typerOn,
              pubs,
              pres,
@@ -32,7 +34,8 @@ var state = {currentView,
              commentary,
              headshotURL};
 
-var mutations = {navigate(state, view){state.currentView = view;},
+var mutations = {navigate(state, view){state.lastView = state.currentView;
+                                       state.currentView = view;},
                  typerOff(){state.typerOn = false;}};
 
 // this one is just for debugging

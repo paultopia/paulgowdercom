@@ -17,7 +17,7 @@
                 <transition name="lilnav" mode="out-in">
                     <littlenav v-if="currentView != 'navigation'"></littlenav>
                 </transition>
-                <transition name="main-view-anim" mode="out-in">
+                <transition v-bind:name="'main-view-anim'" mode="out-in">
                 <keep-alive>
                     <component :is="currentView"></component>
                 </keep-alive>
