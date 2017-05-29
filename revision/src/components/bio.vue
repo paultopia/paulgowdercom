@@ -1,6 +1,5 @@
 <template>
 <div>
-<littlenav></littlenav>
  <p><img :src="headshot"></p>
 <bio></bio>
 </div>

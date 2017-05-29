@@ -14,12 +14,14 @@
             <p v-if="notloaded">Loading... if you have JavaScript turned on, the page should appear soon!</p>
 
             <div id="view">
-                <transition name="main-view-anim">
+                <transition name="lilnav" mode="out-in">
+                    <littlenav v-if="currentView != 'navigation'"></littlenav>
+                </transition>
+                <transition name="main-view-anim" mode="out-in">
                 <keep-alive>
                     <component :is="currentView"></component>
                 </keep-alive>
                 </transition>
-
             </div>
 
  

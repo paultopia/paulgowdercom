@@ -26,9 +26,27 @@ svg.topiconcolor {
 
 /* animations */
 
-.main-view-anim-enter-active, .main-view-anim-leave-active {
-    transition: opacity .5s
+
+.main-view-anim-enter-active {
+    transition: opacity 0.3s;
 }
-.main-view-anim-enter, .main-view-anim-leave-to /* .fade-leave-active in <2.1.8 */ {
-    opacity: 0
+
+.main-view-anim-leave-active {
+    transition: opacity 0.5s, transform 0.2s;
+}
+.main-view-anim-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0;
+    transform: translateX(10%);
+}
+
+.main-view-anim-enter {
+    opacity: 0.5;
+}
+
+.lilnav-enter-active {
+    transition: opacity 0.6s;
+}
+
+.lilnav-enter {
+    opacity: 0;
 }

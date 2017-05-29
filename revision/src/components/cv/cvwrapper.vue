@@ -1,6 +1,5 @@
 <template>
 <div>
-<littlenav></littlenav>
 <cv :pubs="pubs" :pres="pres" :courses="courses" :misc="misc" :basics="basics" :svc="svc" :awards="awards"> </cv>
 </div>
 </template>

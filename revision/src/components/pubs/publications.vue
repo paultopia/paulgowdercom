@@ -1,6 +1,5 @@
 <template>
 <div>
-<littlenav></littlenav>
 <div style="margin-top:5%;">
 
        <h3>Books</h3>

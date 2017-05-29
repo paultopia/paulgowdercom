@@ -2,7 +2,6 @@
 
 <div>
 
-<littlenav></littlenav>
 <div style="margin-top:5%;">
 <h2>Non-Academic Writings</h2>
 

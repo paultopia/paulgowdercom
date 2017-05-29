@@ -40,6 +40,7 @@ import '../css/custom.css';
 // my external components (declared in global vue object below)
 
 import navigation from './components/nav/bignavbar.vue';
+import littlenav from './components/nav/littlenavbar.vue'
 import cv from './components/cv/cvwrapper.vue';
 import bio from "./components/bio.vue";
 import pubs from './components/pubs/publications.vue';
@@ -51,7 +52,7 @@ function loader(){
         el: '#app',
         store,
         data: {notloaded: false}, // the point of this is to have placeholder text that goes away on load.
-        components: {bio, navigation, cv, pubs, writing},
+        components: {bio, navigation, cv, pubs, writing, littlenav},
         computed: {
             currentView: function(){return store.state.currentView;}
         },
