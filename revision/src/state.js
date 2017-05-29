@@ -14,15 +14,18 @@ import basics from '../data/basic.json';
 import svc from '../data/service.json';
 import commentary from '../data/commentary.json';
 import headshotURL from '../images/headshot.jpg';
+import bbabbrv from '../data/bbtables.json';
 
 
 // load up the state object
 
 var currentView = "navigation";
+var citeFormat = "Chicago"
 var lastView = null;
 var typerOn = true;
 
 var state = {currentView,
+             citeFormat,
              lastView,
              typerOn,
              pubs,
@@ -32,10 +35,12 @@ var state = {currentView,
              basics,
              svc,
              commentary,
-             headshotURL};
+             headshotURL,
+             bbabbrv};
 
 var mutations = {navigate(state, view){state.lastView = state.currentView;
                                        state.currentView = view;},
+                 changeCitation(state, newFormat){state.citeFormat = newFormat;},
                  typerOff(){state.typerOn = false;}};
 
 // this one is just for debugging
