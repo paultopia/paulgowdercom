@@ -4,25 +4,48 @@
 
 <p v-if="(art.type == 'peer review' || art.type == 'law review') && citeFormat == 'Chicago'">
 
-<span v-if="art.coauthor">{{chiAuthorMaker(art.coauthor)}}</span><span v-else>Gowder, Paul.</span> "{{art.title}}." <i>{{art.journal}}</i>
-{{art.volume}}<span v-if="art.issue">.{{art.issue}}</span> ({{art.year}}): {{art.firstpage}}-{{art.lastpage}}.
+<span v-if="art.coauthor">{{chimlaAuthorMaker(art.coauthor)}}</span> 
+<span v-else>Gowder, Paul.</span> 
+"{{art.title}}." 
+<i>{{art.journal}}</i> 
+{{art.volume}}<span v-if="art.issue">.{{art.issue}}</span> 
+({{art.year}}): {{art.firstpage}}-{{art.lastpage}}.
 
 </p>
 
 <p v-else-if="(art.type == 'peer review' || art.type == 'law review') && citeFormat == 'Bluebook'">
 
-<span v-if="art.coauthor">{{bbAuthorMaker(art.coauthor)}}</span><span v-else>Gowder, Paul.</span> "{{art.title}}." <i>{{ bbJournalMaker(art.journal)}}</i>
-{{art.volume}}<span v-if="art.issue">.{{art.issue}}</span> ({{art.year}}): {{art.firstpage}}-{{art.lastpage}}.
+<span v-if="art.coauthor">{{bbAuthorMaker(art.coauthor)}}</span> 
+<span v-else>Paul Gowder,</span> 
+"{{art.title}}," 
+{{art.volume}} 
+<span style="font-variant:small-caps;">{{ bbJournalMaker(art.journal)}}</span> 
+{{art.firstpage}} ({{art.year}}).
 
-Bluebook Article
 </p>
 
 <p v-else-if="(art.type == 'peer review' || art.type == 'law review') && citeFormat == 'APA'">
-APA Article
+
+<span v-if="art.coauthor">{{apaAuthorMaker(art.coauthor)}}</span>
+<span v-else>Gowder, P.</span> ({{art.year}}). 
+{{art.title}}. 
+<i>{{art.journal}}</i>, 
+{{art.volume}}<span v-if="art.issue">({{art.issue}})</span>,
+{{art.firstpage}}-{{art.lastpage}}.
+
+
 </p>
 
 <p v-else-if="(art.type == 'peer review' || art.type == 'law review') && citeFormat == 'MLA'">
-MLA Article
+
+
+<span v-if="art.coauthor">{{chimlaAuthorMaker(art.coauthor)}}</span>
+<span v-else>Gowder, Paul.</span>
+"{{art.title}}."
+<i>{{art.journal}}</i>
+{{art.volume}}<span v-if="art.issue">.{{art.issue}}</span>
+({{art.year}}): {{art.firstpage}}-{{art.lastpage}}. Print.
+
 </p>
 
 <p v-else-if="art.type == 'book' && citeFormat == 'Chicago'">
@@ -61,7 +84,7 @@ MLA Chapter
 Sorry, I don't have a clear citation rule for this item.
 </p>
 
-<p>Change citation format:</p>
+<p>Citation format: 
 
 <select v-model="citeFormat">
   <option>Chicago</option>
@@ -69,7 +92,7 @@ Sorry, I don't have a clear citation rule for this item.
   <option>APA</option>
   <option>MLA</option>
   </select>
-
+</p>
 
 </div>
 </template>
@@ -85,8 +108,9 @@ Sorry, I don't have a clear citation rule for this item.
                            set(value){this.$store.commit('changeCitation', value);}
                }
      },
-     methods: {chiAuthorMaker: (coau) => coau.split(" ").reverse().join(", ") + ", and Paul Gowder.",
-     bbAuthorMaker: (coau) => coau + " & Paul Gowder,",
+     methods: {chimlaAuthorMaker: (coau) => coau.split(" ").reverse().join(", ") + ", and Paul Gowder.",
+              apaAuthorMaker: (coau) => coau.split(" ")[1] + ", " + coau.split(" ")[0].charAt(0) + "., & Gowder, P.",
+              bbAuthorMaker: (coau) => coau + " & Paul Gowder,",
               bbJournalMaker: function(journal){
               var bb = this.$store.state.bbabbrv;
               return journal.split(/([!-#%-\x2A,-\/:;\x3F@\d\s])/)
@@ -97,5 +121,7 @@ Sorry, I don't have a clear citation rule for this item.
      }
 
 // AUTHORMAKER DOES NOT HANDLE JOURNAL ON LEGISLATION GROUP AUTHORSHIP CASE.
+
+// MLA ARTICLE DOES NOT HANDLE NON-PRINT
 
 </script>
