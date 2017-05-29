@@ -1,3 +1,7 @@
+.bignavbox {
+    backface-visibility: hidden;
+}
+
 .big-nav-label {
     margin-top:-5%;
     font-size:20px;
@@ -28,25 +32,36 @@ svg.topiconcolor {
 
 
 .main-view-anim-enter-active {
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.6s;
 }
 
 .main-view-anim-leave-active {
-    transition: opacity 0.5s, transform 0.2s;
+    transition: opacity 0.5s ease-in, transform 0.6s;;
 }
 .main-view-anim-leave-to /* .fade-leave-active in <2.1.8 */ {
     opacity: 0;
-    transform: translateX(10%);
+    transform: translateY(-50%);
 }
 
 .main-view-anim-enter {
-    opacity: 0.5;
+    opacity: 0.5 ease-in;
+    transform: translateY(-35%);
 }
 
 .lilnav-enter-active {
-    transition: opacity 0.6s;
+    transition: opacity 0.6s, transform 0.6s;
 }
 
 .lilnav-enter {
     opacity: 0;
+    transform: translateY(-30%);
+}
+
+.lilnav-leave-active {
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.lilnav-leave-to {
+    opacity: 0;
+    transform: translateY(-30%);
 }

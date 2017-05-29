@@ -1,5 +1,5 @@
 <template>
-<div id="navcomponent">
+<div class="bignavbox">
 <transition name="main-view-anim">
                 <div class="row" v-if="typerOn">
                     <vue-typer text="Paul Gowder" caret-animation="solid" :type-delay="300" :repeat="0"></vue-typer>
