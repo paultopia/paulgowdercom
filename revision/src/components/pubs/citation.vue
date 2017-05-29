@@ -2,6 +2,16 @@
 
 <div class="citation">
 
+<form style="float:right;">
+<label class="citeform">
+<span class="label-body">Chicago</span> <input type="radio" id="Chicago" value="Chicago" v-model="citeFormat"> 
+<span class="label-body">APA</span> <input type="radio" id="APA" value="APA" v-model="citeFormat"><br>
+<span class="label-body">Bluebook</span> <input type="radio" id="Bluebook" value="Bluebook" v-model="citeFormat">
+ <span class="label-body">MLA</span> <input type="radio" id="MLA" value="MLA" v-model="citeFormat"> 
+</label>
+</form>
+
+
 <p v-if="(art.type == 'peer review' || art.type == 'law review') && citeFormat == 'Chicago'">
 
 <span v-if="art.coauthor">{{chimlaAuthorMaker(art.coauthor)}}</span> 
@@ -84,15 +94,6 @@ MLA Chapter
 Sorry, I don't have a clear citation rule for this item.
 </p>
 
-<p>Citation format: 
-
-<select v-model="citeFormat">
-  <option>Chicago</option>
-  <option>Bluebook</option>
-  <option>APA</option>
-  <option>MLA</option>
-  </select>
-</p>
 
 </div>
 </template>
