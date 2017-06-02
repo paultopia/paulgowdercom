@@ -5,6 +5,7 @@
 /revision/css/normalize.css
 /revision/css/skeleton.css
 /revision/css/font-awesome/
+/revision/data/bbtables.json
 .DS_Store
 revision/node_modules/
 revision/vue-experiments/

@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a modified ONE COLUMN version of
+% the following template:
+%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \documentclass[]{deedy-resume-openfont}
+
+    \begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     Profile
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Paul A}{Gowder}{paul.gowder@gmail.com | 6507395203 | 916 Kirkwood Ave. | paul-gowder.com}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     Education
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education}
+\raggedright
+
+\runsubsection{Stanford University}\descript{| Ph.D. Political Science}\hfill \location{Stanford, CA | May 2012}\\
+GPA: (gpa field)\\
+\sectionsep
+  
+
+\runsubsection{Harvard Law School}\descript{| J.D. Law}\hfill \location{Cambridge, MA | May 2000}\\
+GPA: (gpa field)\\
+\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     Experience
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+\runsubsection{University of Iowa}\descript{| Professor of Law}\hfill \location{Iowa City, IA | September 2012 – Present}
+\begin{tightemize}
+	\item Here is a line of text.
+	\item Here is another line of text.
+\end{tightemize}
+\sectionsep
+\runsubsection{Victor M. Glasberg and Associates}\descript{| Associate Attorney}\hfill \location{Alexandria, VA | June 2004 – June 2006}
+\begin{tightemize}
+	\item Line of text.
+\end{tightemize}
+\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     Skills
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Skills}
+\raggedright
+\begin{tabular}{ l l }
+	\descript{Human Languages}   & {\location{English (native), Attic Greek (rudimentary reading)}} \\
+	\descript{Computer Language} & {\location{Clojure, Python, R, Javascript}}                      \\
+\end{tabular}
+\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     Projects
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Projects}
+\raggedright
+
+\runsubsection{\large{The Rule of Law in the Real World}}
+\descript{| Cambridge University Press}\hfill \location{2016}\\
+(line of text)\\
+\sectionsep
+  
+
+\runsubsection{\large{The Rule of Law and Equality}}
+\descript{| line of text}\hfill \location{2013}\\
+001 Cite Cite 1930\\
+\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     Awards
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Awards}
+\runsubsection{\large{Institute for Advanced Study}} \descript{2014-5 | Princeton, NJ} \\
+Member, School of Social Science\\
+\sectionsep
+\runsubsection{\large{Williston Contracts Competition}} \descript{1998 | Cambridge, MA} \\
+First place team\\
+\sectionsep
+\ 
+\end{document}

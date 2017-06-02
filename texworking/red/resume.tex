@@ -1,0 +1,143 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[]{awesome-cv}
+\usepackage{textcomp}
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{resume/}
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+\colorlet{awesome}{awesome-red}
+%\definecolor{awesome}{HTML}{CA63A8}
+%% Colors for text
+%\definecolor{darktext}{HTML}{414141}
+%\definecolor{text}{HTML}{414141}
+%\definecolor{graytext}{HTML}{414141}
+%\definecolor{lighttext}{HTML}{414141}
+
+%%% Override a separator for social informations in header(default: ' | ')
+%\headersocialsep[\quad\textbar\quad]
+    \begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Profile
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+	\headerfirstnamestyle{Paul A} \headerlastnamestyle{Gowder} \\
+	\vspace{2mm}
+	{\faEnvelope\ paul.gowder@gmail.com} | {\faMobile\ 6507395203} | {\faMapMarker\ 916 Kirkwood Ave.} | {\faLink\ paul-gowder.com}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Education
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Education}
+\begin{cventries}
+	\cventry
+	{Ph.D. in Political Science}
+	{Stanford University}
+	{Stanford, CA}
+	{May 2012}
+	{GPA: (gpa field)}
+	\cventry
+	{J.D. in Law}
+	{Harvard Law School}
+	{Cambridge, MA}
+	{May 2000}
+	{GPA: (gpa field)}
+\end{cventries}
+
+\vspace{-2mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Experience
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Experience}
+\begin{cventries}
+	\cventry
+	{Professor of Law}
+	{University of Iowa}
+	{Iowa City, IA}
+	{September 2012 – Present}
+	{\begin{cvitems}
+		\item {Here is a line of text.}
+		\item {Here is another line of text.}
+		\end{cvitems}}
+	\cventry
+	{Associate Attorney}
+	{Victor M. Glasberg and Associates}
+	{Alexandria, VA}
+	{June 2004 – June 2006}
+	{\begin{cvitems}
+		\item {Line of text.}
+		\end{cvitems}}
+\end{cventries}
+\cvsection{Skills}
+\begin{cventries}
+	\cventry
+	{}
+	{\def\arraystretch{1.15}{\begin{tabular}{ l l }
+		Human Languages:  & {\skill{ English (native), Attic Greek (rudimentary reading)}} \\
+		Computer Language:  & {\skill{ Clojure, Python, R, Javascript}} \\
+		\end{tabular}}}
+	{}
+	{}
+	{}
+\end{cventries}
+
+\vspace{-7mm}
+\cvsection{Projects}
+\begin{cventries}
+	\cventry
+	{(line of text)}
+	{The Rule of Law in the Real World}
+	{Cambridge University Press}
+	{2016}
+	{}
+	
+	\vspace{-5mm}
+	\cventry
+	{001 Cite Cite 1930}
+	{The Rule of Law and Equality}
+	{line of text}
+	{2013}
+	{}
+	
+	\vspace{-5mm}
+\end{cventries}
+\cvsection{Honors \& Awards}
+\begin{cvhonors}
+	\cvhonor
+	{Institute for Advanced Study}
+	{Member, School of Social Science}
+	{Princeton, NJ}
+	{2014-5}
+	\cvhonor
+	{Williston Contracts Competition}
+	{First place team}
+	{Cambridge, MA}
+	{1998}
+\end{cvhonors}
+\ 
+\end{document}
