@@ -14,6 +14,7 @@ import basics from '../data/basic.json';
 import svc from '../data/service.json';
 import commentary from '../data/commentary.json';
 import headshotURL from '../images/headshot.jpg';
+import cvURL from '../data/gowdercv.pdf';
 import bbabbrv from '../data/bbtables.json';
 
 
@@ -36,6 +37,7 @@ var state = {currentView,
              svc,
              commentary,
              headshotURL,
+             cvURL,
              bbabbrv};
 
 var mutations = {navigate(state, view){state.lastView = state.currentView;

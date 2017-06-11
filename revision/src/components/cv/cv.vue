@@ -7,7 +7,7 @@
 
     <div class="twelve columns">
         <h1 id="top"><a href="http://paul-gowder.com">Paul Gowder</a></h1>
-        <p><a :href="'mailto:' + basics.email"><icon name="file-pdf-o"></icon></a> <a :href="basics.cvurl"><icon name="envelope-o"></icon></a></p>
+        <p><a :href="'mailto:' + basics.email"><icon name="envelope-o"></icon></a> <a :href="cvURL" download="gowdercv.pdf"><icon name="file-pdf-o"></icon></a></p>
 
     </div></div>
 
@@ -78,7 +78,8 @@ import icon from 'vue-awesome';
 
 export default {
      props: ["pubs", "pres", "courses", "misc", "basics", "svc", "awards"],
-     components: {presentations, teaching, generictable, publications, service, icon}
+     components: {presentations, teaching, generictable, publications, service, icon},
+     computed: {cvURL: function(){return this.$store.state.cvURL;}}
 }
 
 </script>
