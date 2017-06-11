@@ -1,13 +1,11 @@
 const latex = require('node-latex');
-const fs = require('fs');
+ const fs = require('fs');
 const Mustache = require('mustache');
-// const awards = require('./data/awards.json');
-
-const awards = JSON.parse(fs.readFileSync('./data/awards.json', "utf8"));
+const awards = require('./data/awards.json');
 
 const customTags = [ '<<', '>>' ];
 Mustache.tags = customTags;
-Mustache.escape = function (text) {return text;} // overriding HTML escaping. See line 622 of https://github.com/janl/mustache.js/blob/23beb3a8805c9a857e3ea777431481599fab503e/mustache.js 
+Mustache.escape = text => text;
 
 const templatedata = {name: "P. foo/bar Gowder", awards: awards};
 
