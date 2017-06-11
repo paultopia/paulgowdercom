@@ -16,6 +16,7 @@ import commentary from '../data/commentary.json';
 import headshotURL from '../images/headshot.jpg';
 import cvURL from '../data/gowdercv.pdf';
 import bbabbrv from '../data/bbtables.json';
+import awards from '../data/awards.json';
 
 
 // load up the state object
@@ -38,7 +39,8 @@ var state = {currentView,
              commentary,
              headshotURL,
              cvURL,
-             bbabbrv};
+             bbabbrv,
+             awards};
 
 var mutations = {navigate(state, view){state.lastView = state.currentView;
                                        state.currentView = view;},

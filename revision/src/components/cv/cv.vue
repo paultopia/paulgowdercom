@@ -76,10 +76,18 @@ import service from "./service.vue";
 import icon from 'vue-awesome';
 
 
-export default {
-     props: ["pubs", "pres", "courses", "misc", "basics", "svc", "awards"],
+export default {    
      components: {presentations, teaching, generictable, publications, service, icon},
-     computed: {cvURL: function(){return this.$store.state.cvURL;}}
+    computed: {
+        cvURL: function(){return this.$store.state.cvURL;},
+        pubs: function(){return this.$store.state.pubs;},
+        pres: function(){return this.$store.state.pres;},
+        courses: function(){return this.$store.state.courses;},
+        misc: function(){return this.$store.state.misc;},
+        basics: function(){return this.$store.state.basics;},
+        svc: function(){return this.$store.state.svc;},
+        awards: function(){return this.$store.state.awards;}
+              }
 }
 
 </script>
