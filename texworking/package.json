@@ -1,0 +1,12 @@
+{
+  "name": "test-latex-npm",
+  "version": "1.0.0",
+  "description": "test of compiling latex over node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+  "node-latex": "2.4.1"}
+}

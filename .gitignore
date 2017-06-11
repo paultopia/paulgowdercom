@@ -9,3 +9,5 @@
 .DS_Store
 revision/node_modules/
 revision/vue-experiments/
+texworking/node_modules/
+texworking/output.pdf
