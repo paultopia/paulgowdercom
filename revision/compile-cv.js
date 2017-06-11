@@ -1,7 +1,13 @@
 const latex = require('node-latex');
- const fs = require('fs');
+const fs = require('fs');
 const Mustache = require('mustache');
 const awards = require('./data/awards.json');
+const basic = require('./data/basic.json');
+const courses = require('./data/courses.json');
+const misc = require('./data/misc.json');
+const presentations = require('./data/presentations.json');
+const publications = require('./data/publications.json');
+const service = require('./data/service.json');
 
 const customTags = [ '<<', '>>' ];
 Mustache.tags = customTags;
