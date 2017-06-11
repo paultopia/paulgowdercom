@@ -1,0 +1,104 @@
+%% start of file 'template.tex'.
+%% Based on a c.v. template (moderncv) that is Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%% Also based on code by Saad Quadri in latexresu.me
+%% modern cv under LaTeX Project Public License version 1.3c
+%% latexresu.me under MIT license. 
+%% Paul Gowder additions under MIT license.
+
+\documentclass[letterpaper]{moderncv} 
+\usepackage{textcomp}
+% moderncv themes
+\moderncvstyle{classic}           % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{red}               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+    % Profile
+\name{<<name>>}{}
+\address{916 Kirkwood Ave.}
+\phone[mobile]{6507395203}
+\email{paul.gowder@gmail.com}
+\homepage{paul-gowder.com}
+    \begin{document}
+\makecvtitle
+\section{Education}
+\cventry
+{May 2012}
+{Ph.D. in Political Science}
+{Stanford University}
+{GPA: (gpa field)}
+{\textit{Stanford, CA}}
+{}
+\cventry
+{May 2000}
+{J.D. in Law}
+{Harvard Law School}
+{GPA: (gpa field)}
+{\textit{Cambridge, MA}}
+{}
+\section{Experience}
+\cventry
+{September 2012 -- Present}
+{Professor of Law}
+{University of Iowa}
+{Iowa City, IA}
+{}
+{\begin{itemize}%
+	\item Here is a line of text.
+	\item Here is another line of text.
+	\end{itemize}}
+\cventry
+{June 2004 -- June 2006}
+{Associate Attorney}
+{Victor M. Glasberg and Associates}
+{Alexandria, VA}
+{}
+{\begin{itemize}%
+	\item Line of text.
+	\end{itemize}}
+\section{Skills}
+\cvitem{Human Languages}{English (native), Attic Greek (rudimentary reading)}
+\cvitem{Computer Language}{Clojure, Python, R, Javascript}
+\section{Projects}
+\cventry
+{}
+{The Rule of Law in the Real World}
+{}
+{\textit{Cambridge University Press}}
+{}
+{(line of text)\\2016}
+\vspace{1mm}
+\cventry
+{}
+{The Rule of Law and Equality}
+{}
+{\textit{line of text}}
+{}
+{001 Cite Cite 1930\\2013}
+\vspace{1mm}
+\section{Awards}
+\cventry
+{}
+{Institute for Advanced Study}
+{}
+{\textit{2014-5}}
+{}
+{Member, School of Social Science\\Princeton, NJ}
+\vspace{1mm}
+\cventry
+{}
+{Williston Contracts Competition}
+{}
+{\textit{1998}}
+{}
+{First place team\\Cambridge, MA}
+\vspace{1mm}
+\ 
+\end{document}
