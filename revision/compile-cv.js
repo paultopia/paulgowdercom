@@ -12,10 +12,9 @@ const service = require('./data/service.json');
 const customTags = [ '<<', '>>' ];
 Mustache.tags = customTags;
 
-//Mustache.escape = text => text;
-// I actually should put a custom escaping function in that escapes things like ampersands. https://tex.stackexchange.com/questions/34580/escape-character-in-latex This one should work for everything except \ ^ and ~, which I don't plan to use.
+// Custom escaping function. https://tex.stackexchange.com/questions/34580/escape-character-in-latex This one should work for everything except \ ^ and ~, which I don't plan to use.
 
-Mustache.escape = text => text.replace(/[%&$#_{}]/g, m => "\\" + m));
+Mustache.escape = text => text.replace(/[%&$#_{}]/g, m => "\\" + m);
 
 const templatedata = {name: "P. foo/bar $ Gowder", awards: awards};
 
