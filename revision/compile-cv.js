@@ -12,17 +12,22 @@ const service = require('./data/service.json');
 const customTags = [ '<<', '>>' ];
 Mustache.tags = customTags;
 
-// Custom escaping function. https://tex.stackexchange.com/questions/34580/escape-character-in-latex This one should work for everything except \ ^ and ~, which I don't plan to use.
+// Custom escaping code for LaTeX special chatacters.
 
-Mustache.escape = text => text.replace(/[%&$#_{}]/g, m => "\\" + m);
+var matches = {"\\": "textbackslash", "~":"textasciitilde", "^":"textasciicircum"};
+function latexEscaper(text){
+	return text
+		.replace(/[\\~\^]/g, match => "\\" +  matches[match])
+		.replace(/[%&$#_{}]/g, m => "\\" + m);
+}
 
-const templatedata = {name: "P. foo/bar $ Gowder", awards: awards};
+Mustache.escape = latexEscaper;
+
+const templatedata = {name: "P. foo/bar ^ $ Gowder", awards: awards};
 
 const template = fs.readFileSync("./cvtex/template.tex", "utf8");
 
 const input = Mustache.render(template, templatedata);
-
-console.log(input)
 
 const output = fs.createWriteStream('./data/tex-cv.pdf');
 
