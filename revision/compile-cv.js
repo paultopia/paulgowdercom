@@ -24,7 +24,36 @@ function latexEscaper(text){
 
 Mustache.escape = latexEscaper;
 
-const templatedata = {name: "P. foo/bar ^ $ Gowder", awards: awards};
+// clean up pubs
+
+function chronThenTitle(a, b){
+    if(parseInt(a.year) > parseInt(b.year)) return -1;
+    if(parseInt(a.year) < parseInt(b.year)) return 1;
+    if(a.title < b.title) return -1;
+    return 1;
+}
+
+function citeMaker(art){
+    return art.issue ? art.volume + "(" + art.issue + "):" + art.firstpage + "-" + art.lastpage : art.volume + ":" + art.firstpage + "-" + art.lastpage;
+}
+
+function citeAdder(art){
+    var a = JSON.parse(JSON.stringify(art));
+    a.cite = citeMaker(a);
+    return a;
+}
+
+const books = publications.filter(p => p.type === "book").sort(chronThenTitle);
+
+const peerreview = publications.filter(p => p.type === "peer review").sort(chronThenTitle).map(citeAdder);
+
+const lawreview = publications.filter(p => p.type === "law review").sort(chronThenTitle).map(citeAdder);
+
+const chapters = publications.filter(p => p.type === "chapter").sort(chronThenTitle);
+
+const miscpubs = publications.filter(p => p.type === "misc").sort(chronThenTitle);
+
+const templatedata = {awards, basic, courses, misc, presentations, service, books, peerreview, lawreview, chapters, miscpubs};
 
 const template = fs.readFileSync("./cvtex/template.tex", "utf8");
 

@@ -7,4 +7,4 @@ from pygments.formatters import TerminalFormatter
 with open(sys.argv[1]) as dj:
 	data = json.dumps(json.load(dj), indent=4, sort_keys=True)
 
-print (highlight(data, JsonLexer(), TerminalFormatter()))
+print(highlight(data, JsonLexer(), TerminalFormatter()))
