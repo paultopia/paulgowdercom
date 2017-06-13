@@ -13,6 +13,8 @@ const customTags = [ '<<', '>>' ];
 Mustache.tags = customTags;
 Mustache.escape = text => text;
 
+// I actually should put a custom escaping function in that escapes things like ampersands. https://tex.stackexchange.com/questions/34580/escape-character-in-latex 
+
 const templatedata = {name: "P. foo/bar Gowder", awards: awards};
 
 const template = fs.readFileSync("./cvtex/template.tex", "utf8");
