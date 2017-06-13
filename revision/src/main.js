@@ -42,6 +42,7 @@ import '../css/custom.css';
 import navigation from './components/nav/bignavbar.vue';
 import littlenav from './components/nav/littlenavbar.vue'
 import cv from './components/cv/cv.vue';
+// import cv from "./components/cv.vue"; // experimental pdf embed doesn't work.  moving to failing-cv.vue.
 import bio from "./components/bio.vue";
 import pubs from './components/pubs/publications.vue';
 import writing from './components/writing.vue';
