@@ -1,0 +1,94 @@
+I'm sick of having to double-check all the fields, so, for future reference, here are the fields for each one.
+
+Everything is lowercase in actual files.  I use uppercase in this file only to denote stuff with children.
+
+If an entry with children in this list is denoted with an:
+
+- (a) it is an array.  If it
+  - - has children, it's an array of objects where each object has the fields listed below;
+  - - does not have children, it's an array of string entries.
+
+- (o) it's an object, with sub-objects or sub-arrays as noted.
+
+- (s) it's a singleton object, with string fields as children.
+
+AWARDS(a):
+    award
+    year
+BASIC(o)
+    CORE(s)
+        addr1
+        addr2
+        cvurl
+        email
+        name
+        phone
+        phoneid
+        revdate
+        url
+    EDUCATION(a)
+        degree
+        name
+        year
+    POSITIONS(a)
+        title
+        university
+        year
+COURSES(o)
+    LEAD(a)
+        notes
+        school
+        terms
+        title
+    TA(a)
+        notes
+        school
+        terms
+        title
+MISC(o)
+    BARS(a)
+    COMPUTERLANG(a)
+    HUMANLANG(a)
+    NOTES(a)
+    OTHER(a)
+    PRACTICE(a)
+        employer
+        role
+        years
+PRESENTATIONS(o)
+    CAMPUS(a)
+        title
+        venue
+        year
+    CONFERENCES(a)
+        title
+        venue
+        year
+    INVITED(a)
+        title
+        venue
+        year
+PUBLICATIONS(a)
+    volume
+    publisher
+    altlink
+    title
+    publink
+    type
+    abstract
+    year
+    firstpage
+    coauthor
+    note
+    lastpage
+    book
+    editor
+    address
+    issue
+    journal
+SERVICE(a)
+    type
+    subentity
+    entity
+    role
+    years

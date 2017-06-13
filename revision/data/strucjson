@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+import json, sys
+from pygments import highlight
+from pygments.lexers.data import JsonLexer
+from pygments.formatters import TerminalFormatter
+
+with open(sys.argv[1]) as dj:
+	data = json.dumps(json.load(dj)[0].keys(), indent=4, sort_keys=True)
+
+print (highlight(data, JsonLexer(), TerminalFormatter()))

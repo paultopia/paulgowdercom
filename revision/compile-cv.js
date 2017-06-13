@@ -14,12 +14,13 @@ Mustache.tags = customTags;
 
 // Custom escaping code for LaTeX special chatacters.
 
-var matches = {"\\": "textbackslash", "~":"textasciitilde", "^":"textasciicircum"};
+var matches = new Map([["\\", "textbackslash"],
+                       ["~","textasciitilde"],
+	                     ["^","textasciicircum"]]);
+
 function latexEscaper(text){
-	return text
-		.replace(/[\\~\^]/g, match => "\\" +  matches[match])
-		.replace(/[%&$#_{}]/g, m => "\\" + m);
-}
+		return text.replace(/[\\~\^%&$#_{}]/g,
+				                match => "\\" + (matches.get(match) || match));}
 
 Mustache.escape = latexEscaper;
 
