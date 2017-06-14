@@ -6,15 +6,14 @@
 </div>
 </transition>
                 <div class="row">
-                   <bigsingle icon="phone" word="bio" toggle="bio"></bigsingle>
-
-                   <bigdouble bottomicon="certificate" topicon="cogs" word="pubs" toggle="pubs"></bigdouble>
-                   <bigsingle icon="list-ul" word="cv" toggle="cv"></bigsingle>
+                   <bigicon icon="phone" word="bio" toggle="bio"></bigicon>
+                   <bigicon icon="certificate" word="pubs" toggle="pubs"></bigicon>
+                   <bigicon icon="list-ul" word="cv" toggle="cv"></bigicon>
 
             </div>
 
 <div class="row">
-<bigsingle icon="pencil" word="other writing" toggle="writing"></bigsingle>
+<bigicon icon="pencil" word="other writing" toggle="writing"></bigicon>
 </div>
 
 
@@ -27,10 +26,9 @@
 import VueTyperPlugin from 'vue-typer';
 
 
-import bigsingle from "./bigsinglenav.vue";
-import bigdouble from "./bigdoublenav.vue";
+import bigicon from "./bigicon.vue";
 export default {
-     components: {bigsingle, bigdouble, VueTyperPlugin},
+     components: {bigicon, VueTyperPlugin},
      deactivated() {this.$store.commit('typerOff');},
      computed: {typerOn(){return this.$store.state.typerOn;}}
 }

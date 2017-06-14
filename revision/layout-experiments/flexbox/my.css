@@ -1,0 +1,22 @@
+body {
+background-color: rgb(172, 196, 165);
+}
+.bigcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  margin: 3em;
+}
+
+.subcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  padding-top: 3em;
+  }
+
+.fa {
+	justify-content: center;
+}
