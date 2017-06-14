@@ -26,6 +26,20 @@ Mustache.escape = latexEscaper;
 
 // clean up pubs
 
+function yearsThenEntity(a, b){
+    if(a.years > b.years) return -1;
+    if(a.years < b.years) return 1;
+    if(a.entity < b.entity) return -1;
+    return 1;
+}
+
+function yearsThenRole(a, b){
+    if(a.years > b.years) return -1;
+    if(a.years < b.years) return 1;
+    if(a.role < b.role) return -1;
+    return 1;
+}
+
 function chronThenTitle(a, b){
     if(parseInt(a.year) > parseInt(b.year)) return -1;
     if(parseInt(a.year) < parseInt(b.year)) return 1;
@@ -54,26 +68,25 @@ function citeAdder(art){
 }
 
 const leadteaching = courses.lead.sort(termsThenSchoolthenTitle);
-
 const taships = courses.ta.sort(termsThenSchoolthenTitle);
 
+const userv = service.filter(s => s.type === "university").sort(yearsThenEntity);
+const dserv = service.filter(s => s.type === "disciplinary").sort(yearsThenRole);
+const cserv = service.filter(s => s.type === "community").sort(yearsThenRole);
+
 const books = publications.filter(p => p.type === "book").sort(chronThenTitle);
-
 const peerreview = publications.filter(p => p.type === "peer review").sort(chronThenTitle).map(citeAdder);
-
 const lawreview = publications.filter(p => p.type === "law review").sort(chronThenTitle).map(citeAdder);
-
 const chapters = publications.filter(p => p.type === "chapter").sort(chronThenTitle);
-
 const miscpubs = publications.filter(p => p.type === "misc").sort(chronThenTitle);
 
-const templatedata = {awards, basic, leadteaching, taships, misc, presentations, service, books, peerreview, lawreview, chapters, miscpubs};
+const templatedata = {awards, basic, leadteaching, taships, misc, presentations, userv, dserv, cserv, books, peerreview, lawreview, chapters, miscpubs};
 
 const template = fs.readFileSync("./cvtex/template.tex", "utf8");
 
 const input = Mustache.render(template, templatedata);
 
-const output = fs.createWriteStream('./data/tex-cv.pdf');
+const output = fs.createWriteStream('./data/gowdercv.pdf');
 
 const opts = {cmd: 'xelatex',
 	            inputs: './cvtex',

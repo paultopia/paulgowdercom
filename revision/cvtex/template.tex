@@ -22,10 +22,10 @@
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
     % Profile
 \name{<<basic.core.name>>}{}
-\address{<<basic.core.revdate>>} %% total hack to get last rev date instead of
+\address{Last update: <<basic.core.revdate>>} %% total hack to get last rev date instead of
                                 %% address in here.
-\phone[mobile]{6507395203}
-\email{paul.gowder@gmail.com}
+\phone[office]{<<basic.core.phone>> (<<basic.core.phoneid>>)}
+\email{<<basic.core.email>>}
 \homepage{paul-gowder.com}
     \begin{document}
 \makecvtitle
@@ -44,7 +44,7 @@
 {}
 {\begin{itemize}%
 	\item Associate Professor of Law (pre-tenure): 2012-2017.
-	\item Professor of Law (tenured): 2017-present.
+	\item Professor of Law (tenured): 2017-.
 	\item Courtesy appointments in Political Science (2012-), Philosophy (2016-)
 	\end{itemize}}
 %
@@ -137,7 +137,7 @@
 <<#awards>>
 \cvitem
 {<<year>>}
-{<<award>>}
+{<<award>>.}
 \vspace{1mm}
 <</awards>>
 
@@ -171,26 +171,62 @@
 <<#leadteaching>>
 \cvitem
 {<<terms>>}
-{<<title>>, <<school>>}
+{<<title>>, <<school>>.}
 \vspace{1mm}
 <</leadteaching>>
 \subsection{Teaching Assistant}
 <<#taships>>
 \cvitem
 {<<terms>>}
-{<<title>>, <<school>>
+{<<title>>, <<school>>.
   \newline
-  <<notes>>
+  <<notes>>.
 }
 \vspace{1mm}
 <</taships>>
 
+\section{Service}
+\subsection{University Service}
+<<#userv>>
+\cvitem
+{<<years>>}
+{<<role>>, <<entity>>, <<subentity>>.}
+\vspace{1mm}
+<</userv>>
 
-%
+\subsection{Disciplinary Service}
+<<#dserv>>
+\cvitem
+{<<years>>}
+{<<role>>.}
+\vspace{1mm}
+<</dserv>>
+\subsection{Community Service and Outreach}
+<<#cserv>>
+\cvitem
+{<<years>>}
+{<<role>>.}
+\vspace{1mm}
+<</cserv>>
+% 
 % languages
 %
-\section{Languages}
+\section{Miscellany}
+\subsection{Ph.D.}
+\cvitem{Dissertation}{\textit{An Egalitarian	Theory of the	Rule of Law}.}
+\cvitem{Major Fields}{Political Theory. Political Institutions.}
+\cvitem{Minor Fields}{American Politics.}
+\subsection{Languages}
 \cvitem{Human}{English (native). Attic Greek (rudimentary reading).}
-\cvitem{Computer} {<<#misc.computerlang>><<.>>. <</misc.computerlang>>}
+\cvitem{Computer}{<<#misc.computerlang>><<.>>. <</misc.computerlang>>}
+\subsection{Bar Admissions}
+\cvitem{}{<<#misc.bars>><<.>>. <</misc.bars>>}
+\subsection{Less Formal Education}
+\cvitem{2017}{Recurse Center (summer 2 half-batch).}
+\cvitem{2013}{University College Cork, Attic Greek Summer Immersion.}
+\subsection{Notes}
+<<#misc.notes>>
+\cvitem{}{<<.>>} <</misc.notes>>
+\cvitem{}{Research Assistant to Lawrence Lessig (2006-8, 1999), and to Richard Sobel (1998).}
 \ 
 \end{document}
