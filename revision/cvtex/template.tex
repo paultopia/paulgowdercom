@@ -9,7 +9,7 @@
 \usepackage{textcomp}
 % moderncv themes
 \moderncvstyle{classic}           % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{red}               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvcolor{orange}               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
@@ -18,29 +18,33 @@
 
 % adjust the page margins
 \usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+\setlength{\hintscolumnwidth}{2cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
     % Profile
 \name{<<basic.core.name>>}{}
-\address{916 Kirkwood Ave.}
+\address{<<basic.core.revdate>>} %% total hack to get last rev date instead of
+                                %% address in here.
 \phone[mobile]{6507395203}
 \email{paul.gowder@gmail.com}
 \homepage{paul-gowder.com}
     \begin{document}
 \makecvtitle
+
+\lfoot{\thepage}
+
 %
 % positions
 %
 \section{Academic Positions}
 \cventry
-{09/12 -- }
+{09/12-Present}
 {Professor of Law}
 {University of Iowa}
 {Iowa City, IA}
 {}
 {\begin{itemize}%
 	\item Associate Professor of Law (pre-tenure): 2012-2017.
-	\item Professor of Law (tenured): 2017-.
+	\item Professor of Law (tenured): 2017-present.
 	\item Courtesy appointments in Political Science (2012-), Philosophy (2016-)
 	\end{itemize}}
 %
@@ -84,7 +88,7 @@
 \vspace{1mm}
 <</books>>
 \vspace{1mm}
-\subsection{Peer-Reviewed Articles}
+\subsection{Peer-Reviewed/Edited Articles}
 <<#peerreview>>
 \cventry
 {<<year>>}
@@ -96,7 +100,7 @@
 \vspace{1mm}
 <</peerreview>>
 \vspace{1mm}
-\subsection{Law Review Articles}
+\subsection{Law Review (Student-Edited) Articles}
 <<#lawreview>>
 \cventry
 {<<year>>}
@@ -127,12 +131,6 @@
 {\textit{<<title>>}, <<note>>.}
 \vspace{1mm}
 <</miscpubs>>
-%
-% languages
-%
-\section{Languages}
-\cvitem{Human}{English (native), Attic Greek (rudimentary reading)}
-\cvitem{Computer}{Clojure, Python, R, Javascript}
 
 
 \section{Grants, Awards, Honors}
@@ -141,8 +139,58 @@
 {<<year>>}
 {<<award>>}
 \vspace{1mm}
-
 <</awards>>
 
+
+\section{Presentations}
+\subsection{Invited Talks}
+<<#presentations.invited>>
+\cvitem
+{<<year>>}
+{\textit{<<title>>}, <<venue>>.}
+\vspace{1mm}
+<</presentations.invited>>
+\subsection{Conference Presentations}
+<<#presentations.conferences>>
+\cvitem
+{<<year>>}
+{\textit{<<title>>}, <<venue>>.}
+\vspace{1mm}
+<</presentations.conferences>>
+\subsection{Campus Talks}
+<<#presentations.campus>>
+\cvitem
+{<<year>>}
+{\textit{<<title>>}, <<venue>>.}
+\vspace{1mm}
+<</presentations.campus>>
+
+
+\section{Teaching}
+\subsection{Lead Instructor}
+<<#leadteaching>>
+\cvitem
+{<<terms>>}
+{<<title>>, <<school>>}
+\vspace{1mm}
+<</leadteaching>>
+\subsection{Teaching Assistant}
+<<#taships>>
+\cvitem
+{<<terms>>}
+{<<title>>, <<school>>
+  \newline
+  <<notes>>
+}
+\vspace{1mm}
+<</taships>>
+
+
+%
+% languages
+%
+\section{Languages}
+\cvitem{Human}{English (native). Attic Greek (rudimentary reading).}
+\cvitem{Computer} {<<#misc.computerlang>><<.>>. <</misc.computerlang>>}
 \ 
 \end{document}

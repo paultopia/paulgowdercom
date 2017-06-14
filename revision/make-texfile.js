@@ -1,4 +1,3 @@
-const latex = require('node-latex');
 const fs = require('fs');
 const Mustache = require('mustache');
 const awards = require('./data/awards.json');
@@ -33,16 +32,6 @@ function chronThenTitle(a, b){
     return 1;
 }
 
-function termsThenSchoolthenTitle(a, b){
-    if(a.terms > b.terms) return -1;
-    if(a.terms < b.terms) return 1;
-    if(a.school > b.school) return -1;
-    if(a.school < b.school) return 1;
-    if(a.title < b.title) return -1;
-    return 1;
-}
-
-
 function citeMaker(art){
     return art.issue ? art.volume + "(" + art.issue + "):" + art.firstpage + "-" + art.lastpage : art.volume + ":" + art.firstpage + "-" + art.lastpage;
 }
@@ -52,10 +41,6 @@ function citeAdder(art){
     a.cite = citeMaker(a);
     return a;
 }
-
-const leadteaching = courses.lead.sort(termsThenSchoolthenTitle);
-
-const taships = courses.ta.sort(termsThenSchoolthenTitle);
 
 const books = publications.filter(p => p.type === "book").sort(chronThenTitle);
 
@@ -67,18 +52,13 @@ const chapters = publications.filter(p => p.type === "chapter").sort(chronThenTi
 
 const miscpubs = publications.filter(p => p.type === "misc").sort(chronThenTitle);
 
-const templatedata = {awards, basic, leadteaching, taships, misc, presentations, service, books, peerreview, lawreview, chapters, miscpubs};
+const templatedata = {awards, basic, courses, misc, presentations, service, books, peerreview, lawreview, chapters, miscpubs};
 
 const template = fs.readFileSync("./cvtex/template.tex", "utf8");
 
 const input = Mustache.render(template, templatedata);
 
-const output = fs.createWriteStream('./data/tex-cv.pdf');
+fs.writeFile("test.tex", input);
 
-const opts = {cmd: 'xelatex',
-	            inputs: './cvtex',
-              fonts: './cvtex'};
-
-latex(input).pipe(output);
 
 
