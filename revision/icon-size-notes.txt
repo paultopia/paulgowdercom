@@ -1,0 +1,33 @@
+vue awesome is huge
+
+vue-awesome: 477.76 KB (36.0%)
+vue: 251.07 KB (18.9%)
+vuex: 21.77 KB (1.64%)
+vue-typer: 18.75 KB (1.41%)
+style-loader: 11.25 KB (0.847%)
+vue-style-loader: 6.54 KB (0.492%)
+process: 5.29 KB (0.398%)
+vue-markdown-loader: 4.96 KB (0.374%)
+vue-loader: 2.49 KB (0.187%)
+css-loader: 1.47 KB (0.111%)
+webpack: 509 B (0.0374%)
+<self>: 526.11 KB (39.6%)
+
+
+
+To reduce bundle size, I want to just bring the icons in my own damn way with 
+
+https://stackoverflow.com/questions/23193404/how-to-install-only-required-fonts-from-font-awesome
+
+http://fontello.com/
+
+https://icomoon.io
+
+icomoon looks best, it just has raw svg source available, so I can just put them straight in.  and from preferences I can do it as sprites.  so I can shove them in css, and thence into js.  
+
+or: 
+https://github.com/encharm/Font-Awesome-SVG-PNG
+
+Import clean svg files in state.js with name for pages.  Then in nav icons I can have one fewer prop and just pass the name to the src and it will be the URL! 
+
+Probably will need to size with media queries, but if I have to, I can also detect screen sizes with js as in gowder.io and then just dynamically change the height/width properties on image tag.
