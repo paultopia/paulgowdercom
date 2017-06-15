@@ -14,6 +14,8 @@
 
 <div class="row">
 <bigicon icon="pencil" word="other writing" toggle="writing"></bigicon>
+
+            <span class="icon icon-spinner"></span>
 </div>
 
 
