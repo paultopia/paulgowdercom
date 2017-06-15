@@ -16,6 +16,7 @@ Vue.component('icon', Icon);
 
 // icon imports
 
+// import {phone, certificate, cogs, file_text, external_link_square, download, times, file_pdf_o, envelope_o, list_ul, pencil} from 'vue-awesome/icons';
 import 'vue-awesome/icons/phone';
 import 'vue-awesome/icons/certificate';
 import 'vue-awesome/icons/cogs';

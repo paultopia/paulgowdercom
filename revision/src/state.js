@@ -47,7 +47,7 @@ var state = {currentView,
              awards,
              icons};
 
-var mutations = {navigate(state, view){state.lastView = state.currentView;
+var mutations = {navigate(state, view){state.lastView = state.currentView; 
                                        state.currentView = view;},
                  changeCitation(state, newFormat){state.citeFormat = newFormat;},
                  typerOff(){state.typerOn = false;}};
