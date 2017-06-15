@@ -3,7 +3,7 @@
 import Vue from "vue";
 import Vuex from 'vuex';
 Vue.use(Vuex);
-import Icon from 'vue-awesome';
+import Icon from 'vue-awesome/components/Icon.vue';
 import VueTyperPlugin from 'vue-typer';
 
 
@@ -20,7 +20,6 @@ import 'vue-awesome/icons/phone';
 import 'vue-awesome/icons/certificate';
 import 'vue-awesome/icons/cogs';
 import 'vue-awesome/icons/file-text';
-import 'vue-awesome/icons/external-link-square';
 import 'vue-awesome/icons/external-link-square';
 import 'vue-awesome/icons/download';
 import 'vue-awesome/icons/times';

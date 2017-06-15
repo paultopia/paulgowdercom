@@ -13,6 +13,4 @@ export default {
 mixins: [mixins.nav, mixins.singleNav]
 };
 
-// I'm going to try to not import the icons here, see if importing them globally works. 
-
 </script>
