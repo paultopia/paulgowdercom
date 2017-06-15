@@ -18,6 +18,10 @@ import cvURL from '../data/gowdercv.pdf';
 import bbabbrv from '../data/bbtables.json';
 import awards from '../data/awards.json';
 
+// I'm going to try to load some icons this way, directly into state, to pull out when needed.
+
+import apple from '../icons/apple.svg';
+const icons = {apple};
 
 // load up the state object
 
@@ -40,7 +44,8 @@ var state = {currentView,
              headshotURL,
              cvURL,
              bbabbrv,
-             awards};
+             awards,
+             icons};
 
 var mutations = {navigate(state, view){state.lastView = state.currentView;
                                        state.currentView = view;},
